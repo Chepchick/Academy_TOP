@@ -1,0 +1,30 @@
+﻿  Main.cpp
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(38,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(49,12): error C2064: результатом вычисления фрагмента не является функция, принимающая 2 аргументов
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(54,12): error C2064: результатом вычисления фрагмента не является функция, принимающая 2 аргументов
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(158,40): error C2556: float sum(float [],const int): перегруженная функция отличается от "int sum(float [],const int)" только возвращаемым типом
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(15): message : см. объявление "sum"
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(158,7): error C2371: sum: переопределение; различные базовые типы
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(15): message : см. объявление "sum"
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(166,42): error C2556: double sum(double [],const int): перегруженная функция отличается от "int sum(double [],const int)" только возвращаемым типом
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(16): message : см. объявление "sum"
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(166,8): error C2371: sum: переопределение; различные базовые типы
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(16): message : см. объявление "sum"
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(181,22): error C2264: sum: ошибка в определении или объявлении функции; функция не вызвана
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(185,22): error C2264: sum: ошибка в определении или объявлении функции; функция не вызвана
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(196,47): error C2556: float minValueIn(float [],const int): перегруженная функция отличается от "int minValueIn(float [],const int)" только возвращаемым типом
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(21): message : см. объявление "minValueIn"
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(196,7): error C2371: minValueIn: переопределение; различные базовые типы
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(21): message : см. объявление "minValueIn"
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(204,49): error C2556: double minValueIn(double [],const int): перегруженная функция отличается от "int minValueIn(double [],const int)" только возвращаемым типом
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(22): message : см. объявление "minValueIn"
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(204,8): error C2371: minValueIn: переопределение; различные базовые типы
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(22): message : см. объявление "minValueIn"
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(221,47): error C2556: float maxValueIn(float [],const int): перегруженная функция отличается от "int maxValueIn(float [],const int)" только возвращаемым типом
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(24): message : см. объявление "maxValueIn"
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(221,7): error C2371: maxValueIn: переопределение; различные базовые типы
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(24): message : см. объявление "maxValueIn"
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(229,49): error C2556: double maxValueIn(double [],const int): перегруженная функция отличается от "int maxValueIn(double [],const int)" только возвращаемым типом
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(25): message : см. объявление "maxValueIn"
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(229,8): error C2371: maxValueIn: переопределение; различные базовые типы
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(25): message : см. объявление "maxValueIn"
