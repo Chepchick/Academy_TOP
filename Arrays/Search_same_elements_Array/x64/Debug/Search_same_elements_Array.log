@@ -1,0 +1,3 @@
+﻿  Main.cpp
+P:\Git_Hub\Academy_TOP\Arrays\Search_same_elements_Array\Main.cpp(8,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Search_same_elements_Array.vcxproj -> P:\Git_Hub\Academy_TOP\Arrays\x64\Debug\Search_same_elements_Array.exe
