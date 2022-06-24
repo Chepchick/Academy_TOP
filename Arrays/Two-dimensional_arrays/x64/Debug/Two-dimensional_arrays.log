@@ -1,0 +1,6 @@
+﻿  Main.cpp
+P:\Git_Hub\Academy_TOP\Arrays\Two-dimensional_arrays\Main.cpp(32,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Arrays\Two-dimensional_arrays\Main.cpp(48,41): error C2664: "double getAvg(double *,const int,const int)": невозможно преобразовать аргумент 1 из "int [5]" в "double *"
+P:\Git_Hub\Academy_TOP\Arrays\Two-dimensional_arrays\Main.cpp(48,20): message : Типы, на которые указывают указатели, не связаны; для преобразования требуется reinterpret_cast, приведение в стиле С или приведение в стиле функции в круглых скобках
+P:\Git_Hub\Academy_TOP\Arrays\Two-dimensional_arrays\Main.cpp(18,8): message : см. объявление "getAvg"
+P:\Git_Hub\Academy_TOP\Arrays\Two-dimensional_arrays\Main.cpp(49,109): error C3536: avg: не может использоваться до инициализации
