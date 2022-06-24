@@ -4,250 +4,234 @@
 
 using namespace std;
 
-void fillRand(int*, const int, const int);
-void fillRand(float*, const int, const int);
-void fillRand(double*, const int, const int);
-void fillRand(char*, const int, const int);
+void fillRand(int**&, int, int);
+void fillRand(float**&, int, int);
+void fillRand(double**&, int, int);
+void fillRand(char**&, int, int);
 
-void printArray(int*, const int, const int);
-void printArray(float*, const int, const int);
-void printArray(double*, const int, const int);
-void printArray(char*, const int, const int);
-
-int getSum(int*, const int, const int);
-double getAvg(double*, const int, const int);
-int getMinVlaueIn(int*, const int, const int);
-int getMaxVlaueIn(int*, const int, const int);
-void shiftLeft(int*, const int, const int, int);
-void shiftRight(int*, const int, const int, int);
-void generalSort(int*, const int, const int, bool type_of_sorting = true);
-void lineByLineSorting(int*, const int, const int, bool type_of_sorting = true);
-
-
-
-
+template<typename T> void printArray(T**&, int, int);
+template<typename T> T getSum(T**&, int, int);
+template<typename T> T getAvg(T**&, int, int);
+template<typename T> T getMinVlaueIn(T**&, int, int);
+template<typename T> T getMaxVlaueIn(T**&, int, int);
+template<typename T> void shiftLeft(T**&, int, int, int);
+template<typename T> void shiftRight(T**&, int, int, int);
+template<typename T> void generalSort(T**&, int, int, bool type_of_sorting = true);
+template<typename T> void lineByLineSorting(T**&, int, int, bool type_of_sorting = true);
 
 int main() {
 	setlocale(LC_ALL, "");
 	srand(time(NULL));
 
-	const int ROWS = 5, COLUMNS = 5;
-	int array[ROWS][COLUMNS];
+	int ROWS = 5, COLUMNS = 5;
+	int** array = new int* [ROWS];
+	for (int i = 0; i < COLUMNS; i++)
+	{
+		array[i] = new int[COLUMNS];
+	}
 
 	//инициализация и вывод на консоль массива
-	fillRand(*array, ROWS, COLUMNS);
-	printArray(*array, ROWS, COLUMNS);
+	fillRand(array, ROWS, COLUMNS);
+	printArray(array, ROWS, COLUMNS);
 	cout << endl << endl;
 
 	//вывод суумы элементов массива
-	auto sum = getSum(*array, ROWS, COLUMNS);
+	auto sum = getSum(array, ROWS, COLUMNS);
 	cout << "Сумма элементов массива равна: " << sum;
 	cout << endl << endl;
 
 	//вывод среднего арифметического элементов массива
-	auto avg = getAvg(*array, ROWS, COLUMNS);
+	auto avg = getAvg(array, ROWS, COLUMNS);
 	cout << "Среднее арифметическое элементов массива равно: " << avg;
 	cout << endl << endl;
 
 	//вывод максимального элемента массива
-	auto max = getMaxVlaueIn(*array, ROWS, COLUMNS);
+	auto max = getMaxVlaueIn(array, ROWS, COLUMNS);
 	cout << "Максимальный элемент массива равен: " << max;
 	cout << endl << endl;
 
 	//вывод минимального элемента массива
-	auto min = getMinVlaueIn(*array, ROWS, COLUMNS);
+	auto min = getMinVlaueIn(array, ROWS, COLUMNS);
 	cout << "Минимальный элемент массива равен: " << min;
 	cout << endl << endl;
 
 	//сдвиг массива вправо
 	int shift = 1;
 	cout << "Cдвиг массива вправо на " << shift << " элемента " << endl;
-	shiftRight(*array, ROWS, COLUMNS, shift);
-	printArray(*array, ROWS, COLUMNS);
+	shiftRight(array, ROWS, COLUMNS, shift);
+	printArray(array, ROWS, COLUMNS);
 	cout << endl << endl;
 
 	//сдвиг массива влево
 	shift = 1;
 	cout << "Cдвиг массива влево на " << shift << " элемента " << endl;
-	shiftLeft(*array, ROWS, COLUMNS, shift);
-	printArray(*array, ROWS, COLUMNS);
+	shiftLeft(array, ROWS, COLUMNS, shift);
+	printArray(array, ROWS, COLUMNS);
 	cout << endl << endl;
 
 	//сортировка по строчно по возрастанию
 	cout << "Сортировка массива по строчно по возрастанию " << endl;
-	lineByLineSorting(*array, ROWS, COLUMNS);
-	printArray(*array, ROWS, COLUMNS);
+	lineByLineSorting(array, ROWS, COLUMNS, true);
+	printArray(array, ROWS, COLUMNS);
 	cout << endl << endl;
 
 	//сортировка по строчно по убыванию
 	cout << "Сортировка массива по строчно по убыванию " << endl;
-	lineByLineSorting(*array, ROWS, COLUMNS, false);
-	printArray(*array, ROWS, COLUMNS);
+	lineByLineSorting(array, ROWS, COLUMNS, false);
+	printArray(array, ROWS, COLUMNS);
 	cout << endl << endl;
 
 	//сортировка по возрастанию
 	cout << "Cортировка всего массива по возрастанию" << endl;
-	generalSort(*array, ROWS, COLUMNS);
-	printArray(*array, ROWS, COLUMNS);
+	generalSort(array, ROWS, COLUMNS, true);
+	printArray(array, ROWS, COLUMNS);
 	cout << endl << endl;
 
 	//сортировка по убыванию
 	cout << "Cортировка всего массива по убыванию " << endl;
-	generalSort(*array, ROWS, COLUMNS, false);
-	printArray(*array, ROWS, COLUMNS);
+	generalSort(array, ROWS, COLUMNS, false);
+	printArray(array, ROWS, COLUMNS);
 	cout << endl << endl;
 
 
 	return 0;
 }
 
-void fillRand(int* arr, const int ROWS, const int COLS) {
+void fillRand(int**& arr, int ROWS, int COLS) {
 
-	for (int i = 0; i < ROWS * COLS; i++)
+	for (int i = 0; i < ROWS; i++)
 	{
-		arr[i] = rand() % 100;
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
 	}
 }
-void fillRand(float* arr, const int ROWS, const int COLS) {
-	for (int i = 0; i < ROWS * COLS; i++)
+void fillRand(float**& arr, int ROWS, int COLS) {
+	for (int i = 0; i < ROWS; i++)
 	{
-		arr[i] = (float)(rand() % 1000) / 10;
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = (float)(rand() % 1000) / 10;
+		}
 	}
 }
-void fillRand(double* arr, const int ROWS, const int COLS) {
-	for (int i = 0; i < ROWS * COLS; i++)
+void fillRand(double**& arr, int ROWS, int COLS) {
+	for (int i = 0; i < ROWS; i++)
 	{
-		arr[i] = (double)(rand() % 10000) / 100;
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = (double)(rand() % 10000) / 100;
+		}
 	}
 }
-void fillRand(char* arr, const int ROWS, const int COLS) {
-	for (int i = 0; i < ROWS * COLS; i++)
+void fillRand(char**& arr, int ROWS, int COLS) {
+	for (int i = 0; i < ROWS; i++)
 	{
-		arr[i] = rand() % 256;
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 256;
+		}
 	}
 }
 
-void printArray(int* arr, const int ROWS, const int COLS) {
-	for (register int i = 0; i < ROWS * COLS; i++)
+template<typename T> void printArray(T**& arr, int ROWS, int COLS) {
+	for (register int i = 0; i < ROWS; i++)
 	{
-		if (i != 0 && i % COLS == 0) cout << endl;
-		cout << arr[i] << "\t";
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
 	}
 }
-int getSum(int* arr, const int ROWS, const int COLS) {
+template<typename T> T getSum(T**& arr, int ROWS, int COLS) {
 	int sum = 0;
-	for (int i = 0; i < ROWS * COLS; i++)
+	for (int i = 0; i < ROWS; i++)
 	{
-		sum += arr[i];
+		for (int j = 0; j < COLS; j++)
+		{
+			sum += arr[i][j];
+		}
 	}
 	return sum;
 }
-double getAvg(int* arr, const int ROWS, const int COLS) {
+template<typename T> T getAvg(T**& arr, int ROWS, int COLS) {
 	return (double)(getSum(arr, ROWS, COLS) / (ROWS * COLS));
 }
-int getMinVlaueIn(int* arr, const int ROWS, const int COLS) {
-	int min = arr[0];
-	for (int i = 1; i < ROWS * COLS; i++)
+template<typename T> T getMinVlaueIn(T**& arr, int ROWS, int COLS) {
+	int min = arr[0][0];
+	for (int i = 1; i < ROWS; i++)
 	{
-		if (min > arr[i]) min = arr[i];
+		for (int j = 0; j < COLS; j++)
+		{
+			if (min > arr[i][j]) min = arr[i][j];
+		}
+		
 	}
 	return min;
 }
-int getMaxVlaueIn(int* arr, const int ROWS, const int COLS) {
-	int max = arr[0];
-	for (int i = 1; i < ROWS * COLS; i++)
+template<typename T> T getMaxVlaueIn(T**& arr, int ROWS, int COLS) {
+	int max = arr[0][0];
+	for (int i = 1; i < ROWS; i++)
 	{
-		if (max < arr[i]) max = arr[i];
+		for (int j = 0; j < COLS; j++)
+		{
+			if (max < arr[i][j]) max = arr[i][j];
+		}
+
 	}
 	return max;
 }
-void shiftLeft(int* arr, const int ROWS, const int COLS, int number_of_shift) {
-	for (int m = 0; m < ROWS * COLS; m++)
+template<typename T> void shiftLeft(T**& arr, int ROWS, int COLS, int number_of_shift) {
+	int buffer;
+	
+	for (int i = 0; i < ROWS; i++)
 	{
-		if (m % COLS == 0)
+		for (int m = 0; m < number_of_shift; m++)
 		{
-			for (int i = 0; i < number_of_shift; i++)
+			buffer = arr[i][0];
+			for (int j = 0; j < COLS - 1; j++)
 			{
-				int buffer = arr[m];
-				for (int j = m; j < m + COLS - 1; j++)
-				{
-					arr[j] = arr[j + 1];
-				}
-				arr[m + COLS - 1] = buffer;
+				arr[i][j] = arr[i][j + 1];
 			}
-		}
+			arr[i][COLS - 1] = buffer;
+		}		
 	}
-
-
 }
-void shiftRight(int* arr, const int ROWS, const int COLS, int number_of_shift) {
+template<typename T> void shiftRight(T**& arr, int ROWS, int COLS, int number_of_shift) {
 
-	for (int m = 0; m < ROWS * COLS; m++)
+	for (int i = 0; i < ROWS; i++)
 	{
-		if (m % COLS == 0)
+		for (int m = 0; m < number_of_shift; m++)
 		{
-			for (int i = 0; i < number_of_shift; i++)
+			int buffer = arr[i][COLS - 1];
+			for (int j = COLS - 1; j > 0; j--)
 			{
-				int buffer = arr[m + COLS - 1];
-				for (int j = m + COLS - 1; j > m; j--)
-				{
-					arr[j] = arr[j - 1];
-				}
-				arr[m] = buffer;
+				arr[i][j] = arr[i][j - 1];
 			}
+			arr[i][0] = buffer;
 		}
 	}
 
 }
-void generalSort(int* arr, const int ROWS, const int COLS, bool type_of_sorting) {
-
-	if (type_of_sorting) {
-		for (int i = 0; i < ROWS * COLS; i++)
-		{
-			for (int j = i; j < ROWS * COLS; j++)
-			{
-				if (arr[i] > arr[j])
-				{
-					int buffer = arr[i];
-					arr[i] = arr[j];
-					arr[j] = buffer;
-				}
-			}
-		}
-	}
-	else
-	{
-		for (int i = 0; i < ROWS * COLS; i++)
-		{
-			for (int j = i; j < ROWS * COLS; j++)
-			{
-				if (arr[i] < arr[j])
-				{
-					int buffer = arr[i];
-					arr[i] = arr[j];
-					arr[j] = buffer;
-				}
-			}
-		}
-	}
-}
-void lineByLineSorting(int* arr, const int ROWS, const int COLS, bool type_of_sorting) {
+template<typename T> void generalSort(T**& arr, int ROWS, int COLS, bool type_of_sorting) {
 
 	if (type_of_sorting)
 	{
-		for (int m = 0; m < ROWS * COLS; m++)
+		for (int i = 0; i < ROWS; i++)
 		{
-			if (m % COLS == 0)
+			for (int j = 0; j < COLS; j++)
 			{
-				for (int i = m; i < m + COLS; i++)
+				for (int m = i; m < ROWS; m++)
 				{
-					for (int j = i; j < m + COLS; j++)
+					for (int n = j; n < COLS; n++)
 					{
-						if (arr[i] > arr[j])
+						if (arr[i][j] > arr[m][n])
 						{
-							int buffer = arr[i];
-							arr[i] = arr[j];
-							arr[j] = buffer;
+							int buffer = arr[i][j];
+							arr[i][j] = arr[m][n];
+							arr[m][n] = buffer;
 						}
 					}
 				}
@@ -256,20 +240,59 @@ void lineByLineSorting(int* arr, const int ROWS, const int COLS, bool type_of_so
 	}
 	else
 	{
-		for (int m = 0; m < ROWS * COLS; m++)
+		for (int i = 0; i < ROWS; i++)
 		{
-			if (m % COLS == 0)
+			for (int j = 0; j < COLS; j++)
 			{
-				for (int i = m; i < m + COLS; i++)
+				for (int m = i; m < ROWS; m++)
 				{
-					for (int j = i; j < m + COLS; j++)
+					for (int n = j; n < COLS; n++)
 					{
-						if (arr[i] < arr[j])
+						if (arr[i][j] < arr[m][n])
 						{
-							int buffer = arr[i];
-							arr[i] = arr[j];
-							arr[j] = buffer;
+							int buffer = arr[i][j];
+							arr[i][j] = arr[m][n];
+							arr[m][n] = buffer;
 						}
+					}
+				}
+			}
+		}
+	}
+}
+template<typename T> void lineByLineSorting(T**& arr, int ROWS, const int COLS, bool type_of_sorting) {
+
+	if (type_of_sorting)
+	{
+		for (int i = 0; i < ROWS; i++)
+		{
+			for (int j = 0; j < COLS; j++)
+			{
+				for (int m = j; m < COLS; m++)
+				{
+					if (arr[i][j] > arr[i][m])
+					{
+						int buffer = arr[i][j];
+						arr[i][j] = arr[i][m];
+						arr[i][m] = buffer;
+					}
+				}
+			}
+		}
+	}
+	else
+	{
+		for (int i = 0; i < ROWS; i++)
+		{
+			for (int j = 0; j < COLS; j++)
+			{
+				for (int m = j; m < COLS; m++)
+				{
+					if (arr[i][j] < arr[i][m])
+					{
+						int buffer = arr[i][j];
+						arr[i][j] = arr[i][m];
+						arr[i][m] = buffer;
 					}
 				}
 			}

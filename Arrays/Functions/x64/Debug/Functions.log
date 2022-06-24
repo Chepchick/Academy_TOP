@@ -1,3 +1,3 @@
 ﻿  Main.cpp
-P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(38,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Arrays\Functions\Main.cpp(31,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   Functions.vcxproj -> P:\Git_Hub\Academy_TOP\Arrays\x64\Debug\Functions.exe
