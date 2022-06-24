@@ -24,6 +24,7 @@
     <ProjectGuid>{39a2c5c3-760e-4a58-bc22-ee9bffba0d26}</ProjectGuid>
     <RootNamespace>Twodimensionalarrays</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Functions_Two-dimensional_arrays</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

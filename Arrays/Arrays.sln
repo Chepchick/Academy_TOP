@@ -11,7 +11,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Search_same_elements_Array"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Functions", "Functions\Functions.vcxproj", "{66D52BAB-5D1A-455D-B207-4B480D0238FE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Two-dimensional_arrays", "Two-dimensional_arrays\Two-dimensional_arrays.vcxproj", "{39A2C5C3-760E-4A58-BC22-EE9BFFBA0D26}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Functions_Two-dimensional_arrays", "Two-dimensional_arrays\Two-dimensional_arrays.vcxproj", "{39A2C5C3-760E-4A58-BC22-EE9BFFBA0D26}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamicMemory", "DynamicMemory\DynamicMemory.vcxproj", "{C71F52B1-FE5A-46CA-ACC9-5C53FEBC9804}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,14 @@ Global
 		{39A2C5C3-760E-4A58-BC22-EE9BFFBA0D26}.Release|x64.Build.0 = Release|x64
 		{39A2C5C3-760E-4A58-BC22-EE9BFFBA0D26}.Release|x86.ActiveCfg = Release|Win32
 		{39A2C5C3-760E-4A58-BC22-EE9BFFBA0D26}.Release|x86.Build.0 = Release|Win32
+		{C71F52B1-FE5A-46CA-ACC9-5C53FEBC9804}.Debug|x64.ActiveCfg = Debug|x64
+		{C71F52B1-FE5A-46CA-ACC9-5C53FEBC9804}.Debug|x64.Build.0 = Debug|x64
+		{C71F52B1-FE5A-46CA-ACC9-5C53FEBC9804}.Debug|x86.ActiveCfg = Debug|Win32
+		{C71F52B1-FE5A-46CA-ACC9-5C53FEBC9804}.Debug|x86.Build.0 = Debug|Win32
+		{C71F52B1-FE5A-46CA-ACC9-5C53FEBC9804}.Release|x64.ActiveCfg = Release|x64
+		{C71F52B1-FE5A-46CA-ACC9-5C53FEBC9804}.Release|x64.Build.0 = Release|x64
+		{C71F52B1-FE5A-46CA-ACC9-5C53FEBC9804}.Release|x86.ActiveCfg = Release|Win32
+		{C71F52B1-FE5A-46CA-ACC9-5C53FEBC9804}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
