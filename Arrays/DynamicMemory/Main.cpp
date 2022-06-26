@@ -42,15 +42,15 @@ int main() {
 	int value = 146;//новое вводимое значение
 	int index = 4;// индекс под которым вводится новое значение в массив
 
-	int* basicArray = getNewFillIntegerArray(size);
-	printArray(basicArray, size);
+	int* oneDimenArray = getNewFillIntegerArray(size);
+	printArray(oneDimenArray, size);
 	cout << endl << endl;
 
 	int evenArraySize = 0;//размер массива с четными числами
 	int oddArraySize = 0;//размер массива с нечетными числами
 
 	for (int i = 0; i < size; i++)
-		basicArray[i] % 2 == 0 ? evenArraySize++ : oddArraySize++;
+		oneDimenArray[i] % 2 == 0 ? evenArraySize++ : oddArraySize++;
 
 	//объявляем два массива размерами по количеству четных и нечетных чисел
 	int* even = new int[evenArraySize];
@@ -58,7 +58,7 @@ int main() {
 
 	//инициализируем массивы
 	for (int i = 0, j = 0, m = 0; i < size; i++)
-		(basicArray[i] % 2 == 0 ? even[j++] : odd[m++]) = basicArray[i];
+		(oneDimenArray[i] % 2 == 0 ? even[j++] : odd[m++]) = oneDimenArray[i];
 
 	printArray(even, evenArraySize);
 	cout << endl;
@@ -66,31 +66,84 @@ int main() {
 	cout << endl << endl;
 	///////////////////////////////////////////////////////////////////////
 
-	insert(basicArray, size, value, index);
-	printArray(basicArray, size);
+	insert(oneDimenArray, size, value, index);
+	printArray(oneDimenArray, size);
 	cout << endl << endl;
 
-	push_back(basicArray, size, value);
-	printArray(basicArray, size);
+	push_back(oneDimenArray, size, value);
+	printArray(oneDimenArray, size);
 	cout << endl << endl;
 
-	push_front(basicArray, size, value);
-	printArray(basicArray, size);
+	push_front(oneDimenArray, size, value);
+	printArray(oneDimenArray, size);
 	cout << endl << endl;
 
-	pop_front(basicArray, size);
-	printArray(basicArray, size);
+	pop_front(oneDimenArray, size);
+	printArray(oneDimenArray, size);
 	cout << endl << endl;
 
-	pop_back(basicArray, size);
-	printArray(basicArray, size);
+	pop_back(oneDimenArray, size);
+	printArray(oneDimenArray, size);
 	cout << endl << endl;
 
-	erase(basicArray, size, index);
-	printArray(basicArray, size);
+	erase(oneDimenArray, size, index);
+	printArray(oneDimenArray, size);
 	cout << endl << endl;
+	//////////////////////////////////////////////////////////////////////
 
+	int rows = 4;// количество строк двумерного массива
+	int cols = 4;// количество колонок двумерного массива
 
+	// объявление нового двумерного массива и инициализация его целыми случайными числами
+	int** newArr = getNewFillTwoDimensionalIntegerArray(rows, cols);
+
+	// добавление пустой строки вверху массива
+	pushRowUp(newArr, rows, cols);
+	printTwoDimensionalArray(newArr, rows, cols);
+	cout << endl;
+	//добаление пустой строки внизу массива
+	pushRowDown(newArr, rows, cols);
+	printTwoDimensionalArray(newArr, rows, cols);
+	cout << endl;
+	//добаление пустой колонки слева
+	pushColumnLeft(newArr, rows, cols);
+	printTwoDimensionalArray(newArr, rows, cols);
+	cout << endl;
+	//добаление пустой колонки справа
+	pushColumnRight(newArr, rows, cols);
+	printTwoDimensionalArray(newArr, rows, cols);
+	cout << endl;
+	//добаление пустой колонки по индексу
+	insertCol(newArr, rows, cols, 3);
+	printTwoDimensionalArray(newArr, rows, cols);
+	cout << endl;
+	//добаление пустой строки по индексу
+	insertRow(newArr, rows, cols, 3);
+	printTwoDimensionalArray(newArr, rows, cols);
+	cout << endl;
+	//удаление строки по индексу
+	eraseRow(newArr, rows, cols, 3);
+	printTwoDimensionalArray(newArr, rows, cols);
+	cout << endl;
+	//удаление колонки по индексу
+	eraseCol(newArr, rows, cols, 3);
+	printTwoDimensionalArray(newArr, rows, cols);
+	cout << endl;
+	// удаление строки вверху массива
+	popRowUp(newArr, rows, cols);
+	printTwoDimensionalArray(newArr, rows, cols);
+	cout << endl;
+	// удаление строки внизу массива
+	popRowDown(newArr, rows, cols);
+	printTwoDimensionalArray(newArr, rows, cols);
+	cout << endl;
+	// удаление левой колонки массива
+	popColumnLeft(newArr, rows, cols);
+	printTwoDimensionalArray(newArr, rows, cols);
+	cout << endl;
+	// удаление правой колонки массива
+	popColumnRight(newArr, rows, cols);
+	printTwoDimensionalArray(newArr, rows, cols);
 
 
 	return 0;
@@ -98,20 +151,13 @@ int main() {
 
 ///////////////////////////////////////////////////////////
 int* getNewFillIntegerArray(int size) {
-	if (size < 1)
-	{
-		cout << "Ошибка! Параметр size не может быть меньше 1" << endl;
-	}
-	else
-	{
-		int* array = new int[size];
+	int* array = new int[size];
 
-		for (int i = 0; i < size; i++)
-		{
-			array[i] = 1 + rand() % 9;
-		}
-		return array;
+	for (int i = 0; i < size; i++)
+	{
+		array[i] = 1 + rand() % 9;
 	}
+	return array;
 }
 void printArray(int* arr, int size) {
 
@@ -158,19 +204,14 @@ void push_front(int*& arr, int& size, int number) {
 void insert(int*& arr, int& size, int number, int index) {
 
 	int* newArray = new int[size + 1];
+	int shift = 0;
 
-	int i = 0;
-	for (; i < index; i++)
+	for (int i = 0; i < size; i++)
 	{
-		newArray[i] = arr[i];
+		if (i == index) shift = 1;
+		newArray[i + shift] = arr[i];
 	}
-
-	newArray[i] = number;
-
-	for (; i < size; i++)
-	{
-		newArray[i + 1] = arr[i];
-	}
+	newArray[index] = number;
 
 	size++;
 
@@ -210,16 +251,12 @@ void pop_front(int*& arr, int& size) {
 void erase(int*& arr, int& size, int index) {
 
 	int* newArray = new int[size - 1];
+	int shift = 0;
 
-	int i = 0;
-	for (; i < index; i++)
+	for (int i = 0; i < size - 1; i++)
 	{
-		newArray[i] = arr[i];
-	}
-
-	for (; i < size; i++)
-	{
-		newArray[i] = arr[i + 1];
+		if (i == index) shift = 1;
+		newArray[i] = arr[i + shift];
 	}
 
 	size--;
@@ -231,26 +268,19 @@ void erase(int*& arr, int& size, int index) {
 /////////////////////////////////////////////////////////
 int** getNewFillTwoDimensionalIntegerArray(int rows, int cols)
 {
-	if (rows < 2 || cols < 2)
+	int** newArray = new int* [rows];
+	for (int i = 0; i < rows; i++)
 	{
-		cout << "Ошибка! Параметры размерности не могут быть меньше 2" << endl;
+		newArray[i] = new int[cols];
 	}
-	else
+	for (int i = 0; i < rows; i++)
 	{
-		int** newArray = new int* [rows];
-		for (int i = 0; i < rows; i++)
+		for (int j = 0; j < cols; j++)
 		{
-			newArray[i] = new int[cols];
+			newArray[i][j] = 1 + rand() % 9;
 		}
-		for (int i = 0; i < rows; i++)
-		{
-			for (int j = 0; j < cols; j++)
-			{
-				newArray[i][j] = 1 + rand() % 9;
-			}
-		}
-		return newArray;
 	}
+	return newArray;
 }
 void printTwoDimensionalArray(int** arr, int rows, int cols) {
 
@@ -265,7 +295,7 @@ void printTwoDimensionalArray(int** arr, int rows, int cols) {
 }
 void pushRowUp(int**& arr, int& rows, int cols) {
 
-	int** newArray = new int* [rows];
+	int** newArray = new int* [rows + 1];
 	for (int i = 0; i < rows + 1; i++)
 	{
 		newArray[i] = new int[cols]{};
@@ -289,7 +319,7 @@ void pushRowUp(int**& arr, int& rows, int cols) {
 }
 void pushRowDown(int **& arr, int& rows, int cols) {
 
-	int** newArray = new int* [rows];
+	int** newArray = new int* [rows + 1];
 	for (int i = 0; i < rows + 1; i++)
 	{
 		newArray[i] = new int[cols]{};

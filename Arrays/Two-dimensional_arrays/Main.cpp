@@ -15,7 +15,7 @@ void printArray(double*, const int, const int);
 void printArray(char*, const int, const int);
 
 int getSum(int*, const int, const int);
-double getAvg(double*, const int, const int);
+double getAvg(int*, const int, const int);
 int getMinVlaueIn(int*, const int, const int);
 int getMaxVlaueIn(int*, const int, const int);
 void shiftLeft(int*, const int, const int, int);
@@ -143,7 +143,7 @@ int getSum(int* arr, const int ROWS, const int COLS) {
 	return sum;
 }
 double getAvg(int* arr, const int ROWS, const int COLS) {
-	return (double)(getSum(arr, ROWS, COLS) / (ROWS * COLS));
+	return (double)getSum(arr, ROWS, COLS) / (ROWS * COLS);
 }
 int getMinVlaueIn(int* arr, const int ROWS, const int COLS) {
 	int min = arr[0];
