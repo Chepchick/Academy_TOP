@@ -1,3 +1,9 @@
 ﻿  Main.cpp
-P:\Git_Hub\Academy_TOP\Arrays\DynamicMemory\Main.cpp(39,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Arrays\DynamicMemory\Main.cpp(36,29): warning C4244: инициализация: преобразование "float" в "size_t", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Arrays\DynamicMemory\Main.cpp(40,18): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Arrays\DynamicMemory\Main.cpp(53,31): warning C4244: инициализация: преобразование "double" в "size_t", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Arrays\DynamicMemory\Main.cpp(104,25): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Arrays\DynamicMemory\Main.cpp(518,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Arrays\DynamicMemory\Main.cpp(27): warning C4715: OperationsWithArrays::getNewFillIntegerArray: значение возвращается не при всех путях выполнения
+P:\Git_Hub\Academy_TOP\Arrays\DynamicMemory\Main.cpp(86): warning C4715: OperationsWithArrays::getNewFillTwoDimensionalIntegerArray: значение возвращается не при всех путях выполнения
   DynamicMemory.vcxproj -> P:\Git_Hub\Academy_TOP\Arrays\x64\Debug\DynamicMemory.exe

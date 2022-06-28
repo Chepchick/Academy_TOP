@@ -196,24 +196,16 @@ public:
 
 		T* newArray = new T[size + 1];
 
-		int i = 0;
-		for (; i < index; i++)
+		int shift = 0;
+		for (int i = 0; i < size; i++)
 		{
-			newArray[i] = arr[i];
+			if (i == index) shift = 1;
+			newArray[i + shift] = arr[i];			
 		}
-
-		newArray[i] = number;
-
-		for (; i < size; i++)
-		{
-			newArray[i + 1] = arr[i];
-		}
-
-		size++;
-
+		newArray[index] = number;
 		delete[]arr;
-
 		arr = newArray;
+		size++;
 	}
 
 	//удаление последнеко элемента массива
@@ -253,23 +245,16 @@ public:
 	template <typename T> void erase(T*& arr, int& size, int index) {
 
 		T* newArray = new T[size - 1];
-
-		int i = 0;
-		for (; i < index; i++)
+		int shift = 0;
+		
+		for (int i = 0; i < size - 1; i++)
 		{
-			newArray[i] = arr[i];
+			if (i == index) shift = 1;
+			newArray[i] = arr[i + shift];
 		}
-
-		for (; i < size; i++)
-		{
-			newArray[i] = arr[i + 1];
-		}
-
-		size--;
-
 		delete[]arr;
-
 		arr = newArray;
+		size--;
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////
@@ -278,25 +263,14 @@ public:
 	//добавление пустой строки вверх двумерного массива
 	template <typename T> void pushRowUp(T**& arr, int& rows, int cols) {
 
-		T** newArray = new T * [rows];
-		for (int i = 0; i < rows + 1; i++)
-		{
-			newArray[i] = new T[cols]{};
-		}
-
+		T** newArray = new T * [rows + 1];
 		for (int i = 1; i < rows + 1; i++)
 		{
-			for (int j = 0; j < cols; j++)
-			{
-				newArray[i][j] = arr[i - 1][j];
-			}
+			newArray[i] = arr[i - 1];
 		}
-
-		for (int i = 0; i < rows; i++)
-		{
-			delete[] arr[i];
-		}
+		delete[]arr;
 		arr = newArray;
+		arr[0] = new T[cols]{};
 		rows++;
 
 	}
@@ -304,25 +278,14 @@ public:
 	//добавление пустой строки вниз двумерного массива
 	template <typename T> void pushRowDown(T**& arr, int& rows, int cols) {
 
-		T** newArray = new T * [rows];
-		for (int i = 0; i < rows + 1; i++)
-		{
-			newArray[i] = new T[cols]{};
-		}
-
+		T** newArray = new T * [rows + 1];
 		for (int i = 0; i < rows; i++)
 		{
-			for (int j = 0; j < cols; j++)
-			{
-				newArray[i][j] = arr[i][j];
-			}
+			newArray[i] = arr[i];
 		}
-
-		for (int i = 0; i < rows; i++)
-		{
-			delete[] arr[i];
-		}
+		delete[]arr;
 		arr = newArray;
+		arr[rows] = new T[cols] {};
 		rows++;
 	}
 
@@ -334,19 +297,17 @@ public:
 		{
 			newArray[i] = new T[cols + 1]{};
 		}
-
 		for (int i = 0; i < rows; i++)
 		{
-			for (int j = 1; j < cols + 1; j++)
+			for (int j = 0; j < cols; j++)
 			{
-				newArray[i][j] = arr[i][j - 1];
+				newArray[i][j + 1] = arr[i][j];
 			}
 		}
-
 		for (int i = 0; i < rows; i++)
 		{
 			delete[] arr[i];
-		}
+		}		
 		arr = newArray;
 		cols++;
 
@@ -379,7 +340,7 @@ public:
 	}
 
 	//добавление пустой колонки в двумерный массив по индексу
-	template <typename T> void pushColumnByIndex(T**& arr, int rows, int& cols, int index) {
+	template <typename T> void insertCol(T**& arr, int rows, int& cols, int index) {
 
 		int shiftCol;
 		T** newArray = new T * [rows];
@@ -408,63 +369,43 @@ public:
 	}
 
 	//добавление пустой строки в двумерный массив по индексу
-	template <typename T> void pushRowByIndex(T**& arr, int& rows, int cols, int index) {
+	template <typename T> void insertRow(T**& arr, int& rows, int cols, int index) {
 
-		int shiftRow = 0;
+		int shift = 0;
 		T** newArray = new T * [rows + 1];
-		for (int i = 0; i < rows + 1; i++)
+		for (int i = 0; i < (rows == index ? rows + 1 : rows); i++)
 		{
-			newArray[i] = new T[cols]{};
-		}
-
-		for (int i = 0; i < rows; i++)
-		{
-			if (i == index) shiftRow = 1;
-			for (int j = 0; j < cols; j++)
-			{
-				newArray[i + shiftRow][j] = arr[i][j];
+			if (i == index)
+			{ 
+				shift = 1;
+				newArray[i] = new T[cols]{};
 			}
+			newArray[i + shift] = arr[i];
 		}
-
-		for (int i = 0; i < rows; i++)
-		{
-			delete[] arr[i];
-		}
+		delete[]arr;
 		arr = newArray;
 		rows++;
-
 	}
 
 	//удаление строки из двумерного массива по индексу
-	template <typename T> void popRowByIndex(T**& arr, int& rows, int cols, int index) {
+	template <typename T> void eraseRow(T**& arr, int& rows, int cols, int index) {
 
-		int shiftRow = 0;
+		int shift = 0;
 		T** newArray = new T * [rows - 1];
 		for (int i = 0; i < rows - 1; i++)
 		{
-			newArray[i] = new T[cols]{};
+			if (i == index) shift = 1;
+			newArray[i] = arr[i + shift];
 		}
-
-		for (int i = 0; i < rows - 1; i++)
-		{
-			if (i == index) shiftRow = 1;
-			for (int j = 0; j < cols; j++)
-			{
-				newArray[i][j] = arr[i + shiftRow][j];
-			}
-		}
-
-		for (int i = 0; i < rows; i++)
-		{
-			delete[] arr[i];
-		}
+		delete[]arr[index];
+		delete[]arr;
 		arr = newArray;
 		rows--;
 
 	}
 
 	//удаление колонки из двумерного массива по индексу
-	template <typename T> void popColumnByIndex(T**& arr, int rows, int& cols, int index) {
+	template <typename T> void eraseCol(T**& arr, int rows, int& cols, int index) {
 
 		int shiftCol;
 		T** newArray = new T * [rows];
@@ -495,27 +436,15 @@ public:
 	//удаление верхеней строки двумерного массива
 	template <typename T> void popRowUp(T**& arr, int& rows, int cols) {
 
-		T** newArray = new T * [rows - 1];
+		T** newArray = new T* [rows - 1];
 		for (int i = 0; i < rows - 1; i++)
 		{
-			newArray[i] = new T[cols]{};
+			newArray[i] = arr[i + 1];
 		}
-
-		for (int i = 0; i < rows - 1; i++)
-		{
-			for (int j = 0; j < cols; j++)
-			{
-				newArray[i][j] = arr[i + 1][j];
-			}
-		}
-
-		for (int i = 0; i < rows; i++)
-		{
-			delete[] arr[i];
-		}
+		delete[]arr[0];
+		delete[]arr;		
 		arr = newArray;
 		rows--;
-
 	}
 
 	//удаление нижней строки двумерного массива
@@ -524,24 +453,12 @@ public:
 		T** newArray = new T * [rows - 1];
 		for (int i = 0; i < rows - 1; i++)
 		{
-			newArray[i] = new T[cols]{};
+			newArray[i] = arr[i];
 		}
-
-		for (int i = 0; i < rows - 1; i++)
-		{
-			for (int j = 0; j < cols; j++)
-			{
-				newArray[i][j] = arr[i][j];
-			}
-		}
-
-		for (int i = 0; i < rows; i++)
-		{
-			delete[] arr[i];
-		}
+		/*delete[] arr[rows];???*/
+		delete[]arr;
 		arr = newArray;
 		rows--;
-
 	}
 
 	//удаление левой колонки двумерного массива
@@ -642,51 +559,52 @@ int main() {
 	int** newArr = myOperations.getNewFillTwoDimensionalIntegerArray(rows, cols);
 
 	// добавление пустой строки вверху массива
-	myOperations.pushRowUp(newArr, rows, cols);
+	myOperations.insertRow(newArr, rows, cols, 0);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 	cout << endl;
 	//добаление пустой строки внизу массива
-	myOperations.pushRowDown(newArr, rows, cols);
+	myOperations.insertRow(newArr, rows, cols, rows);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 	cout << endl;
 	//добаление пустой колонки слева
-	myOperations.pushColumnLeft(newArr, rows, cols);
+	myOperations.insertCol(newArr, rows, cols, 0);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 	cout << endl;
 	//добаление пустой колонки справа
-	myOperations.pushColumnRight(newArr, rows, cols);
+	myOperations.insertCol(newArr, rows, cols, cols);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 	cout << endl;
 	//добаление пустой колонки по индексу
-	myOperations.pushColumnByIndex(newArr, rows, cols, 3);
+	myOperations.insertCol(newArr, rows, cols, 3);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 	cout << endl;
 	//добаление пустой строки по индексу
-	myOperations.pushRowByIndex(newArr, rows, cols, 3);
+	myOperations.insertRow(newArr, rows, cols, 3);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 	cout << endl;
+
 	//удаление строки по индексу
-	myOperations.popRowByIndex(newArr, rows, cols, 3);
+	myOperations.eraseRow(newArr, rows, cols, 3);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 	cout << endl;
 	//удаление колонки по индексу
-	myOperations.popColumnByIndex(newArr, rows, cols, 3);
+	myOperations.eraseCol(newArr, rows, cols, 3);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 	cout << endl;
 	// удаление строки вверху массива
-	myOperations.popRowUp(newArr, rows, cols);
+	myOperations.eraseRow(newArr, rows, cols, 0);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 	cout << endl;
 	// удаление строки внизу массива
-	myOperations.popRowDown(newArr, rows, cols);
+	myOperations.eraseRow(newArr, rows, cols, rows - 1);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 	cout << endl;
 	// удаление левой колонки массива
-	myOperations.popColumnLeft(newArr, rows, cols);
+	myOperations.eraseCol(newArr, rows, cols, 0);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 	cout << endl;
 	// удаление правой колонки массива
-	myOperations.popColumnRight(newArr, rows, cols);
+	myOperations.eraseCol(newArr, rows, cols, cols - 1);
 	myOperations.printTwoDimensionalArray(newArr, rows, cols);
 
 	return 0;
