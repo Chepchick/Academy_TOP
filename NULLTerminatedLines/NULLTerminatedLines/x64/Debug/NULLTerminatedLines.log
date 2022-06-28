@@ -1,5 +1,0 @@
-﻿  Main.cpp
-P:\Git_Hub\Academy_TOP\NULLTerminatedLines\NULLTerminatedLines\Main.cpp(146,30): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-P:\Git_Hub\Academy_TOP\NULLTerminatedLines\NULLTerminatedLines\Main.cpp(180,30): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-P:\Git_Hub\Academy_TOP\NULLTerminatedLines\NULLTerminatedLines\Main.cpp(276,30): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-  NULLTerminatedLines.vcxproj -> P:\Git_Hub\Academy_TOP\NULLTerminatedLines\x64\Debug\NULLTerminatedLines.exe
