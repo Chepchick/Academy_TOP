@@ -214,63 +214,9 @@ int  hex_to_dec(char str[]) {
 				//присваивает в массив эквивалент символа в числе
 				intValueArray[valueCount--] = int(str[i++]) - 48;
 			}
-			//если символ строки соответствует числовому значению от A до F в 16-ой системе
-			else if (str[i] >= 65 && str[i] <= 70) {
-				//присваивает в массив эквивалент символа в числе
-				switch (str[i])
-				{
-				case'A':
-					intValueArray[valueCount--] = 10;
-					break;
-				case'B':
-					intValueArray[valueCount--] = 11;
-					break;
-				case'C':
-					intValueArray[valueCount--] = 12;
-					break;
-				case'D':
-					intValueArray[valueCount--] = 13;
-					break;
-				case'E':
-					intValueArray[valueCount--] = 14;
-					break;
-				case'F':
-					intValueArray[valueCount--] = 15;
-					break;
-				default:
-					cout << "Error!!!";
-					break;
-				}
-				i++;
-			}	
-			//если символ строки соответствует числовому значению от a до f в 16-ой системе
-			else if (str[i] >= 97 && str[i] <= 102) {
-				//присваивает в массив эквивалент символа в числе
-				switch (str[i])
-				{
-				case'a':
-					intValueArray[valueCount--] = 10;
-					break;
-				case'b':
-					intValueArray[valueCount--] = 11;
-					break;
-				case'c':
-					intValueArray[valueCount--] = 12;
-					break;
-				case'd':
-					intValueArray[valueCount--] = 13;
-					break;
-				case'e':
-					intValueArray[valueCount--] = 14;
-					break;
-				case'f':
-					intValueArray[valueCount--] = 15;
-					break;
-				default:
-					cout << "Error!!!";
-					break;
-				}
-				i++;
+			else {
+				//если символ строки соответствует числовому значению от A(a) до F(f) в 16-ой системе
+				intValueArray[valueCount--] = (str[i] >= 65 && str[i] <= 70) ? int(str[i++] - 54) : int(str[i++] - 86);
 			}
 		}
 
