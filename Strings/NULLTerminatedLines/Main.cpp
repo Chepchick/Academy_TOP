@@ -31,17 +31,17 @@ int main() {
 	cout << endl;
 
 	char intStr[] = "45266";
-	cout << is_dec_number(intStr) << endl;
-	int val = to_dec_number(intStr);
-	cout << val << endl << endl;
+	cout << "Строка является десятичным числом ?: " << is_dec_number(intStr) << endl;
+	int valDec = to_dec_number(intStr);
+	cout << valDec << endl << endl;
 
 	char binStr[] = "11010011";
-	cout << is_bin_number(binStr) << endl;
+	cout << "Строка является двоичным числом ?: " << is_bin_number(binStr) << endl;
 	int valBin = bin_to_dec(binStr);
 	cout << valBin << endl << endl;
 
 	char hexStr[] = "A450B";
-	cout << is_hex_number(hexStr) << endl;
+	cout << "Строка является гексоганальным числом?: " << is_hex_number(hexStr) << endl;
 	int valHex = hex_to_dec(hexStr);
 	cout << valHex << endl << endl;
 	
@@ -52,78 +52,89 @@ int main() {
 
 int stringLength(const char str[])
 {
-	int count = 0;
+	int characterCount = 0;
 
-	while (str[count] != 0) count++;
+	while (str[characterCount] != 0) characterCount++;
 
-	return count;
+	return characterCount;
 	
 }
 void to_upper(char str[]) {
-	for (int count = 0; str[count] != 0; count++)
-	{
-		if (str[count] >= 97 && str[count] <= 122) {
-			str[count] -= 32;
+
+	char char_a = 97, char_z = 122;
+	int shift_to_uppercase = 32;
+
+	for (int characterCount = 0; str[characterCount] != 0; characterCount++)
+	{//если символ попадает в диапазон от а до z то он меняется на прописной символ
+		if (str[characterCount] >= char_a && str[characterCount] <= char_z) {
+			str[characterCount] -= shift_to_uppercase;
 		}		
 	}
 }
 void to_lower(char str[]) {
-	for (int count = 0; str[count] != 0; count++)
-	{
-		if (str[count] >= 65 && str[count] <= 90) {
-			str[count] += 32;
+
+	char char_A = 65, char_Z = 90;
+	int shift_to_lowercase = 32;
+
+	for (int characterCount = 0; str[characterCount] != 0; characterCount++)
+	{	//если символ попадает в диапазон от A до Z то он меняется на строчный символ
+		if (str[characterCount] >= char_A && str[characterCount] <= char_Z) {
+			str[characterCount] += shift_to_lowercase;
 		}		
 	}
 }
 void shrink(char str[]) {
 
-	char space = 32;
+	char char_space = 32;
 	//перебор строки цыклом
-	for (int count = 0; str[count] != 0; count++)
+	for (int characterCount = 0; str[characterCount] != 0; characterCount++)
 	{
 		//если в строке встречается два пробела подряд
-		if (str[count] == space && str[count + 1] == space)
+		if (str[characterCount] == char_space && str[characterCount + 1] == char_space)
 		{
 			//смещает все последующие символы на 1 элемент назад
-			for (int i = count; str[i] != 0; i++)
+			for (int i = characterCount; str[i] != 0; i++)
 			str[i] = str[i + 1];
-
-			count--;
+			
+			characterCount--;
 		}
 	}
 }
 bool is_palindrome(const char str[]) {
-	char space = 32;// символ пробела
+	char char_space = 32;// символ пробела
 	int strLength = stringLength(str);// длина строки	
 	//два счетчика: один с начала строки на увеличение, второй - с конца на убывание; пока не сравняются
-	for (int startCount = 0, endCount = strLength - 1; startCount >= endCount; startCount++, endCount--)
-	{	
+	for (int strStartCounter = 0, strEndCounter = strLength - 1; strStartCounter >= strEndCounter; strStartCounter++, strEndCounter--) {
+
 		// счетчик пропускает пробелы с начала строки
-		if (str[startCount] == space) { 
-			while (str[startCount] == space)
+		if (str[strStartCounter] == char_space) { 
+			while (str[strStartCounter] == char_space)
 			{
-				startCount++;
+				strStartCounter++;
 			}			
 		}
 		// счетчик пропускает пробелы с конца строки
-		if (str[endCount] == space) {
-			while (str[endCount] == space )
+		if (str[strEndCounter] == char_space) {
+			while (str[strEndCounter] == char_space )
 			{
-				endCount--;
+				strEndCounter--;
 			}
 		}
 
 		//если символы не совпадают, выход из цыкла со значением false
-		if (str[startCount] != str[endCount]) return false;		
+		if (str[strStartCounter] != str[strEndCounter]) return false;		
 	}
 	return true;
 }
 bool is_dec_number(const char str[]) {
+	char char_Zero = 48, char_Nine = 57;
+
 	//перебор всей строки циклом
-	for (int i = 0; str[i] != 0; i++)
+	for (int characterCount = 0; str[characterCount] != 0; characterCount++)
 	{
 		//если хотя бы один символ строки не соответствует числовоу значению в десятичной системе - выход из цыкла со значнием false
-		if (str[i] < 48 || str[i] > 57) return false;		
+		if (str[characterCount] < char_Zero || str[characterCount] > char_Nine)
+			return false;
 	}
 	// иначе вовод значения true
 	return true;
@@ -133,67 +144,76 @@ int  to_dec_number(char str[]) {
 	if (is_dec_number(str))
 	{
 		int arraySize = stringLength(str);// размер массива в зависимости от длины строки
-		int* intValueArray = new int[arraySize];//массив для значений
+		int* arrayOfIntegerValues = new int[arraySize];//массив для значений
 		int value = 0;
 		//заполнение в обратном порядке массива десятичными значениями, эквевалентными символьным значениям в таблице ASCII
-		for (int i = 0, valueCount = arraySize - 1; i < arraySize;)
+		for (int characterCount = 0, valueCount = arraySize - 1; str[characterCount] != 0;)
 		{
-			intValueArray [valueCount--] = int(str[i++]) - 48;
+			arrayOfIntegerValues [valueCount--] = int(str[characterCount++]) - 48;
 		}
 		//суммированиее элементов массива, помноженных на 10 в степени, соответствующей позиции элемента в десятичном числе 
 		for (int i = 0; i < arraySize; i++)
 		{
-			value += intValueArray[i] * pow(10, i);
+			value += arrayOfIntegerValues[i] * pow(10, i);
 		}
 
-		delete[]intValueArray;
-		intValueArray = nullptr;
+		delete[]arrayOfIntegerValues;
+		arrayOfIntegerValues = nullptr;
 		return value;
 	}
 	return -1;
 }
 bool is_bin_number(const char str[]) {
+	char char_Zero = 48, char_One = 49;
 	//перебор всей строки циклом
-	for (int i = 0; str[i] != 0;i++)
+	for (int characterCount = 0; str[characterCount] != 0; characterCount++)
 	{
 		//если хотя бы один символ строки не соответствует числовому значению 1 или 0, выход из цыкла со значнием false
-		if(str[i] < 48 || str[i] > 49) return false ;
+		if(str[characterCount] < char_Zero || str[characterCount] > char_One) return false ;
 	}
 	// иначе вовод значения true
 	return true;
 }
 int  bin_to_dec(char str[]) {
+	char char_Zero = 48;
 	//проверка, является ли строка двоичным числом
 	if (is_bin_number(str))
 	{
 		int arraySize = stringLength(str);// размер массива в зависимости от длины строки
-		int* intValueArray = new int[arraySize];//массив для значений
+		int* arrayOfIntegerValues = new int[arraySize];//массив для значений
 
 		//заполнение в обратном порядке массива двоиными значениями, эквевалентными символьным значениям в таблице ASCII
-		for (int i = 0, valueCount = arraySize - 1; i < arraySize;)
+		for (int characterCount = 0, valueCount = arraySize - 1; str[characterCount] != 0;)
 		{
-			str[i++] == 48? intValueArray[valueCount--] = 0: intValueArray[valueCount--] = 1;
+			str[characterCount++] == char_Zero ? arrayOfIntegerValues[valueCount--] = 0: arrayOfIntegerValues[valueCount--] = 1;
 		}
 
 		//суммированиее элементов массива, помноженных на 2 в степени, соответствующей позиции элемента в двоичном числе 
 		int value = 0;
 		for (int i = 0; i < arraySize; i++)
 		{
-			value += intValueArray[i] * pow(2, i);
+			value += arrayOfIntegerValues[i] * pow(2, i);
 		}
 
-		delete[]intValueArray;
-		intValueArray = nullptr;
+		delete[]arrayOfIntegerValues;
+		arrayOfIntegerValues = nullptr;
 		return value;
 	}
 	return -1;
 }
 bool is_hex_number(const char str[]) {
+	char char_Zero = 48, char_Nine = 57;
+	char char_A = 65, char_F = 70;
+	char char_a = 97, char_f = 102;
+
 	//перебор всей строки циклом
-	for (int i = 0; str[i] != 0; i++)
+	for (int characterCount = 0; str[characterCount] != 0; characterCount++)
 	{
-		//если хотя бы один символ строки не соответствует числовому значению от 1 до F(f) в 16-ой системе исчисления, выход из цыкла со значнием false
-		if ((str[i] < 48 || str[i] > 57) && (str[i] < 65 || str[i] > 70) && (str[i] < 97 || str[i] > 102)) {
+		//если хотя бы один символ строки не соответствует числовому значению от 0 
+		//до F(f) в 16-ой системе исчисления, выход из цыкла со значнием false
+		if ((str[characterCount] < char_Zero || str[characterCount] > char_Nine)
+			&& (str[characterCount] < char_A || str[characterCount] > char_F)
+			&& (str[characterCount] < char_a || str[characterCount] > char_f)) {
 			return false;
 		}
 	}
@@ -204,31 +224,33 @@ int  hex_to_dec(char str[]) {
 	if (is_hex_number(str))
 	{
 		int arraySize = stringLength(str);// размер массива в зависимости от длины строки
-		int* intValueArray = new int[arraySize];//массив для значений
+		int* arrayOfIntegerValues = new int[arraySize];//массив для значений
+		char char_Zero = 48, char_Nine = 57;
+		char char_A = 65, char_F = 70;
 		
 		//перебор строки циклом
-		for (int i = 0, valueCount = arraySize - 1; i < arraySize;)
+		for (int characterСount = 0, valueCount = arraySize - 1; str[characterСount] != 0;)
 		{
-			//если символ строки соответствует числовому значению от 1 до 9
-			if (str[i] >= 48 && str[i] <= 57) {
+			
+			if (str[characterСount] >= char_Zero && str[characterСount] <= char_Nine) {//если символ строки соответствует числовому значению от 0 до 9
 				//присваивает в массив эквивалент символа в числе
-				intValueArray[valueCount--] = int(str[i++]) - 48;
+				arrayOfIntegerValues[valueCount--] = int(str[characterСount++]) - 48;
 			}
-			else {
-				//если символ строки соответствует числовому значению от A(a) до F(f) в 16-ой системе
-				intValueArray[valueCount--] = (str[i] >= 65 && str[i] <= 70) ? int(str[i++] - 54) : int(str[i++] - 86);
+			else {//если символ строки соответствует числовому значению от A(a) до F(f) в 16-ой системе
+				
+				arrayOfIntegerValues[valueCount--] = (str[characterСount] >= char_A && str[characterСount] <= char_F) ? int(str[characterСount++] - 55) : int(str[characterСount++] - 87);
 			}
 		}
 
-		int value = 0;
+		int valueInHexNotation = 0;
 		for (int i = 0; i < arraySize; i++)
 		{
-			value += intValueArray[i] * pow(16, i);
+			valueInHexNotation += arrayOfIntegerValues[i] * pow(16, i);
 		}
 
-		delete[]intValueArray;
-		intValueArray = nullptr;
-		return value;
+		delete[]arrayOfIntegerValues;
+		arrayOfIntegerValues = nullptr;
+		return valueInHexNotation;
 	}
 	return -1;
 }
