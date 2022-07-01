@@ -1,5 +1,5 @@
 ﻿  Main.cpp
-P:\Git_Hub\Academy_TOP\Strings\NULLTerminatedLines\Main.cpp(146,30): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-P:\Git_Hub\Academy_TOP\Strings\NULLTerminatedLines\Main.cpp(182,30): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-P:\Git_Hub\Academy_TOP\Strings\NULLTerminatedLines\Main.cpp(228,30): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Strings\NULLTerminatedLines\Main.cpp(158,61): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Strings\NULLTerminatedLines\Main.cpp(196,61): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\Strings\NULLTerminatedLines\Main.cpp(249,61): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
   NULLTerminatedLines.vcxproj -> P:\Git_Hub\Academy_TOP\Strings\x64\Debug\NULLTerminatedLines.exe
