@@ -61,13 +61,13 @@ int stringLength(const char arrayOfCharacters[])
 }
 void to_upper(char arrayOfCharacters[]) {
 
-	char char_a = 97, char_z = 122;
+	
 	int shift_to_uppercase = 32;
 
 	for (int charCount = 0; arrayOfCharacters[charCount] != 0; charCount++)
 	{//если символ попадает в диапазон от а до z то он меняется на прописной символ
-		if (arrayOfCharacters[charCount] >= char_a && arrayOfCharacters[charCount] <= char_z) {
-			arrayOfCharacters[charCount] -= shift_to_uppercase;
+		if (arrayOfCharacters[charCount] >= 'a' && arrayOfCharacters[charCount] <= 'z') {
+			arrayOfCharacters[charCount] -= ' ';
 		}		
 	}
 }
@@ -181,7 +181,9 @@ int  bin_to_dec(char arrayOfCharacters[]) {
 	if (is_bin_number(arrayOfCharacters))
 	{
 		int arraySize = stringLength(arrayOfCharacters);// размер массива в зависимости от длины строки
-		int* arrayOfIntegerValues = new int[arraySize];//массив для значений
+		int* arrayOfIntegerValues = new int[arraySize] {};//массив для значений
+
+		//RAII - Resource Aquilisation is initialisation
 
 		//заполнение в обратном порядке массива двоиными значениями, эквевалентными символьным значениям в таблице ASCII
 		for (int charCount = 0, valueCount = arraySize - 1; arrayOfCharacters[charCount] != 0;)
@@ -225,7 +227,7 @@ int  hex_to_dec(char arrayOfCharacters[]) {
 	if (is_hex_number(arrayOfCharacters))
 	{
 		int arraySize = stringLength(arrayOfCharacters);// размер массива в зависимости от длины строки
-		int* arrayOfIntegerValues = new int[arraySize];//массив для значений
+		int* arrayOfIntegerValues = new int[arraySize] {};//массив для значений
 		char char_Zero = 48, char_Nine = 57;
 		char char_A = 65, char_F = 70;
 		
