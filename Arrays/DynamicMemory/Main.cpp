@@ -460,6 +460,15 @@ public:
 		arr = newArray;
 		rows--;
 	}
+	template <typename T> void popRowDown(T**& arr, int& rows, int cols) {
+		rows -- ;
+		delete[] arr[rows];
+		int** buffer = new int* [cols] {};
+		for (int i = 0; i < rows; i++) buffer[i] = arr[i];
+		delete[]arr;
+		return buffer;
+
+	}
 
 	//удаление левой колонки двумерного массива
 	template <typename T> void popColumnLeft(T**& arr, int rows, int& cols) {
