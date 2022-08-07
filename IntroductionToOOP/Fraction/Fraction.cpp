@@ -84,11 +84,6 @@ int Fraction::getGreatestCommonDivisor(const int first_value, const int second_v
 		}
 		return 1;
 	}
-void Fraction::FractionReduction(Fraction& fraction) {
-		int greatest_common_divisor = getGreatestCommonDivisor(fraction.numerator, fraction.denominator);
-		fraction.setNumerator(fraction.numerator / greatest_common_divisor);
-		fraction.setDenominator(fraction.denominator / greatest_common_divisor);
-	}
 
 //public
 Fraction::Fraction(int numerator, int denominator, int integer_fraction)
@@ -202,4 +197,10 @@ bool Fraction::operator>(const Fraction& other) {
 }
 bool Fraction::operator<(const Fraction& other) {
 	return !(this->operator>(other));
+}
+
+void Fraction::FractionReduction(Fraction& fraction) {
+	int greatest_common_divisor = getGreatestCommonDivisor(fraction.numerator, fraction.denominator);
+	fraction.setNumerator(fraction.numerator / greatest_common_divisor);
+	fraction.setDenominator(fraction.denominator / greatest_common_divisor);
 }
