@@ -1,0 +1,5 @@
+﻿  Fraction.cpp
+  Main.cpp
+  Создание кода...
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(16): warning C4717: operator>>: рекурсия на всех путях выполнения, функция вызовет переполнение стека
+  Fraction.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\Fraction.exe
