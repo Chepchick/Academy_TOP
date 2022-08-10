@@ -4,7 +4,7 @@ using std::istream;
 
 class Fraction {
 	friend ostream& operator<<(ostream&, const Fraction&);
-	friend istream& operator>>(istream&, const Fraction&);
+	friend istream& operator>>(istream&, Fraction&);
 
 private:
 	int integer_fraction;
@@ -19,24 +19,31 @@ private:
 	const int getNumerator() const;
 	const int getDenominator() const;
 
-	int getGreatestCommonDivisor(const int, const int);	
-
+	static int getGreatestCommonDivisor(const int, const int);
+	void сalculatingAndSetingIntegerFraction(Fraction&);
 public:
-	Fraction(int = 0, int = 1, int = 0);
+	Fraction(int = 0, int = 0, int = 1);
 	Fraction(const Fraction&);
 	~Fraction();
 
 	Fraction& operator=(const Fraction&);
 
-	Fraction operator+(const Fraction&);
-	Fraction operator-(const Fraction&);
-	Fraction operator*(const Fraction&);
-	Fraction operator/(const Fraction&);
+	const Fraction operator+(const Fraction&);
+	const Fraction operator-(const Fraction&);
+	const Fraction operator*(const Fraction&);
+	const Fraction operator/(const Fraction&);
+
+	Fraction& operator+=(const Fraction&);
+	Fraction& operator-=(const Fraction&);
+	Fraction& operator*=(const Fraction&);
+	Fraction& operator/=(const Fraction&);
 
 	bool operator==(const Fraction&);
 	bool operator!=(const Fraction&);
 	bool operator>(const Fraction&);
 	bool operator<(const Fraction&);
+	bool operator>=(const Fraction&);
+	bool operator<=(const Fraction&);
 
-	void FractionReduction(Fraction&);
+	static void fractionReduction(Fraction&);
 };

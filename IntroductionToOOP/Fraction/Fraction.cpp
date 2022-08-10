@@ -8,16 +8,20 @@ ostream& operator<<(ostream& output, const Fraction& frac) {
 	output << frac.integer_fraction << "(" << frac.numerator << "/" << frac.denominator << ")";
 	return output;
 }
-istream& operator>>(istream& input, const Fraction& frac) {
-	input >> frac.numerator;
-	input >> frac.denominator;
-	input >> frac.integer_fraction;	
+istream& operator>>(istream& input, Fraction& frac) {
+	cout << "Вызван оператор ввода  ";
+	input >> setw(1) >> frac.integer_fraction;
+	input.ignore(1);
+	input >> setw(1) >> frac.numerator;
+	input.ignore(1);
+	input >> setw(1) >> frac.denominator;
 	return input;
 }
 
 //private
 void Fraction::setIntegerFraction(int value) {
 		integer_fraction = value;
+		cout << "     Для объекта " << this << " вызван setIntegerFraction, в чеслитель присвоено значение " << integer_fraction << endl;
 	}
 void Fraction::setNumerator(int value) {
 		numerator = value;
@@ -84,9 +88,17 @@ int Fraction::getGreatestCommonDivisor(const int first_value, const int second_v
 		}
 		return 1;
 	}
+void Fraction::сalculatingAndSetingIntegerFraction(Fraction& frac) {
+	cout << "     Для объекта " << &frac << " вызван метод сalculatingAndSetingIntegerFraction" << endl;
+	if (frac.numerator > frac.denominator)
+	{
+		frac.setIntegerFraction(frac.numerator / frac.denominator);
+		frac.setNumerator(frac.numerator - (frac.integer_fraction * frac.denominator));
+	}	
+}
 
 //public
-Fraction::Fraction(int numerator, int denominator, int integer_fraction)
+Fraction::Fraction(int integer_fraction, int numerator, int denominator)
 	{
 		cout << "Вызван конструктор, создан объект " << this << endl;
 		setNumerator(numerator);
@@ -113,65 +125,90 @@ Fraction& Fraction::operator=(const Fraction& other)
 		return *this;
 	}
 
-Fraction Fraction::operator+(const Fraction& other) {
+const Fraction Fraction::operator+(const Fraction& other) {
 	cout << "Вызван оператор + для объектов " << this << " и " << &other << endl;
 	Fraction temp;
 
-	temp.numerator = ((this->integer_fraction * this->denominator + this->numerator) * other.denominator) +
-		((other.integer_fraction * other.denominator + other.numerator) * this->denominator);
-	temp.denominator = this->denominator * other.denominator;
+	temp.setNumerator(((this->integer_fraction * this->denominator + this->numerator) * other.denominator) +
+		((other.integer_fraction * other.denominator + other.numerator) * this->denominator));
+	temp.setDenominator(this->denominator * other.denominator);
 
-	if (temp.numerator > temp.denominator)
-	{
-		temp.integer_fraction = temp.numerator / temp.denominator;
-		temp.numerator = (this->numerator * other.numerator) - temp.integer_fraction * temp.denominator;
-	}
-	FractionReduction(temp);
+	сalculatingAndSetingIntegerFraction(temp);
+	fractionReduction(temp);
 	return temp;
 }
-Fraction Fraction::operator-(const Fraction& other) {
+const Fraction Fraction::operator-(const Fraction& other) {
 	cout << "Вызван оператор - для объектов " << this << " и " << &other << endl;
 	Fraction temp;
-	temp.numerator = int (fabs(((this->integer_fraction * this->denominator + this->numerator) * other.denominator) -
-		((other.integer_fraction * other.denominator + other.numerator) * this->denominator)));
-	temp.denominator = this->denominator * other.denominator;
+	temp.setNumerator(((this->integer_fraction * this->denominator + this->numerator) * other.denominator) -
+		((other.integer_fraction * other.denominator + other.numerator) * this->denominator));
+	temp.setDenominator(this->denominator * other.denominator);
 
-	if (temp.numerator > temp.denominator)
-	{
-		temp.integer_fraction = temp.numerator / temp.denominator;
-		temp.numerator = (this->numerator * other.numerator) - temp.integer_fraction * temp.denominator;
-	}
-	FractionReduction(temp);
+	сalculatingAndSetingIntegerFraction(temp);
+	fractionReduction(temp);
 	return temp;
 }
-Fraction Fraction::operator*(const Fraction& other) {
+const Fraction Fraction::operator*(const Fraction& other) {
 	cout << "Вызван оператор * для объектов " << this << " и " << &other << endl;
 	Fraction temp;
 
-	temp.numerator = (this->integer_fraction * this->denominator + this->numerator) *
-		(other.integer_fraction * other.denominator + other.numerator);
-	temp.denominator = this->denominator * other.denominator;
+	temp.setNumerator((this->integer_fraction * this->denominator + this->numerator) *
+		(other.integer_fraction * other.denominator + other.numerator));
+	temp.setDenominator(this->denominator * other.denominator);
 
-	if (temp.numerator > temp.denominator)
-	{
-		temp.integer_fraction = temp.numerator / temp.denominator;
-		temp.numerator = (this->numerator * other.numerator) - temp.integer_fraction * temp.denominator;
-	}
-	FractionReduction(temp);
+	сalculatingAndSetingIntegerFraction(temp);
+	fractionReduction(temp);
 	return temp;
 }
-Fraction Fraction::operator/(const Fraction& other) {
+const Fraction Fraction::operator/(const Fraction& other) {
 	cout << "Вызван оператор / для объектов " << this << " и " << &other << endl;
 	Fraction temp;
-	temp.numerator = (this->integer_fraction * this->denominator + this->numerator) * other.denominator;
-	temp.denominator = (other.integer_fraction * other.denominator + other.numerator) * this->denominator;
-	if (temp.numerator > temp.denominator)
-	{
-		temp.integer_fraction = temp.numerator / temp.denominator;
-		temp.numerator = (this->numerator * other.denominator) - temp.integer_fraction * temp.denominator;
-	}
-	FractionReduction(temp);
+	temp.setNumerator((this->integer_fraction * this->denominator + this->numerator) * other.denominator);
+	temp.setDenominator((other.integer_fraction * other.denominator + other.numerator) * this->denominator);
+
+	сalculatingAndSetingIntegerFraction(temp);
+	fractionReduction(temp);
 	return temp;
+}
+
+Fraction& Fraction::operator+=(const Fraction& other){
+	this->setNumerator(((this->integer_fraction * this->denominator + this->numerator) * other.denominator) +
+		((other.integer_fraction * other.denominator + other.numerator) * this->denominator));
+	this->setDenominator(this->denominator * other.denominator);
+
+	сalculatingAndSetingIntegerFraction(*this);
+	fractionReduction(*this);
+	
+	return *this;
+}
+Fraction& Fraction::operator-=(const Fraction& other) {
+	this->setNumerator(((this->integer_fraction * this->denominator + this->numerator) * other.denominator) -
+		((other.integer_fraction * other.denominator + other.numerator) * this->denominator));
+	this->setDenominator(this->denominator * other.denominator);
+
+	сalculatingAndSetingIntegerFraction(*this);
+	fractionReduction(*this);
+
+	return *this;
+}
+Fraction& Fraction::operator*=(const Fraction& other) {
+	this->setNumerator((this->integer_fraction * this->denominator + this->numerator) *
+		(other.integer_fraction * other.denominator + other.numerator));
+	this->setDenominator(this->denominator * other.denominator);
+
+	сalculatingAndSetingIntegerFraction(*this);
+	fractionReduction(*this);
+
+	return *this;
+}
+Fraction& Fraction::operator/=(const Fraction& other) {
+	this->setNumerator((this->integer_fraction * this->denominator + this->numerator) * other.denominator);
+	this->setDenominator((other.integer_fraction * other.denominator + other.numerator) * this->denominator);
+
+	сalculatingAndSetingIntegerFraction(*this);
+	fractionReduction(*this);
+
+	return *this;
 }
 
 bool Fraction::operator==(const Fraction& other) {
@@ -198,8 +235,15 @@ bool Fraction::operator>(const Fraction& other) {
 bool Fraction::operator<(const Fraction& other) {
 	return !(this->operator>(other));
 }
+bool Fraction::operator>=(const Fraction& other) {
+	return this->operator>(other) || this->operator==(other);
+}
+bool Fraction::operator<=(const Fraction& other) {
+	return this->operator<(other) || this->operator==(other);
+}
 
-void Fraction::FractionReduction(Fraction& fraction) {
+void Fraction::fractionReduction(Fraction& fraction) {
+	cout << "     Для объекта " << &fraction << " вызван fractionReduction " << endl;
 	int greatest_common_divisor = getGreatestCommonDivisor(fraction.numerator, fraction.denominator);
 	fraction.setNumerator(fraction.numerator / greatest_common_divisor);
 	fraction.setDenominator(fraction.denominator / greatest_common_divisor);
