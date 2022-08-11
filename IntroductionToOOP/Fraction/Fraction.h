@@ -19,8 +19,8 @@ private:
 	const int getNumerator() const;
 	const int getDenominator() const;
 
-	static int getGreatestCommonDivisor(const int, const int);
 	void сalculatingAndSetingIntegerFraction(Fraction&);
+	static int getGreatestCommonDivisor(const int, const int);
 public:
 	Fraction(int = 0, int = 0, int = 1);
 	Fraction(const Fraction&);

@@ -2,7 +2,7 @@
 #include "Fraction.h"
 using namespace std;
 
-#define separation "--------------------------------------------------------------------------------\n"
+#define delimiter_line "--------------------------------------------------------------------------------\n"
 int main() {
 	setlocale(LC_ALL, "ru");
 
@@ -10,17 +10,17 @@ int main() {
 	cin >> C;
 	cout << A << "     " << B << "     " << C << endl;
 	Fraction::fractionReduction(C);
-	cout << separation;	
+	cout << delimiter_line;	
 	cout << A + B << endl;
-	cout << separation;
+	cout << delimiter_line;
 	cout << A - C << endl;
-	cout << separation;
+	cout << delimiter_line;
 	cout << A * B << endl;
-	cout << separation;
+	cout << delimiter_line;
 	cout << A / C << endl;
-	/*cout << separation; ???
-	cout << A += B;*/
-	cout << separation;
+	cout << delimiter_line;
+	/*cout << A += B;
+	cout << delimiter_line;*/
 	bool res = A == B;
 	cout << res << endl;
 	res = A != B;

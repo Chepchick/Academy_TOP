@@ -28,12 +28,9 @@ void Fraction::setNumerator(int value) {
 		cout << "     Для объекта " << this << " вызван setNumerator, в чеслитель присвоено значение " << numerator << endl;
 	}
 void Fraction::setDenominator(int value) {
-		if (value != 0) {
-			denominator = value;
-		}
-		else {
-			cout << "Ошибка! Знаменатель не может быть равным 0" << endl;
-		}
+		if (value) denominator = value;		
+		else cout << "Ошибка! Знаменатель не может быть равным 0" << endl;
+		
 		cout << "     Для объекта " << this << " вызван setDenominator, в знаменатель присвоено значение " << denominator << endl;
 	}
 
@@ -47,13 +44,6 @@ const int Fraction::getDenominator() const {
 		return denominator;
 	}
 
-int Fraction::getGreatestCommonDivisor(int first_value, int second_value) {
-
-	while (first_value != second_value)	{
-		first_value > second_value ? first_value -= second_value : second_value -= first_value;
-	}	
-	return first_value;
-}
 void Fraction::сalculatingAndSetingIntegerFraction(Fraction& frac) {
 	cout << "     Для объекта " << &frac << " вызван метод сalculatingAndSetingIntegerFraction" << endl;
 	if (frac.numerator > frac.denominator)
@@ -61,6 +51,13 @@ void Fraction::сalculatingAndSetingIntegerFraction(Fraction& frac) {
 		frac.setIntegerFraction(frac.numerator / frac.denominator);
 		frac.setNumerator(frac.numerator - (frac.integer_fraction * frac.denominator));
 	}	
+}
+int Fraction::getGreatestCommonDivisor(int first_value, int second_value) {
+
+	while (first_value != second_value)	{
+		first_value > second_value ? first_value -= second_value : second_value -= first_value;
+	}	
+	return first_value;
 }
 
 //public
