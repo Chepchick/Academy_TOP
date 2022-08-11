@@ -21,7 +21,7 @@ istream& operator>>(istream& input, Fraction& frac) {
 //private
 void Fraction::setIntegerFraction(int value) {
 		integer_fraction = value;
-		cout << "     Для объекта " << this << " вызван setIntegerFraction, в чеслитель присвоено значение " << integer_fraction << endl;
+		cout << "     Для объекта " << this << " вызван setIntegerFraction, в целую часть присвоено значение " << integer_fraction << endl;
 	}
 void Fraction::setNumerator(int value) {
 		numerator = value;
@@ -47,47 +47,13 @@ const int Fraction::getDenominator() const {
 		return denominator;
 	}
 
-int Fraction::getGreatestCommonDivisor(const int first_value, const int second_value) {
-		int number_of_devisors_for_the_first_value = 0;
-		int number_of_devisors_for_the_second_value = 0;
+int Fraction::getGreatestCommonDivisor(int first_value, int second_value) {
 
-		for (int i = 1; i <= first_value; i++) {
-			if (first_value % i == 0) number_of_devisors_for_the_first_value++;
-		}
-		int* array_of_divisors_of_the_first_value = new int[number_of_devisors_for_the_first_value] {};
-
-		for (int i = 1; i <= second_value; i++) {
-			if (second_value % i == 0) number_of_devisors_for_the_second_value++;
-		}
-		int* array_of_divisors_of_the_second_value = new int[number_of_devisors_for_the_second_value] {};
-
-
-		for (int i = 1, count_devisors = 0; i <= first_value; i++) {
-			if (first_value % i == 0) {
-				array_of_divisors_of_the_first_value[count_devisors++] = i;
-			}
-		}
-		for (int i = 1, count_devisors = 0; i <= second_value; i++) {
-			if (second_value % i == 0) {
-				array_of_divisors_of_the_second_value[count_devisors++] = i;
-			}
-		}
-
-
-		for (int i = number_of_devisors_for_the_first_value - 1; i >= 0; i--)
-		{
-			for (int j = number_of_devisors_for_the_second_value - 1; j >= 0; j--)
-			{
-				if (array_of_divisors_of_the_first_value[i] == array_of_divisors_of_the_second_value[j]) {
-					int greatest_common_divisor = array_of_divisors_of_the_first_value[i];
-					delete[]array_of_divisors_of_the_first_value;
-					delete[]array_of_divisors_of_the_second_value;
-					return greatest_common_divisor;
-				}
-			}
-		}
-		return 1;
-	}
+	while (first_value != second_value)	{
+		first_value > second_value ? first_value -= second_value : second_value -= first_value;
+	}	
+	return first_value;
+}
 void Fraction::сalculatingAndSetingIntegerFraction(Fraction& frac) {
 	cout << "     Для объекта " << &frac << " вызван метод сalculatingAndSetingIntegerFraction" << endl;
 	if (frac.numerator > frac.denominator)
@@ -101,9 +67,9 @@ void Fraction::сalculatingAndSetingIntegerFraction(Fraction& frac) {
 Fraction::Fraction(int integer_fraction, int numerator, int denominator)
 	{
 		cout << "Вызван конструктор, создан объект " << this << endl;
+		setIntegerFraction(integer_fraction);
 		setNumerator(numerator);
 		setDenominator(denominator);
-		setIntegerFraction(integer_fraction);
 	}
 Fraction::~Fraction() {
 		cout << "Вызван деструктор, удален объект " << this << endl;
@@ -112,9 +78,9 @@ Fraction::~Fraction() {
 Fraction::Fraction(const Fraction& other)
 	{
 		cout << "Вызван конструктор копирования из объекта " << &other << " в объект " << this << endl;
+		this->setIntegerFraction(other.integer_fraction);
 		this->setNumerator(other.numerator);
 		this->setDenominator(other.denominator);
-		this->setIntegerFraction(other.integer_fraction);
 	}
 Fraction& Fraction::operator=(const Fraction& other)
 	{
