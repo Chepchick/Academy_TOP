@@ -218,19 +218,8 @@ bool Fraction::operator!=(const Fraction& other) {
 	return !(this->operator==(other));
 }
 bool Fraction::operator>(const Fraction& other) {
-	if ((this->integer_fraction > other.integer_fraction) ||
-		((this->numerator / this->denominator) > (other.numerator / other.denominator))) return true;
-	else {
-		if (this->denominator == other.denominator) {
-			return this->numerator > other.numerator;
-		}
-		else if (this->numerator == other.numerator) {
-			return this->denominator < other.denominator;
-		}
-		else {
-			return (this->numerator * other.denominator) > (other.numerator * this->denominator);
-		}
-	}
+	return ((this->integer_fraction * this->denominator + this->numerator) * other.denominator) >
+		   ((other.integer_fraction * other.denominator + other.numerator) * this->denominator);
 }
 bool Fraction::operator<(const Fraction& other) {
 	return !(this->operator>(other));
@@ -239,7 +228,7 @@ bool Fraction::operator>=(const Fraction& other) {
 	return this->operator>(other) || this->operator==(other);
 }
 bool Fraction::operator<=(const Fraction& other) {
-	return this->operator<(other) || this->operator==(other);
+	return !(this->operator>(other)) || this->operator==(other);
 }
 
 void Fraction::fractionReduction(Fraction& fraction) {
