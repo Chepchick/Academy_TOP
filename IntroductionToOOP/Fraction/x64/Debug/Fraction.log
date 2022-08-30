@@ -1,2 +1,19 @@
-﻿  Main.cpp
-  Fraction.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\Fraction.exe
+﻿  Fraction.cpp
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(66,62): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(68,45): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(106,33): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(180,16): error C2039: "==": не является членом "Fraction".
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(5): message : см. объявление "Fraction"
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(187,16): error C2039: ">": не является членом "Fraction".
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(5): message : см. объявление "Fraction"
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(190,14): error C2039: ">": не является членом "Fraction".
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(5): message : см. объявление "Fraction"
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(190,39): error C2039: "==": не является членом "Fraction".
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(5): message : см. объявление "Fraction"
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(193,16): error C2039: ">": не является членом "Fraction".
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(5): message : см. объявление "Fraction"
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(193,42): error C2039: "==": не является членом "Fraction".
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(5): message : см. объявление "Fraction"
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(220,24): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(221,26): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(239,34): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных

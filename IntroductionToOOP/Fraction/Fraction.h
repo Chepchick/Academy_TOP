@@ -18,8 +18,8 @@ class Fraction {
 	int getNumerator() const;
 	int getDenominator() const;
 
-	static void сalculatingAndSetingIntegerFraction(Fraction&);
-	static int getGreatestCommonDivisor(const int, const int);
+	friend static void сalculatingAndSetingIntegerFraction(Fraction&);
+	friend static int getGreatestCommonDivisor(const int, const int);
 	static int getFractionPartOfDoubleValue(const double, int&);
 
 public:
@@ -29,24 +29,24 @@ public:
 
 	Fraction& operator=(const Fraction&);
 
-	Fraction operator+(const Fraction&);
-	Fraction operator-(const Fraction&);
-	Fraction operator*(const Fraction&);
-	Fraction operator/(const Fraction&);
+	friend Fraction operator+(const Fraction&, const Fraction&);
+	friend Fraction operator-(const Fraction&, const Fraction&);
+	friend Fraction operator*(const Fraction&, const Fraction&);
+	friend Fraction operator/(const Fraction&, const Fraction&);
 
 	Fraction& operator+=(const Fraction&);
 	Fraction& operator-=(const Fraction&);
 	Fraction& operator*=(const Fraction&);
 	Fraction& operator/=(const Fraction&);
 
-	bool operator==(const Fraction&);
-	bool operator!=(const Fraction&);
-	bool operator>(const Fraction&);
-	bool operator<(const Fraction&);
-	bool operator>=(const Fraction&);
-	bool operator<=(const Fraction&);
+	friend bool operator==(const Fraction&, const Fraction&);
+	friend bool operator!=(const Fraction&, const Fraction&);
+	friend bool operator>(const Fraction&, const Fraction&);
+	friend bool operator<(const Fraction&, const Fraction&);
+	friend bool operator>=(const Fraction&, const Fraction&);
+	friend bool operator<=(const Fraction&, const Fraction&);
 
-	static void fractionReduction(Fraction&);
+	friend static void fractionReduction(Fraction&);
 	static Fraction& power(Fraction&, int);
 	static Fraction& square(Fraction&);
 	double convertToDecimalFraction();

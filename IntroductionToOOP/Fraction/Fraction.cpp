@@ -31,7 +31,7 @@ int Fraction::getDenominator() const {
 		return denominator;
 }
 
-void Fraction::сalculatingAndSetingIntegerFraction(Fraction& frac) {	
+void сalculatingAndSetingIntegerFraction(Fraction& frac) {	
 	if (frac.numerator > frac.denominator){
 		frac.setIntegerFraction(frac.numerator / frac.denominator);
 		frac.setNumerator(frac.numerator - (frac.integer_fraction * frac.denominator));
@@ -43,7 +43,7 @@ void Fraction::сalculatingAndSetingIntegerFraction(Fraction& frac) {
 		frac.setDenominator(0);
 	}
 }
-int Fraction::getGreatestCommonDivisor(int first_value, int second_value) {
+int getGreatestCommonDivisor(int first_value, int second_value) {
 	while (first_value != second_value)	{
 		first_value > second_value ? first_value -= second_value : second_value -= first_value;
 	}	
@@ -89,44 +89,44 @@ Fraction& Fraction::operator=(const Fraction& other) {
 		return *this;
 	}
 
-Fraction Fraction::operator+(const Fraction& other) {	
+Fraction operator+(const Fraction& left, const Fraction& right) {
 	Fraction temp_fraction;
 
-	temp_fraction.setNumerator(((this->integer_fraction * this->denominator + this->numerator) * other.denominator) +
-					  ((other.integer_fraction * other.denominator + other.numerator) * this->denominator));
+	temp_fraction.setNumerator(((left.integer_fraction * left.denominator + left.numerator) * right.denominator) +
+		((right.integer_fraction * right.denominator + right.numerator) * left.denominator));
 
-	temp_fraction.setDenominator(this->denominator * other.denominator);
+	temp_fraction.setDenominator(left.denominator * right.denominator);
 
 	fractionReduction(temp_fraction);
 	сalculatingAndSetingIntegerFraction(temp_fraction);
 	return temp_fraction;
 }
-Fraction Fraction::operator-(const Fraction& other) {	
+Fraction operator-(const Fraction& left, const Fraction& right) {
 	Fraction temp_fraction;
-	temp_fraction.setNumerator(fabs(((this->integer_fraction * this->denominator + this->numerator) * other.denominator) -
-		((other.integer_fraction * other.denominator + other.numerator) * this->denominator)));
-	temp_fraction.setDenominator(this->denominator * other.denominator);
+	temp_fraction.setNumerator(fabs(((left.integer_fraction * left.denominator + left.numerator) * right.denominator) -
+		((right.integer_fraction * right.denominator + right.numerator) * left.denominator)));
+	temp_fraction.setDenominator(left.denominator * right.denominator);
 
 	fractionReduction(temp_fraction);
 	сalculatingAndSetingIntegerFraction(temp_fraction);
 	return temp_fraction;
 }
-Fraction Fraction::operator*(const Fraction& other) {	
+Fraction operator*(const Fraction& left, const Fraction& right) {
 	Fraction temp_fraction;
 
-	temp_fraction.setNumerator((this->integer_fraction * this->denominator + this->numerator) *
-		(other.integer_fraction * other.denominator + other.numerator));
-	temp_fraction.setDenominator(this->denominator * other.denominator);
+	temp_fraction.setNumerator((left.integer_fraction * left.denominator + left.numerator) *
+		(right.integer_fraction * right.denominator + right.numerator));
+	temp_fraction.setDenominator(left.denominator * right.denominator);
 
 	fractionReduction(temp_fraction);
 	сalculatingAndSetingIntegerFraction(temp_fraction);
 	return temp_fraction;
 }
-Fraction Fraction::operator/(const Fraction& other) {	
+Fraction operator/(const Fraction& left, const Fraction& right) {
 	Fraction temp_fraction;
 
-	temp_fraction.setNumerator((this->integer_fraction * this->denominator + this->numerator) * other.denominator);
-	temp_fraction.setDenominator((other.integer_fraction * other.denominator + other.numerator) * this->denominator);
+	temp_fraction.setNumerator((left.integer_fraction * left.denominator + left.numerator) * right.denominator);
+	temp_fraction.setDenominator((right.integer_fraction * right.denominator + right.numerator) * left.denominator);
 
 	fractionReduction(temp_fraction);
 	сalculatingAndSetingIntegerFraction(temp_fraction);
@@ -173,27 +173,27 @@ Fraction& Fraction::operator/=(const Fraction& other) {
 	return *this;
 }
 
-bool Fraction::operator==(const Fraction& other) {
-	return (this->numerator * other.denominator) == (other.numerator * this->denominator);
+bool operator==(const Fraction& left, const Fraction& right) {
+	return (left.numerator * right.denominator) == (right.numerator * left.denominator);
 }
-bool Fraction::operator!=(const Fraction& other) {
-	return !(this->operator==(other));
+bool operator!=(const Fraction& left, const Fraction& right) {
+	return !(left.operator==(right));
 }
-bool Fraction::operator>(const Fraction& other) {
-	return ((this->integer_fraction * this->denominator + this->numerator) * other.denominator) >
-		   ((other.integer_fraction * other.denominator + other.numerator) * this->denominator);
+bool operator>(const Fraction& left, const Fraction& right) {
+	return ((left.integer_fraction * left.denominator + left.numerator) * right.denominator) >
+		   ((right.integer_fraction * right.denominator + right.numerator) * left.denominator);
 }
-bool Fraction::operator<(const Fraction& other) {
-	return !(this->operator>(other));
+bool operator<(const Fraction& left, const Fraction& right) {
+	return !(left.operator>(right));
 }
-bool Fraction::operator>=(const Fraction& other) {
-	return this->operator>(other) || this->operator==(other);
+bool operator>=(const Fraction& left, const Fraction& right) {
+	return left.operator>(right) || left.operator==(right);
 }
-bool Fraction::operator<=(const Fraction& other) {
-	return !(this->operator>(other)) || this->operator==(other);
+bool operator<=(const Fraction& left, const Fraction& right) {
+	return !(left.operator>(right)) || left.operator==(right);
 }
 
-void Fraction::fractionReduction(Fraction& frac) {	
+void fractionReduction(Fraction& frac) {	
 	int greatest_common_divisor = getGreatestCommonDivisor(frac.numerator, frac.denominator);
 	frac.setNumerator(frac.numerator / greatest_common_divisor);
 	frac.setDenominator(frac.denominator / greatest_common_divisor);	
