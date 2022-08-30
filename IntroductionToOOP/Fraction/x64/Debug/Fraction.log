@@ -1,7 +1,2 @@
 ﻿  Main.cpp
-  Fraction.cpp
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(94,33): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(208,24): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(209,26): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
-  Создание кода...
   Fraction.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\Fraction.exe

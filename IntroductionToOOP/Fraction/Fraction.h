@@ -6,7 +6,6 @@ class Fraction {
 	friend ostream& operator<<(ostream&, const Fraction&);
 	friend istream& operator>>(istream&, Fraction&);
 
-private:
 	int integer_fraction;
 	int numerator;
 	int denominator;
@@ -15,12 +14,14 @@ private:
 	void setNumerator(int);
 	void setDenominator(int);
 
-	const int getIntegerFraction() const;
-	const int getNumerator() const;
-	const int getDenominator() const;
+	int getIntegerFraction() const;
+	int getNumerator() const;
+	int getDenominator() const;
 
 	static void сalculatingAndSetingIntegerFraction(Fraction&);
 	static int getGreatestCommonDivisor(const int, const int);
+	static int getFractionPartOfDoubleValue(const double, int&);
+
 public:
 	Fraction(int = 0, int = 0, int = 1);
 	Fraction(const Fraction&);
@@ -28,10 +29,10 @@ public:
 
 	Fraction& operator=(const Fraction&);
 
-	const Fraction operator+(const Fraction&);
-	const Fraction operator-(const Fraction&);
-	const Fraction operator*(const Fraction&);
-	const Fraction operator/(const Fraction&);
+	Fraction operator+(const Fraction&);
+	Fraction operator-(const Fraction&);
+	Fraction operator*(const Fraction&);
+	Fraction operator/(const Fraction&);
 
 	Fraction& operator+=(const Fraction&);
 	Fraction& operator-=(const Fraction&);
@@ -49,5 +50,6 @@ public:
 	static Fraction& power(Fraction&, int);
 	static Fraction& square(Fraction&);
 	double convertToDecimalFraction();
-	/*static Fraction getFromDecimalFraction(double value);*/
+	static Fraction getFromDecimalFraction(double value);
+	
 };
