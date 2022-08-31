@@ -21,6 +21,12 @@ int main() {
 	cout << A / B << endl;
 	cout << delimiter_line;
 
+	cout << (A += B) << endl;
+	cout << (A -= B) << endl;
+	cout << (A *= B) << endl;
+	cout << (A /= B) << endl;
+	cout << delimiter_line;
+
 	cout << (A == B) << endl;
 	cout << (C != B) << endl;
 	cout << (A < C) << endl;
@@ -35,8 +41,7 @@ int main() {
 	double dec_fraction = B.convertToDecimalFraction();
 	A = Fraction::getFromDecimalFraction(dec_fraction);
 	cout << dec_fraction << endl;
-	cout << A << endl;
-	
+	cout << A << endl;	
 	
 	return 0;
 }

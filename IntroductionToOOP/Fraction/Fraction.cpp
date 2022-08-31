@@ -6,9 +6,6 @@
 using namespace std;
 
 
-
-
-
 //private
 void Fraction::setIntegerFraction(int value) {
 		integer_fraction = value;		
@@ -75,17 +72,17 @@ Fraction::Fraction(int integer_fraction, int numerator, int denominator){
 		setNumerator(numerator);
 		setDenominator(denominator);
 	}
-Fraction::~Fraction(){}
 
 Fraction::Fraction(const Fraction& other) {		
-		this->setIntegerFraction(other.integer_fraction);
-		this->setNumerator(other.numerator);
-		this->setDenominator(other.denominator);
+		setIntegerFraction(other.integer_fraction);
+		setNumerator(other.numerator);
+		setDenominator(other.denominator);
 	}
 Fraction& Fraction::operator=(const Fraction& other) {		
-		this->setNumerator(other.numerator);
-		this->setDenominator(other.denominator);
-		this->setIntegerFraction(other.integer_fraction);
+		setNumerator(other.numerator);
+		setDenominator(other.denominator);
+		setIntegerFraction(other.integer_fraction);
+
 		return *this;
 	}
 
@@ -133,64 +130,64 @@ Fraction operator/(const Fraction& left, const Fraction& right) {
 	return temp_fraction;
 }
 
-Fraction& Fraction::operator+=(const Fraction& other){
-	this->setNumerator(((this->integer_fraction * this->denominator + this->numerator) * other.denominator) +
-		((other.integer_fraction * other.denominator + other.numerator) * this->denominator));
-	this->setDenominator(this->denominator * other.denominator);
+Fraction& operator+=(Fraction& left, const Fraction& right){
+	left.setNumerator(((left.integer_fraction * left.denominator + left.numerator) * right.denominator) +
+		((right.integer_fraction * right.denominator + right.numerator) * left.denominator));
+	left.setDenominator(left.denominator * right.denominator);
 
-	fractionReduction(*this);
-	сalculatingAndSetingIntegerFraction(*this);
+	fractionReduction(left);
+	сalculatingAndSetingIntegerFraction(left);
 	
-	return *this;
+	return left;
 }
-Fraction& Fraction::operator-=(const Fraction& other) {
-	this->setNumerator(((this->integer_fraction * this->denominator + this->numerator) * other.denominator) -
-		((other.integer_fraction * other.denominator + other.numerator) * this->denominator));
-	this->setDenominator(this->denominator * other.denominator);
+Fraction& operator-=(Fraction& left, const Fraction& right) {
+	left.setNumerator(fabs(((left.integer_fraction * left.denominator + left.numerator) * right.denominator) -
+		((right.integer_fraction * right.denominator + right.numerator) * left.denominator)));
+	left.setDenominator(left.denominator * right.denominator);
 
-	fractionReduction(*this);
-	сalculatingAndSetingIntegerFraction(*this);
+	fractionReduction(left);
+	сalculatingAndSetingIntegerFraction(left);
 
-	return *this;
+	return left;
 }
-Fraction& Fraction::operator*=(const Fraction& other) {
-	this->setNumerator((this->integer_fraction * this->denominator + this->numerator) *
-		(other.integer_fraction * other.denominator + other.numerator));
-	this->setDenominator(this->denominator * other.denominator);
+Fraction& operator*=(Fraction& left, const Fraction& right) {
+	left.setNumerator((left.integer_fraction * left.denominator + left.numerator) *
+		(right.integer_fraction * right.denominator + right.numerator));
+	left.setDenominator(left.denominator * right.denominator);
 
-	fractionReduction(*this);
-	сalculatingAndSetingIntegerFraction(*this);
+	fractionReduction(left);
+	сalculatingAndSetingIntegerFraction(left);
 
-	return *this;
+	return left;
 }
-Fraction& Fraction::operator/=(const Fraction& other) {
-	this->setNumerator((this->integer_fraction * this->denominator + this->numerator) * other.denominator);
-	this->setDenominator((other.integer_fraction * other.denominator + other.numerator) * this->denominator);
+Fraction& operator/=(Fraction& left, const Fraction& right) {
+	left.setNumerator((left.integer_fraction * left.denominator + left.numerator) * right.denominator);
+	left.setDenominator((right.integer_fraction * right.denominator + right.numerator) * left.denominator);
 
-	fractionReduction(*this);
-	сalculatingAndSetingIntegerFraction(*this);
+	fractionReduction(left);
+	сalculatingAndSetingIntegerFraction(left);
 
-	return *this;
+	return left;
 }
 
 bool operator==(const Fraction& left, const Fraction& right) {
 	return (left.numerator * right.denominator) == (right.numerator * left.denominator);
 }
 bool operator!=(const Fraction& left, const Fraction& right) {
-	return !(left.operator==(right));
+	return !(left == right);
 }
 bool operator>(const Fraction& left, const Fraction& right) {
 	return ((left.integer_fraction * left.denominator + left.numerator) * right.denominator) >
 		   ((right.integer_fraction * right.denominator + right.numerator) * left.denominator);
 }
 bool operator<(const Fraction& left, const Fraction& right) {
-	return !(left.operator>(right));
+	return !(left > right);
 }
 bool operator>=(const Fraction& left, const Fraction& right) {
-	return left.operator>(right) || left.operator==(right);
+	return left > right || left == right;
 }
 bool operator<=(const Fraction& left, const Fraction& right) {
-	return !(left.operator>(right)) || left.operator==(right);
+	return !(left > right) || left == right;
 }
 
 void fractionReduction(Fraction& frac) {	

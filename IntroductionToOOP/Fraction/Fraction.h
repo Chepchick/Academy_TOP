@@ -3,9 +3,7 @@ using std::ostream;
 using std::istream;
 
 class Fraction {
-	friend ostream& operator<<(ostream&, const Fraction&);
-	friend istream& operator>>(istream&, Fraction&);
-
+private:
 	int integer_fraction;
 	int numerator;
 	int denominator;
@@ -20,12 +18,11 @@ class Fraction {
 
 	friend static void сalculatingAndSetingIntegerFraction(Fraction&);
 	friend static int getGreatestCommonDivisor(const int, const int);
-	static int getFractionPartOfDoubleValue(const double, int&);
+	static int getFractionPartOfDoubleValue(const double, int&);	
 
 public:
-	Fraction(int = 0, int = 0, int = 1);
-	Fraction(const Fraction&);
-	~Fraction();
+	Fraction(int = 0, int = 0, int = 1);	
+	Fraction(const Fraction&);	
 
 	Fraction& operator=(const Fraction&);
 
@@ -34,10 +31,10 @@ public:
 	friend Fraction operator*(const Fraction&, const Fraction&);
 	friend Fraction operator/(const Fraction&, const Fraction&);
 
-	Fraction& operator+=(const Fraction&);
-	Fraction& operator-=(const Fraction&);
-	Fraction& operator*=(const Fraction&);
-	Fraction& operator/=(const Fraction&);
+	friend Fraction& operator+=(Fraction&, const Fraction&);
+	friend Fraction& operator-=(Fraction&, const Fraction&);
+	friend Fraction& operator*=(Fraction&, const Fraction&);
+	friend Fraction& operator/=(Fraction&, const Fraction&);
 
 	friend bool operator==(const Fraction&, const Fraction&);
 	friend bool operator!=(const Fraction&, const Fraction&);
@@ -46,10 +43,12 @@ public:
 	friend bool operator>=(const Fraction&, const Fraction&);
 	friend bool operator<=(const Fraction&, const Fraction&);
 
+	friend ostream& operator<<(ostream&, const Fraction&);
+	friend istream& operator>>(istream&, Fraction&);
+
 	friend static void fractionReduction(Fraction&);
 	static Fraction& power(Fraction&, int);
 	static Fraction& square(Fraction&);
 	double convertToDecimalFraction();
-	static Fraction getFromDecimalFraction(double value);
-	
+	static Fraction getFromDecimalFraction(double value);	
 };
