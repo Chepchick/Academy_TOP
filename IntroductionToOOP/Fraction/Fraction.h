@@ -7,6 +7,7 @@ private:
 	int integer_fraction;
 	int numerator;
 	int denominator;
+	bool fraction_is_negativ;
 
 	void setIntegerFraction(int);
 	void setNumerator(int);
@@ -16,25 +17,38 @@ private:
 	int getNumerator() const;
 	int getDenominator() const;
 
+
+	short sign() const;
 	friend static void сalculatingAndSetingIntegerFraction(Fraction&);
 	friend static int getGreatestCommonDivisor(const int, const int);
-	static int getFractionPartOfDoubleValue(const double, int&);	
+	static int getFractionPartOfDoubleValue(const double, int&);
+	
 
 public:
-	Fraction(int = 0, int = 0, int = 1);	
-	Fraction(const Fraction&);	
+	Fraction(int, int, int);
+	template <typename T1, typename T2, typename T3> Fraction(T1, T2, T3) = delete;	
+	Fraction();
+		
+	friend const Fraction operator+(const Fraction&, const Fraction&);
+	friend const Fraction operator+(const Fraction&, const int);
+	friend const Fraction operator+(const int, const Fraction&);
+	
+	friend const Fraction operator-(const Fraction&, const Fraction&);
+	friend const Fraction operator-(const Fraction&, const int);
+	friend const Fraction operator-(const int, const Fraction&);
 
-	Fraction& operator=(const Fraction&);
+	friend const Fraction operator*(const Fraction&, const Fraction&);
+	friend const Fraction operator*(const Fraction&, const int);
+	friend const Fraction operator*(const int, const Fraction&);
 
-	friend Fraction operator+(const Fraction&, const Fraction&);
-	friend Fraction operator-(const Fraction&, const Fraction&);
-	friend Fraction operator*(const Fraction&, const Fraction&);
-	friend Fraction operator/(const Fraction&, const Fraction&);
+	friend const Fraction operator/(const Fraction&, const Fraction&);
+	friend const Fraction operator/(const Fraction&, const int);
+	friend const Fraction operator/(const int, const Fraction&);
 
-	friend Fraction& operator+=(Fraction&, const Fraction&);
-	friend Fraction& operator-=(Fraction&, const Fraction&);
-	friend Fraction& operator*=(Fraction&, const Fraction&);
-	friend Fraction& operator/=(Fraction&, const Fraction&);
+	Fraction& operator+=(const Fraction&);
+	Fraction& operator-=(const Fraction&);
+	Fraction& operator*=(const Fraction&);
+	Fraction& operator/=(const Fraction&);
 
 	friend bool operator==(const Fraction&, const Fraction&);
 	friend bool operator!=(const Fraction&, const Fraction&);
