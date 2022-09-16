@@ -1,3 +1,13 @@
-﻿  Main.cpp
+﻿  Fraction.cpp
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(10,21): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(20,14): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(23,16): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(79,62): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(82,45): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(323,24): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(324,26): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(343,34): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  Main.cpp
 P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Main.cpp(54,11): warning C4930: Fraction E(void): функция с прототипом не вызвана (предполагалось определение переменной?)
+  Создание кода...
   Fraction.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\Fraction.exe
