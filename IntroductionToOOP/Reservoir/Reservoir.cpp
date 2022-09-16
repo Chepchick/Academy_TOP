@@ -1,4 +1,4 @@
-#include "Reservoir.h"
+ï»¿#include "Reservoir.h"
 #include <cassert>
 #include <iostream>
 #include <iomanip>
@@ -7,7 +7,7 @@ using namespace std;
 
 //private
 const Reservoir& Reservoir::setNameOfReservoir(std::string name) {
-	assert(name.length() > 0 && name.length() < 20 && "Äëèíà ñòðîêè ïðåâûøàåò ìàêñèìàëüíûé ðàçìåð â 20 ñèìâîëîâ!");
+	assert(name.length() > 0 && name.length() < 20 && "Ð”Ð»Ð¸Ð½Ð° ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð¿Ñ€ÐµÐ²Ñ‹ÑˆÐ°ÐµÑ‚ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð² 20 ÑÐ¸Ð¼Ð²Ð¾Ð»Ð¾Ð²!");
 	name_of_reservoir = name;
 
 	return *this;
@@ -103,11 +103,11 @@ string Reservoir::getTypeOfReservoir(const Reservoir& object)  {
 }
 
 ostream& operator<<(ostream& output, const Reservoir& object) {
-	output << "Òèï âîäîåìà " << object.getNameOfReservoir() << " - " << Reservoir::getTypeOfReservoir(object);
+	output << "Ð¢Ð¸Ð¿ Ð²Ð¾Ð´Ð¾ÐµÐ¼Ð° " << object.getNameOfReservoir() << " - " << Reservoir::getTypeOfReservoir(object);
 	return output;
 }
 istream& operator>>(istream& input, Reservoir& object) {
-	cout << "Ââåäèòå çíà÷åíèÿ â ôîðìàòå: íàçâàíèå, òèï âîäû, äëèíà, øèðèíà, ãëóáèíà" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ: Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ, Ñ‚Ð¸Ð¿ Ð²Ð¾Ð´Ñ‹, Ð´Ð»Ð¸Ð½Ð°, ÑˆÐ¸Ñ€Ð¸Ð½Ð°, Ð³Ð»ÑƒÐ±Ð¸Ð½Ð°" << endl;
 	input >> setw(5) >> object.name_of_reservoir;
 	input.ignore(1);
 	input >> setw(1) >> object.type_water;
