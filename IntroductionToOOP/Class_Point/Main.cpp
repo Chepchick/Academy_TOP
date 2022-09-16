@@ -4,8 +4,8 @@ using namespace std;
 class Point {
 
 private:
-	double x = NULL;
-	double y = NULL;
+	double x = 0.0;
+	double y = 0.0;
 
 	void setX(double value_by_X) {
 		if (value_by_X >= 0) {
