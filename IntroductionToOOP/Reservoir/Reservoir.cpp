@@ -8,7 +8,7 @@ const Reservoir& Reservoir::setNameOfReservoir(std::string name) {
     if(name.length() > 0 && name.length() < 20) {
         name_of_reservoir = name;
     }
-    else  cout << "Длина строки превышает максимальный размер в 20 символов!");
+    else  cout << "Длина строки превышает максимальный размер в 20 символов!";
     return *this;
 }
 const Reservoir& Reservoir::setTypeOfWater(std::string type) {

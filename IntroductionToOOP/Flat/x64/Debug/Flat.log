@@ -1,0 +1,8 @@
+﻿  Flat.cpp
+  Main.cpp
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Flat\Main.cpp(9,36): warning C4305: аргумент: усечение из "double" в "float"
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Flat\Main.cpp(11,24): warning C4305: аргумент: усечение из "double" в "float"
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Flat\Main.cpp(12,27): warning C4305: аргумент: усечение из "double" в "float"
+  Создание кода...
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Flat\Flat.cpp(50): warning C4717: Flat::operator<: рекурсия на всех путях выполнения, функция вызовет переполнение стека
+  Flat.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\Flat.exe
