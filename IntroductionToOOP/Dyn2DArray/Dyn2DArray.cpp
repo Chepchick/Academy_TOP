@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <stdlib.h>
 #include <time.h>
 #include <cassert>
@@ -199,9 +199,9 @@ ostream& operator<<(ostream& output, const Dyn2DArray& arr) {
 	return output;
 }
 istream& operator>>(istream& input, Dyn2DArray& object) {
-	std::cout << "Ââåäèòå çíà÷åíèÿ ýåëåìåíòîâ ìàññèâà â êîëëè÷åñòâå: " << object.rows * object.columns << " øò." << std::endl;
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ ÑÐµÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð² ÐºÐ¾Ð»Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ðµ: " << object.rows * object.columns << " ÑˆÑ‚." << std::endl;
 	for (size_t i{ 0 }; i < object.rows * object.columns; i++) {
-		std::cout << "Çíà÷åíèå " << i + 1 << "-ãî ýëåìåíòà: ";
+		std::cout << "Ð—Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ " << i + 1 << "-Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°: ";
 		input >> object.array_ptr[i];
 	}
 	return input;
