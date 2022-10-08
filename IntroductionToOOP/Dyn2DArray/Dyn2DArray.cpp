@@ -135,7 +135,7 @@ Dyn2DArray& Dyn2DArray::deleteColumn(int column_position) {
 	return *this;
 }
 Dyn2DArray& Dyn2DArray::addColumn(int column_position, int* new_column) {
-	assert(column_position >= 0 && column_position < columns && "Columns index is out of range!");
+	assert(column_position >= 0 && column_position <= columns && "Columns index is out of range!");
 
 	int* new_array_ptr{ new int[rows * (columns + 1)] };
 	for (size_t r{ 0 }; r < rows; ++r)
@@ -169,7 +169,7 @@ Dyn2DArray& Dyn2DArray::deleteRow(int row_position) {
 	return *this;
 }
 Dyn2DArray& Dyn2DArray::addRow(int row_position, int* new_row) {
-	assert(row_position >= 0 && row_position < rows && "Rows index is out of range!");
+	assert(row_position >= 0 && row_position <= rows && "Rows index is out of range!");
 
 	int* new_array_ptr{ new int[(rows + 1) * columns] };
 	for (int r{ 0 }; r < rows; ++r) {

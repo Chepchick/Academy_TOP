@@ -4,6 +4,7 @@
 using namespace std;
 
 int main(){
+	setlocale(LC_ALL, " ");
 	int rows{3};
 	int columns{4};
 
@@ -15,16 +16,16 @@ int main(){
 	cin >> arr1;
 	cout << arr1;
 
-	arr.deleteColumn(2);
+	arr1.deleteColumn(2);
 	cout << arr1;
 	
-	arr.addColumn(0);
+	arr1.addColumn(0);
 	cout << arr1;
 
-	arr.deleteRow(2);
+	arr1.deleteRow(2);
 	cout << arr1;
 	
-	arr.addRow(2);
+	arr1.addRow(2);
 	cout << arr1;
 
 
