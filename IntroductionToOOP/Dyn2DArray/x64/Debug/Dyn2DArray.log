@@ -1,13 +1,30 @@
 ﻿  Dyn2DArray.cpp
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(21,23): warning C4244: =: преобразование "float" в "int", возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(22,20): warning C4244: =: преобразование "float" в "int", возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(79,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(86,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(130,33): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(130,102): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(145,72): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(145,103): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(147,60): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(194,23): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(66): warning C4717: operator==: рекурсия на всех путях выполнения, функция вызовет переполнение стека
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(98,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(105,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(184,50): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(187,80): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(188,44): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(188,91): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(190,43): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(201,50): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(204,80): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(205,44): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(205,91): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(207,43): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(218,53): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(221,83): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(222,47): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(222,97): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(224,46): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(235,53): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(238,83): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(239,47): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(239,97): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(241,46): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(264,33): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(264,102): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(279,72): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(279,103): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(281,60): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Dyn2DArray\Dyn2DArray.cpp(328,23): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
   Dyn2DArray.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\Dyn2DArray.exe

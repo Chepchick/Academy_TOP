@@ -3,6 +3,7 @@
 #include <time.h>
 #include <cassert>
 #include "Dyn2DArray.h"
+
 //private:
 int Dyn2DArray::index2D(int r, int c) const {	
 	return r * columns + c;
@@ -10,16 +11,34 @@ int Dyn2DArray::index2D(int r, int c) const {
 int Dyn2DArray::index2D(int r, int c, int  columns) const {
 	return r * columns + c;
 }
+Dyn2DArray& Dyn2DArray::transferNullToTheEndOfArray(Dyn2DArray& object) {
+	for (size_t current_element{ 1 }; current_element < object.columns * object.rows; current_element++)
+	{
+		int temp{ object.array_ptr[current_element] };
+		size_t iterating_element{ current_element };
+
+		for (; iterating_element != NULL; iterating_element--) {
+			object.array_ptr[iterating_element] = object.array_ptr[iterating_element - 1];
+		}
+		object.array_ptr[iterating_element] = temp;
+	}
+	return object;
+}
 
 //public:
 Dyn2DArray::Dyn2DArray(int rows, int columns)
-	:rows{ rows > 0 ? rows : 1 }, columns{ columns > 0 ? columns : 1 }, array_ptr{ new int[columns * rows] }{}
-
-Dyn2DArray::Dyn2DArray(Dyn2DArray&& other)
-	:array_ptr{ other.array_ptr }, rows{ other.rows }, columns{ other.columns } {
+{
+	this->rows = rows > 0 ? rows : 1;
+	this->columns = columns > 0 ? columns : 1;
+	array_ptr = new int[this->columns * this->rows];
+}
+Dyn2DArray::Dyn2DArray(Dyn2DArray&& other) {
+	this->array_ptr = other.array_ptr;
+	this->rows = other.rows;
+	this->columns = other.columns;
 	other.array_ptr = nullptr;
-	other.columns = float();
-	other.rows = float();
+	other.columns = int();
+	other.rows = int();
 }
 Dyn2DArray& Dyn2DArray::operator=(const Dyn2DArray&& other) {
 	if (!(this == &other))
@@ -54,7 +73,7 @@ int& Dyn2DArray::operator()(int r, int c) {
 }
 
 bool operator == (const Dyn2DArray& left, const Dyn2DArray& right) {
-	if (!(left == right))
+	if (!(&left == &right))
 	{
 		if (left.rows == right.rows && left.columns == right.columns) {
 			for (size_t i = 0; i < left.columns * left.rows; i++)
@@ -116,6 +135,121 @@ Dyn2DArray& Dyn2DArray::insert(int r, int c, int value) {
 	*(array_ptr + index2D(r, c)) = value;
 
 	return *this;
+}
+Dyn2DArray& Dyn2DArray::removeDuplicateValues() {
+	for (size_t current_element{ 0 }; current_element < (rows * columns) - 1; current_element++)
+	{
+		if (array_ptr[current_element]) {
+			for (size_t iterating_element{ current_element + 1 }; iterating_element < rows * columns; iterating_element++) {
+				if (array_ptr[current_element] == array_ptr[iterating_element]) array_ptr[iterating_element] = NULL;
+			}
+		}
+	}
+	return *this;
+}
+
+Dyn2DArray& Dyn2DArray::wholeSortAscending() {
+
+	for (size_t current_element{1}; current_element < columns * rows; current_element++)
+	{
+		int temp{ array_ptr[current_element] };
+		size_t iterating_elements{ current_element };
+
+		for (; iterating_elements > 0 && array_ptr[iterating_elements - 1] > temp; iterating_elements--) {
+			array_ptr[iterating_elements] = array_ptr[iterating_elements - 1];
+		}
+		array_ptr[iterating_elements] = temp;
+	}
+	return *this;
+}
+Dyn2DArray& Dyn2DArray::wholeSortDescending() {
+	for (size_t current_element{ 1 }; current_element < columns * rows; current_element++)
+	{
+		int temp{ array_ptr[current_element] };
+		size_t iterating_elements{ current_element };
+
+		for (; iterating_elements > 0 && array_ptr[iterating_elements - 1] < temp; iterating_elements--) {
+			array_ptr[iterating_elements] = array_ptr[iterating_elements - 1];
+		}
+		array_ptr[iterating_elements] = temp;
+	}
+	return *this;
+}
+Dyn2DArray& Dyn2DArray::sortRowsAscending() {
+
+	for (size_t current_row {0}; current_row < rows; current_row ++)
+	{
+		for (size_t current_element{ 1 }; current_element < columns; current_element++)
+		{
+			int temp{ (*this)(current_row, current_element) };
+			size_t iterating_elements{ current_element };
+
+			for (; iterating_elements > 0 && (*this)(current_row, iterating_elements - 1) > temp; iterating_elements--) {
+				(*this)(current_row, iterating_elements) = (*this)(current_row, iterating_elements - 1);
+			}
+			(*this)(current_row, iterating_elements) = temp;
+		}
+	}
+	return *this;
+}
+Dyn2DArray& Dyn2DArray::sortRowsDescending() {
+
+	for (size_t current_row{ 0 }; current_row < rows; current_row++)
+	{
+		for (size_t current_element{ 1 }; current_element < columns; current_element++)
+		{
+			int temp{ (*this)(current_row, current_element) };
+			size_t iterating_elements{ current_element };
+
+			for (; iterating_elements > 0 && (*this)(current_row, iterating_elements - 1) < temp; iterating_elements--) {
+				(*this)(current_row, iterating_elements) = (*this)(current_row, iterating_elements - 1);
+			}
+			(*this)(current_row, iterating_elements) = temp;
+		}
+	}
+	return *this;
+}
+Dyn2DArray& Dyn2DArray::sortColumnsAscending() {
+
+	for (size_t current_column{ 0 }; current_column < columns; current_column++)
+	{
+		for (size_t current_element{ 1 }; current_element < rows; current_element++)
+		{
+			int temp{ (*this)(current_element, current_column) };
+			size_t iterating_elements{ current_element };
+
+			for (; iterating_elements > 0 && (*this)(iterating_elements - 1, current_column) > temp; iterating_elements--) {
+				(*this)(iterating_elements, current_column) = (*this)(iterating_elements - 1, current_column);
+			}
+			(*this)(iterating_elements, current_column) = temp;
+		}
+	}
+	return *this;
+}
+Dyn2DArray& Dyn2DArray::sortColumnsDescending() {
+
+	for (size_t current_column{ 0 }; current_column < columns; current_column++)
+	{
+		for (size_t current_element{ 1 }; current_element < rows; current_element++)
+		{
+			int temp{ (*this)(current_element, current_column) };
+			size_t iterating_elements{ current_element };
+
+			for (; iterating_elements > 0 && (*this)(iterating_elements - 1, current_column) < temp; iterating_elements--) {
+				(*this)(iterating_elements, current_column) = (*this)(iterating_elements - 1, current_column);
+			}
+			(*this)(iterating_elements, current_column) = temp;
+		}
+	}
+	return *this;
+}
+
+int Dyn2DArray::getSum() const{
+	int result{ int() };
+
+	for (size_t i{0}; i < rows * columns; i++) result += array_ptr[i];
+
+	return result;
 }
 
 Dyn2DArray& Dyn2DArray::deleteColumn(int column_position) {

@@ -1,6 +1,4 @@
-﻿#pragma once
-//#include <iostream>
-using std::ostream;
+﻿using std::ostream;
 using std::istream;
 class Dyn2DArray
 {
@@ -10,6 +8,7 @@ class Dyn2DArray
 
 	int index2D(int, int) const;
 	int index2D(int, int, int) const;
+	static Dyn2DArray& transferNullToTheEndOfArray(Dyn2DArray&);
 
 public:
 	Dyn2DArray(int, int);
@@ -33,7 +32,18 @@ public:
 	bool isEmpty() const;
 
 	Dyn2DArray& erase(int, int);
-	Dyn2DArray& insert(int, int, int);	
+	Dyn2DArray& insert(int, int, int);
+	Dyn2DArray& removeDuplicateValues();
+
+	Dyn2DArray& wholeSortAscending();
+	Dyn2DArray& wholeSortDescending();
+	Dyn2DArray& sortRowsAscending();
+	Dyn2DArray& sortRowsDescending();
+	Dyn2DArray& sortColumnsAscending();
+	Dyn2DArray& sortColumnsDescending();
+
+
+	int getSum() const;
 
 	Dyn2DArray& deleteColumn(int);
 	Dyn2DArray& addColumn(int, int* new_column = nullptr);
