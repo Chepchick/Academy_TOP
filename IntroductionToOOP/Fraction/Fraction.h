@@ -25,25 +25,56 @@ private:
 	
 
 public:
-	Fraction(int, int, int);
-	template <typename T1, typename T2, typename T3> Fraction(T1, T2, T3) = delete;	
+	Fraction(int, int, int);	
 	Fraction();
 		
 	friend const Fraction operator+(const Fraction&, const Fraction&);
 	friend const Fraction operator+(const Fraction&, const int);
-	friend const Fraction operator+(const int, const Fraction&);
+	friend const Fraction operator+(const int, const Fraction&);	
+	template<typename float_val> friend const Fraction operator+(const Fraction& fraction, const float_val value) {
+		Fraction temp_fraction = temp_fraction.getFromDecimalFraction(value);
+		return temp_fraction + fraction;
+	}
+	template<typename float_val> friend const Fraction operator+(const float_val value, const Fraction& fraction) {
+		Fraction temp_fraction = temp_fraction.getFromDecimalFraction(value);
+		return temp_fraction + fraction;
+	}
 	
 	friend const Fraction operator-(const Fraction&, const Fraction&);
 	friend const Fraction operator-(const Fraction&, const int);
 	friend const Fraction operator-(const int, const Fraction&);
+	template<typename float_val> friend const Fraction operator-(const Fraction& fraction, const float_val value) {
+		Fraction temp_fraction = temp_fraction.getFromDecimalFraction(value);		
+		return fraction - temp_fraction;
+	}
+	template<typename float_val> friend const Fraction operator-(const float_val value, const Fraction& fraction) {
+		Fraction temp_fraction = temp_fraction.getFromDecimalFraction(value);		
+		return temp_fraction - fraction;
+	}
 
 	friend const Fraction operator*(const Fraction&, const Fraction&);
 	friend const Fraction operator*(const Fraction&, const int);
 	friend const Fraction operator*(const int, const Fraction&);
+	template<typename float_val> friend const Fraction operator*(const Fraction& fraction, const float_val value) {
+		Fraction temp_fraction = temp_fraction.getFromDecimalFraction(value);
+		return fraction * temp_fraction;
+	}
+	template<typename float_val> friend const Fraction operator*(const float_val value, const Fraction& fraction) {
+		Fraction temp_fraction = temp_fraction.getFromDecimalFraction(value);
+		return temp_fraction * fraction;
+	}
 
 	friend const Fraction operator/(const Fraction&, const Fraction&);
 	friend const Fraction operator/(const Fraction&, const int);
 	friend const Fraction operator/(const int, const Fraction&);
+	template<typename float_val> friend const Fraction operator/(const Fraction& fraction, const float_val value) {
+		Fraction temp_fraction = temp_fraction.getFromDecimalFraction(value);
+		return fraction / temp_fraction;
+	}
+	template<typename float_val> friend const Fraction operator/(const float_val value, const Fraction& fraction) {
+		Fraction temp_fraction = temp_fraction.getFromDecimalFraction(value);
+		return temp_fraction / fraction;
+	}
 
 	Fraction& operator+=(const Fraction&);
 	Fraction& operator-=(const Fraction&);

@@ -4,7 +4,7 @@
 using namespace std;
 
 #define delimiter_line "------------------------------\n"
-#define BASIC_PART
+//#define BASIC_PART
 
 
 int main() {
@@ -60,7 +60,13 @@ int main() {
 
 #endif // BASIC_PART
 
-	
+	Fraction A(0, 1, 4);
+	double B{ 0.3 };
+	int C{ 2 };
+	Fraction D = A + B + C;
+	cout << D;
+
+
 
 	return 0;
 }

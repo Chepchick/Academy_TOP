@@ -1,4 +1,6 @@
 ﻿  Fraction.cpp
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(34,10): error C3637: operator +: определение дружественной функции не может быть специализацией функции шаблон
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(44,1): error C2912: явная специализация; "const Fraction operator +(const Fraction &,const long)" не является специализацией функции-шаблона
 P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(10,21): warning C4244: =: преобразование "double" в "int", возможна потеря данных
 P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(20,14): warning C4244: =: преобразование "double" в "int", возможна потеря данных
 P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(23,16): warning C4244: =: преобразование "double" в "int", возможна потеря данных
@@ -8,6 +10,6 @@ P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(323,24): warning 
 P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(324,26): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
 P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.cpp(343,34): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
   Main.cpp
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Main.cpp(54,11): warning C4930: Fraction E(void): функция с прототипом не вызвана (предполагалось определение переменной?)
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(34,10): error C3637: operator +: определение дружественной функции не может быть специализацией функции шаблон
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(44,1): error C2912: явная специализация; "const Fraction operator +(const Fraction &,const long)" не является специализацией функции-шаблона
   Создание кода...
-  Fraction.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\Fraction.exe
