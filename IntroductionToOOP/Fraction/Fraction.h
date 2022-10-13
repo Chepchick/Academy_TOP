@@ -35,10 +35,31 @@ public:
 		Fraction temp_fraction = temp_fraction.getFromDecimalFraction(value);
 		return temp_fraction + fraction;
 	}
+	/*template<> inline friend const Fraction operator+ <long>(const Fraction& left, const long right) {
+		Fraction temp_fraction;
+		
+			temp_fraction.setNumerator((left.getIntegerFraction() * left.getDenominator() + left.getNumerator()) * left.sign() + right * left.getDenominator());
+			temp_fraction.setDenominator(left.getDenominator());
+			
+			сalculatingAndSetingIntegerFraction(temp_fraction);
+			fractionReduction(temp_fraction);
+		
+			return temp_fraction;
+	}*/
 	template<typename float_val> friend const Fraction operator+(const float_val value, const Fraction& fraction) {
 		Fraction temp_fraction = temp_fraction.getFromDecimalFraction(value);
 		return temp_fraction + fraction;
 	}
+	/*template<> inline friend const Fraction operator+ <long>(const long left, const Fraction& right) {
+		Fraction temp_fraction;
+		
+			temp_fraction.setNumerator((right.getIntegerFraction() * right.getDenominator() + right.getNumerator()) * right.sign() + left * right.getDenominator());
+			temp_fraction.setDenominator(right.getDenominator());
+			
+			сalculatingAndSetingIntegerFraction(temp_fraction);
+			fractionReduction(temp_fraction);
+			return temp_fraction;
+	}*/
 	
 	friend const Fraction operator-(const Fraction&, const Fraction&);
 	friend const Fraction operator-(const Fraction&, const int);
