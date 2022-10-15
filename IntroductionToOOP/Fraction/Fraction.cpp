@@ -17,7 +17,7 @@ void Fraction::setNumerator(int value) {
 		fraction_is_negativ = value < 0 ? true : false;
 	}
 	
-	numerator = value ? fabs(value) : 1;
+	numerator = value ? fabs(value) : 0;
 }
 void Fraction::setDenominator(int value) {
 	denominator = value ? fabs(value) : 1;
@@ -62,26 +62,6 @@ int getGreatestCommonDivisor(int first_value, int second_value) {
 	}
 	return first_value;
 }
-int Fraction::getFractionPartOfDoubleValue(const double value, int& size) {
-	ostringstream output_str;
-	output_str << value;
-	string string_value = output_str.str();
-
-	string fraction_part_of_string_value;
-	int frac_part{0};
-
-	size_t count{0};
-	while (string_value[count] != '.')count++;
-	for (; string_value[count + 1] != 0; count++) {
-		fraction_part_of_string_value += string_value[count + 1];
-	}
-	for (size_t i{0}; i < fraction_part_of_string_value.size(); i++) {
-		frac_part += (int)(fraction_part_of_string_value[i] - '0') * pow(10, fraction_part_of_string_value.size() - i - 1);
-	}
-	
-	size = fraction_part_of_string_value.size();
-	return value < 0 ? - frac_part : frac_part;
-}
 
 //public
 Fraction::Fraction(int int_fract, int num, int den)
@@ -101,31 +81,9 @@ const Fraction operator+(const Fraction& left, const Fraction& right) {
 	temp_fraction.setDenominator(left.getDenominator() != right.getDenominator() ? left.getDenominator() * right.getDenominator(): left.getDenominator());
 
 	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
+	Fraction::fractionReduction(temp_fraction);
 	return temp_fraction;
 }
-const Fraction operator+(const Fraction& left, const int right) {
-	Fraction temp_fraction;
-
-	temp_fraction.setNumerator((left.getIntegerFraction() * left.getDenominator() + left.getNumerator()) * left.sign() + right * left.getDenominator());
-	temp_fraction.setDenominator(left.getDenominator());
-	
-	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
-
-	return temp_fraction;
-}
-const Fraction operator+(const int left, const Fraction& right) {
-	Fraction temp_fraction;
-
-	temp_fraction.setNumerator((right.getIntegerFraction() * right.getDenominator() + right.getNumerator()) * right.sign() + left * right.getDenominator());
-	temp_fraction.setDenominator(right.getDenominator());
-	
-	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
-	return temp_fraction;
-}
-
 const Fraction operator-(const Fraction& left, const Fraction& right) {
 	Fraction temp_fraction;
 	
@@ -134,31 +92,9 @@ const Fraction operator-(const Fraction& left, const Fraction& right) {
 	temp_fraction.setDenominator(left.getDenominator() != right.getDenominator() ? left.getDenominator() * right.getDenominator() : left.getDenominator());
 
 	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
+	Fraction::fractionReduction(temp_fraction);
 	return temp_fraction;
 }
-const Fraction operator-(const Fraction& left, const int right) {
-	Fraction temp_fraction;	
-	
-	temp_fraction.setNumerator((left.getIntegerFraction() * left.getDenominator() + left.getNumerator()) * left.sign() - right * left.getDenominator());
-	temp_fraction.setDenominator(left.getDenominator());
-
-	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
-
-	return temp_fraction;
-}
-const Fraction operator-(const int left, const Fraction& right) {
-	Fraction temp_fraction;
-
-	temp_fraction.setNumerator(left * right.getDenominator() - (right.getIntegerFraction() * right.getDenominator() + right.getNumerator()) * right.sign());
-	temp_fraction.setDenominator(right.getDenominator());
-
-	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
-	return temp_fraction;
-}
-
 const Fraction operator*(const Fraction& left, const Fraction& right) {
 	Fraction temp_fraction;	
 
@@ -167,31 +103,9 @@ const Fraction operator*(const Fraction& left, const Fraction& right) {
 	temp_fraction.setDenominator(left.getDenominator() * right.getDenominator());
 
 	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
+	Fraction::fractionReduction(temp_fraction);
 	return temp_fraction;
 }
-const Fraction operator*(const Fraction& left, const int right) {
-	Fraction temp_fraction;
-	
-	temp_fraction.setNumerator((left.getIntegerFraction() * left.getDenominator() + left.getNumerator()) * left.sign() * right);
-	temp_fraction.setDenominator(left.getDenominator());
-
-	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
-
-	return temp_fraction;
-}
-const Fraction operator*(const int left, const Fraction& right) {
-	Fraction temp_fraction;
-	
-	temp_fraction.setNumerator((right.getIntegerFraction() * right.getDenominator() + right.getNumerator()) * right.sign() * left);
-	temp_fraction.setDenominator(right.getDenominator());
-
-	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
-	return temp_fraction;
-}
-
 const Fraction operator/(const Fraction& left, const Fraction& right) {
 	Fraction temp_fraction;
 	
@@ -199,29 +113,7 @@ const Fraction operator/(const Fraction& left, const Fraction& right) {
 	temp_fraction.setDenominator((right.getIntegerFraction() * right.getDenominator() + right.getNumerator()) * left.getDenominator());
 
 	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
-	return temp_fraction;
-}
-const Fraction operator/(const Fraction& left, const int right) {
-
-	Fraction temp_fraction;
-	
-	temp_fraction.setNumerator(left.getNumerator());
-	temp_fraction.setDenominator((left.sign() * left.getDenominator()) * right);
-
-	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
-
-	return temp_fraction;
-}
-const Fraction operator/(const int left, const Fraction& right) {
-	Fraction temp_fraction;	
-
-	temp_fraction.setNumerator(right.getNumerator());
-	temp_fraction.setDenominator((right.sign() * right.getDenominator()) * left);
-
-	сalculatingAndSetingIntegerFraction(temp_fraction);
-	fractionReduction(temp_fraction);
+	Fraction::fractionReduction(temp_fraction);
 	return temp_fraction;
 }
 
@@ -232,7 +124,7 @@ Fraction& Fraction::operator+=(const Fraction& other) {
 	this->setDenominator(this->getDenominator() * other.getDenominator());
 
 	сalculatingAndSetingIntegerFraction(*this);
-	fractionReduction(*this);
+	Fraction::fractionReduction(*this);
 
 	return *this;
 }
@@ -243,7 +135,7 @@ Fraction& Fraction::operator-=(const Fraction& other) {
 	this->setDenominator(this->getDenominator() * other.getDenominator());
 
 	сalculatingAndSetingIntegerFraction(*this);
-	fractionReduction(*this);
+	Fraction::fractionReduction(*this);
 
 	return *this;
 }
@@ -254,7 +146,7 @@ Fraction& Fraction::operator*=(const Fraction& other) {
 	this->setDenominator(this->getDenominator() * other.getDenominator());
 
 	сalculatingAndSetingIntegerFraction(*this);
-	fractionReduction(*this);
+	Fraction::fractionReduction(*this);
 
 	return *this;
 }
@@ -267,7 +159,7 @@ Fraction& Fraction::operator/=(const Fraction& other) {
 	this->setDenominator((other.getIntegerFraction() * other.getDenominator() + other.getNumerator()) * this->getDenominator());
 
 	сalculatingAndSetingIntegerFraction(*this);
-	fractionReduction(*this);
+	Fraction::fractionReduction(*this);
 
 	return *this;
 }
@@ -294,7 +186,7 @@ bool operator<=(const Fraction& left, const Fraction& right) {
 	return !(left > right) || left == right;
 }
 
-void fractionReduction(Fraction& frac) {
+void Fraction::fractionReduction(Fraction& frac) {
 	if (frac.numerator) {
 		int greatest_common_divisor = getGreatestCommonDivisor(frac.numerator, frac.denominator);
 		frac.setNumerator(frac.numerator / greatest_common_divisor);
@@ -315,7 +207,8 @@ Fraction& Fraction::power(Fraction& frac, int value) {
 		frac.setDenominator(1);
 	}
 	else {
-		for (size_t i = 1; i < value; i++) frac *= frac;
+		Fraction temp(frac);
+		for (size_t i = 1; i < value; i++) frac *= temp;
 	}
 	return frac;
 }
@@ -332,19 +225,6 @@ double Fraction::convertToDecimalFraction() {
 	double res = (double)this->getNumerator() * this_sign / this->getDenominator();
 	return res;
 }
-Fraction Fraction::getFromDecimalFraction(double value) {
-	Fraction temp_fraction;
-	int size_of_fraction_part{0};
-
-	int fraction_part_of_double_value = getFractionPartOfDoubleValue(value, size_of_fraction_part);
-
-	temp_fraction.setIntegerFraction((int)value);
-	temp_fraction.setNumerator(fraction_part_of_double_value);
-	temp_fraction.setDenominator(pow(10, size_of_fraction_part));
-
-	return temp_fraction;
-}
-
 
 ostream& operator<<(ostream& output, const Fraction& frac) {
 	char sign = frac.fraction_is_negativ ? '-' : ' ';

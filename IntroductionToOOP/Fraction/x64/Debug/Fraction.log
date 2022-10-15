@@ -1,35 +1,20 @@
-﻿  Fraction.cpp
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(38,42): error C2116: "operator +": списки параметров функции не совпадают в разных объявлениях.
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(34): message : см. объявление "operator +"
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,52): error C2988: неопознанное объявление или определение шаблона
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,52): error C2143: синтаксическая ошибка: отсутствие ";" перед "<"
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,42): error C2460: +: использует "Fraction", определяемый в настоящий момент
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(5): message : см. объявление "Fraction"
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,10): error C2433: +: "friend" не разрешается для объявлений данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,10): error C2473: operator +: выглядит как определение функции, но без списка параметров.
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,42): error C7525: Встроенные (inline) переменные требуют как минимум "/std:c++17".
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,10): error C2238: непредвиденные лексемы перед ";"
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,52): error C2059: синтаксическая ошибка: <
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,10): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(64,67): error C3637: operator -: определение дружественной функции не может быть специализацией функции шаблон
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(65,61): error C3637: operator -: определение дружественной функции не может быть специализацией функции шаблон
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(66,61): error C3637: operator -: определение дружественной функции не может быть специализацией функции шаблон
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(120,1): fatal error C1903: не удается восстановить после предыдущих ошибок; остановка компиляции
-  Main.cpp
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(38,42): error C2116: "operator +": списки параметров функции не совпадают в разных объявлениях.
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(34): message : см. объявление "operator +"
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,52): error C2988: неопознанное объявление или определение шаблона
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,52): error C2143: синтаксическая ошибка: отсутствие ";" перед "<"
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,42): error C2460: +: использует "Fraction", определяемый в настоящий момент
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(5): message : см. объявление "Fraction"
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,10): error C2433: +: "friend" не разрешается для объявлений данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,10): error C2473: operator +: выглядит как определение функции, но без списка параметров.
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,42): error C7525: Встроенные (inline) переменные требуют как минимум "/std:c++17".
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,10): error C2238: непредвиденные лексемы перед ";"
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,52): error C2059: синтаксическая ошибка: <
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(53,10): error C2334: непредвиденные лексемы перед "{"; пропуск вероятного тела функции
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(64,67): error C3637: operator -: определение дружественной функции не может быть специализацией функции шаблон
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(65,61): error C3637: operator -: определение дружественной функции не может быть специализацией функции шаблон
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(66,61): error C3637: operator -: определение дружественной функции не может быть специализацией функции шаблон
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(120,1): fatal error C1903: не удается восстановить после предыдущих ошибок; остановка компиляции
-  Создание кода...
+﻿  Main.cpp
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Main.cpp(63,16): warning C4305: инициализация: усечение из "double" в "float"
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(117,35): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Main.cpp(49): message : выполняется компиляция ссылки на экземпляр шаблон функции "Fraction Fraction::getFromDecimalFraction<double>(T)"
+          with
+          [
+              T=double
+          ]
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(24,23): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Fraction.h(109): message : выполняется компиляция ссылки на экземпляр шаблон функции "int Fraction::getFractionPartOfDoubleValue<T>(const T,int &)"
+          with
+          [
+              T=double
+          ]
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Fraction\Main.cpp(49): message : выполняется компиляция ссылки на экземпляр шаблон функции "Fraction Fraction::getFromDecimalFraction<double>(T)"
+          with
+          [
+              T=double
+          ]
+  Fraction.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\Fraction.exe
