@@ -1,2 +1,4 @@
 ﻿  Main.cpp
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Honoy_Tower\Main.cpp(77,24): warning C4267: =: преобразование из "size_t" в "unsigned short"; возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Honoy_Tower\Main.cpp(65): warning C4715: takeOutTheTop: значение возвращается не при всех путях выполнения
   Honoy_Tower.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\Honoy_Tower.exe
