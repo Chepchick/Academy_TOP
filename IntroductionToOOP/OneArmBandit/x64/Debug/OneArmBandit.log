@@ -1,0 +1,16 @@
+﻿  Main.cpp
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(11,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,27): warning C4838: Преобразование из "int" в "char" требует сужающего преобразования.
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,27): warning C4309: инициализация: усечение константного значения
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,32): warning C4838: Преобразование из "int" в "char" требует сужающего преобразования.
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,32): warning C4309: инициализация: усечение константного значения
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,37): warning C4838: Преобразование из "int" в "char" требует сужающего преобразования.
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,37): warning C4309: инициализация: усечение константного значения
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,42): warning C4838: Преобразование из "int" в "char" требует сужающего преобразования.
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,42): warning C4309: инициализация: усечение константного значения
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,47): warning C4838: Преобразование из "int" в "char" требует сужающего преобразования.
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,47): warning C4309: инициализация: усечение константного значения
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,52): warning C4838: Преобразование из "int" в "char" требует сужающего преобразования.
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(14,52): warning C4309: инициализация: усечение константного значения
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\OneArmBandit\Main.cpp(44,39): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+  OneArmBandit.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\OneArmBandit.exe

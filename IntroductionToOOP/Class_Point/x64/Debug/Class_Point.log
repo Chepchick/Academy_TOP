@@ -1,4 +1,4 @@
 ﻿  Main.cpp
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Class_Point\Main.cpp(72): warning C4172: возвращение адреса локальной или временной переменной : old
 P:\Git_Hub\Academy_TOP\IntroductionToOOP\Class_Point\Main.cpp(101): warning C4172: возвращение адреса локальной или временной переменной : buffer
+P:\Git_Hub\Academy_TOP\IntroductionToOOP\Class_Point\Main.cpp(72): warning C4172: возвращение адреса локальной или временной переменной : old
   Class_Point.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\Class_Point.exe
