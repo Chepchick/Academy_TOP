@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Academy_TOP\\task_from_10.12.22\\C-Sharp_programming_language_basics\\C-Sharp_programming_language_basics.csproj",
-      "projectName": "C-Sharp_programming_language_basics",
-      "projectPath": "F:\\Academy_TOP\\task_from_10.12.22\\C-Sharp_programming_language_basics\\C-Sharp_programming_language_basics.csproj",
+      "projectUniqueName": "F:\\Academy_TOP\\C-Sharp_programming_language_basics\\task_from_10.12.22\\task_from_10.12.22.csproj",
+      "projectName": "task_from_10.12.22",
+      "projectPath": "F:\\Academy_TOP\\C-Sharp_programming_language_basics\\task_from_10.12.22\\task_from_10.12.22.csproj",
       "packagesPath": "C:\\Users\\Алексей\\.nuget\\packages\\",
-      "outputPath": "F:\\Academy_TOP\\task_from_10.12.22\\C-Sharp_programming_language_basics\\obj\\",
+      "outputPath": "F:\\Academy_TOP\\C-Sharp_programming_language_basics\\task_from_10.12.22\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Алексей\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("C-Sharp_programming_language_basics")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("task_from_10.12.22")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("C-Sharp_programming_language_basics")]
-[assembly: System.Reflection.AssemblyTitleAttribute("C-Sharp_programming_language_basics")]
+[assembly: System.Reflection.AssemblyProductAttribute("task_from_10.12.22")]
+[assembly: System.Reflection.AssemblyTitleAttribute("task_from_10.12.22")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
