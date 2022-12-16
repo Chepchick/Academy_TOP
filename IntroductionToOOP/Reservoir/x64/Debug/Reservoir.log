@@ -1,9 +1,1 @@
-﻿  Main.cpp
-  Reservoir.cpp
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Reservoir\Reservoir.cpp(38,9): warning C4244: return: преобразование "const __int64" в "int", возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Reservoir\Reservoir.cpp(41,9): warning C4244: return: преобразование "const __int64" в "int", возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Reservoir\Reservoir.cpp(44,9): warning C4244: return: преобразование "const __int64" в "int", возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Reservoir\Reservoir.cpp(84,22): warning C4244: return: преобразование "__int64" в "const double", возможна потеря данных
-P:\Git_Hub\Academy_TOP\IntroductionToOOP\Reservoir\Reservoir.cpp(87,28): warning C4244: return: преобразование "__int64" в "const double", возможна потеря данных
-  Создание кода...
-  Reservoir.vcxproj -> P:\Git_Hub\Academy_TOP\IntroductionToOOP\x64\Debug\Reservoir.exe
+﻿  Reservoir.vcxproj -> F:\Academy_TOP\IntroductionToOOP\x64\Debug\Reservoir.exe
