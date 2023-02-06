@@ -1,0 +1,5 @@
+F:\Academy_TOP\C-Sharp_programming_language_basics\tasks_from_26.11.22\obj\Debug\net7.0\tasks_from_26.11.22.csproj.AssemblyReference.cache
+F:\Academy_TOP\C-Sharp_programming_language_basics\tasks_from_26.11.22\obj\Debug\net7.0\tasks_from_26.11.22.GeneratedMSBuildEditorConfig.editorconfig
+F:\Academy_TOP\C-Sharp_programming_language_basics\tasks_from_26.11.22\obj\Debug\net7.0\tasks_from_26.11.22.AssemblyInfoInputs.cache
+F:\Academy_TOP\C-Sharp_programming_language_basics\tasks_from_26.11.22\obj\Debug\net7.0\tasks_from_26.11.22.AssemblyInfo.cs
+F:\Academy_TOP\C-Sharp_programming_language_basics\tasks_from_26.11.22\obj\Debug\net7.0\tasks_from_26.11.22.csproj.CoreCompileInputs.cache

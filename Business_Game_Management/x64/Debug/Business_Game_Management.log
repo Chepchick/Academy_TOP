@@ -1,0 +1,83 @@
+﻿  ApplicationList.cpp
+F:\Local_Hub\Проект_игры\Business_Game_Management\Player.h(6,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(10,2): warning C4091: static : пропускается слева от "СonstructionСompany", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(15,2): warning C4091: static : пропускается слева от "const TypesOfObjects", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(20,2): warning C4091: static : пропускается слева от "const ConstructionTime", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(25,2): warning C4091: static : пропускается слева от "const ConstructionCost", когда ни одна переменная не объявлена
+  Bank.cpp
+F:\Local_Hub\Проект_игры\Business_Game_Management\Player.h(6,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(10,2): warning C4091: static : пропускается слева от "СonstructionСompany", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(15,2): warning C4091: static : пропускается слева от "const TypesOfObjects", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(20,2): warning C4091: static : пропускается слева от "const ConstructionTime", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(25,2): warning C4091: static : пропускается слева от "const ConstructionCost", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\Bank.h(40,2): warning C4091: static : пропускается слева от "Bank", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\Bank.h(54,2): warning C4091: static : пропускается слева от "BankDecisionsOn", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\Bank.cpp(32,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+F:\Local_Hub\Проект_игры\Business_Game_Management\Bank.cpp(38,98): warning C4244: аргумент: преобразование "const float" в "const int", возможна потеря данных
+F:\Local_Hub\Проект_игры\Business_Game_Management\Bank.cpp(40,98): warning C4244: аргумент: преобразование "const float" в "const int", возможна потеря данных
+  BasicData.cpp
+F:\Local_Hub\Проект_игры\Business_Game_Management\Player.h(6,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(10,2): warning C4091: static : пропускается слева от "СonstructionСompany", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(15,2): warning C4091: static : пропускается слева от "const TypesOfObjects", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(20,2): warning C4091: static : пропускается слева от "const ConstructionTime", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(25,2): warning C4091: static : пропускается слева от "const ConstructionCost", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\BasicData.h(10,2): warning C4091: static : пропускается слева от "BasicData", когда ни одна переменная не объявлена
+  BuildingSiteList.cpp
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(10,2): warning C4091: static : пропускается слева от "СonstructionСompany", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(15,2): warning C4091: static : пропускается слева от "const TypesOfObjects", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(20,2): warning C4091: static : пропускается слева от "const ConstructionTime", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(25,2): warning C4091: static : пропускается слева от "const ConstructionCost", когда ни одна переменная не объявлена
+  Main.cpp
+F:\Local_Hub\Проект_игры\Business_Game_Management\Player.h(6,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(10,2): warning C4091: static : пропускается слева от "СonstructionСompany", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(15,2): warning C4091: static : пропускается слева от "const TypesOfObjects", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(20,2): warning C4091: static : пропускается слева от "const ConstructionTime", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(25,2): warning C4091: static : пропускается слева от "const ConstructionCost", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\BasicData.h(10,2): warning C4091: static : пропускается слева от "BasicData", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\Bank.h(40,2): warning C4091: static : пропускается слева от "Bank", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\Bank.h(54,2): warning C4091: static : пропускается слева от "BankDecisionsOn", когда ни одна переменная не объявлена
+  Player.cpp
+F:\Local_Hub\Проект_игры\Business_Game_Management\Player.h(6,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(10,2): warning C4091: static : пропускается слева от "СonstructionСompany", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(15,2): warning C4091: static : пропускается слева от "const TypesOfObjects", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(20,2): warning C4091: static : пропускается слева от "const ConstructionTime", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(25,2): warning C4091: static : пропускается слева от "const ConstructionCost", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\Player.cpp(107,20): warning C4244: аргумент: преобразование "double" в "const int", возможна потеря данных
+  PlayerList.cpp
+F:\Local_Hub\Проект_игры\Business_Game_Management\Player.h(6,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(10,2): warning C4091: static : пропускается слева от "СonstructionСompany", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(15,2): warning C4091: static : пропускается слева от "const TypesOfObjects", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(20,2): warning C4091: static : пропускается слева от "const ConstructionTime", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(25,2): warning C4091: static : пропускается слева от "const ConstructionCost", когда ни одна переменная не объявлена
+  PrintConsole.cpp
+F:\Local_Hub\Проект_игры\Business_Game_Management\Player.h(6,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(10,2): warning C4091: static : пропускается слева от "СonstructionСompany", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(15,2): warning C4091: static : пропускается слева от "const TypesOfObjects", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(20,2): warning C4091: static : пропускается слева от "const ConstructionTime", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(25,2): warning C4091: static : пропускается слева от "const ConstructionCost", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\BasicData.h(10,2): warning C4091: static : пропускается слева от "BasicData", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\Bank.h(40,2): warning C4091: static : пропускается слева от "Bank", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\Bank.h(54,2): warning C4091: static : пропускается слева от "BankDecisionsOn", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\PrintConsole.cpp(182,176): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+F:\Local_Hub\Проект_игры\Business_Game_Management\PrintConsole.cpp(184,177): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+F:\Local_Hub\Проект_игры\Business_Game_Management\PrintConsole.cpp(194,176): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+F:\Local_Hub\Проект_игры\Business_Game_Management\PrintConsole.cpp(408,177): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+  СonstructionСompany.cpp
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(10,2): warning C4091: static : пропускается слева от "СonstructionСompany", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(15,2): warning C4091: static : пропускается слева от "const TypesOfObjects", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(20,2): warning C4091: static : пропускается слева от "const ConstructionTime", когда ни одна переменная не объявлена
+F:\Local_Hub\Проект_игры\Business_Game_Management\СonstructionСompany.h(25,2): warning C4091: static : пропускается слева от "const ConstructionCost", когда ни одна переменная не объявлена
+  Создание кода...
+F:\Local_Hub\Проект_игры\Business_Game_Management\PrintConsole.cpp(110): warning C4715: PrintConsole::rusNameObjectForPlayerResourses: значение возвращается не при всех путях выполнения
+F:\Local_Hub\Проект_игры\Business_Game_Management\PrintConsole.cpp(399): warning C4715: PrintConsole::getSelectedNumberOfECMs: значение возвращается не при всех путях выполнения
+F:\Local_Hub\Проект_игры\Business_Game_Management\PrintConsole.cpp(670): warning C4715: PrintConsole::rusNameObjectForPartNine: значение возвращается не при всех путях выполнения
+F:\Local_Hub\Проект_игры\Business_Game_Management\PrintConsole.cpp(752): warning C4715: PrintConsole::findApplicant: значение возвращается не при всех путях выполнения
+F:\Local_Hub\Проект_игры\Business_Game_Management\PlayerList.cpp(9): warning C4715: PlayerList::findNode: значение возвращается не при всех путях выполнения
+F:\Local_Hub\Проект_игры\Business_Game_Management\PlayerList.cpp(70): warning C4715: PlayerList::operator[]: значение возвращается не при всех путях выполнения
+F:\Local_Hub\Проект_игры\Business_Game_Management\BuildingSiteList.cpp(8): warning C4715: BuildingSiteList::findBuildingNode: значение возвращается не при всех путях выполнения
+F:\Local_Hub\Проект_игры\Business_Game_Management\BuildingSiteList.cpp(76): warning C4715: BuildingSiteList::operator[]: значение возвращается не при всех путях выполнения
+F:\Local_Hub\Проект_игры\Business_Game_Management\BuildingSiteList.cpp(71): warning C4715: BuildingSiteList::getBuildingSite: значение возвращается не при всех путях выполнения
+F:\Local_Hub\Проект_игры\Business_Game_Management\ApplicationList.cpp(8): warning C4715: ApplicationList::findListBox: значение возвращается не при всех путях выполнения
+F:\Local_Hub\Проект_игры\Business_Game_Management\ApplicationList.cpp(73): warning C4715: ApplicationList::getApplication: значение возвращается не при всех путях выполнения
+F:\Local_Hub\Проект_игры\Business_Game_Management\ApplicationList.cpp(79): warning C4715: ApplicationList::operator[]: значение возвращается не при всех путях выполнения
+  Business_Game_Management.vcxproj -> F:\Local_Hub\Проект_игры\Business_Game_Management\x64\Debug\Business_Game_Management.exe
