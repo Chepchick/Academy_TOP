@@ -1,7 +1,7 @@
-#pragma once
+Ôªø#pragma once
 #include <iostream>
 #include "BuildingSite.h"
-#include "—onstruction—ompany.h"
+#include "–°onstruction–°ompany.h"
 
 struct BuildingSiteNode {
 	int index{ int() };

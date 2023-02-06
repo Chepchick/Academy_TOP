@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 class Credit
 {
 	int credit_amount{ int() };

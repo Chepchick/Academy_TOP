@@ -1,4 +1,4 @@
-#include "�redit.h"
+﻿#include "Сredit.h"
 
 //private:
 void Credit::setCreditPeriod(const int value) {

@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include <Windows.h>
 #include "Application.h"
@@ -39,26 +39,26 @@ public:
 
 	bool isBankrupt();
 
-	// Методы для выплат постоянных издержек	
+	// РњРµС‚РѕРґС‹ РґР»СЏ РІС‹РїР»Р°С‚ РїРѕСЃС‚РѕСЏРЅРЅС‹С… РёР·РґРµСЂР¶РµРє	
 	void paymentOfCostsForESM();
 	void paymentOfCostsForEGP();
 	void paymentOfCostsForUsualFactory();
 	void paymentOfCostsForAutomatedFactory();
 
-	// Методы для оформления заявки	
+	// РњРµС‚РѕРґС‹ РґР»СЏ РѕС„РѕСЂРјР»РµРЅРёСЏ Р·Р°СЏРІРєРё	
 	int getRequiredNumberOfECM(Application*)const;	
 	int getOfferedPriceOfECM(Application*)const;
 	void ESMapplicationExecution(Application*);
 	void EGPapplicationExecution(Application*);
 
-	//Методы по работе с кредитами
+	//РњРµС‚РѕРґС‹ РїРѕ СЂР°Р±РѕС‚Рµ СЃ РєСЂРµРґРёС‚Р°РјРё
 	void borrowFromTheBank(const int);
 	bool creditRequirementsAreMet(const int) const;
 	int getTotalCredits()const;
 	void payInterestOnTheCredit();
 	void creditRepayment(int);
 
-	//Методы по работе со строительством фабрик
+	//РњРµС‚РѕРґС‹ РїРѕ СЂР°Р±РѕС‚Рµ СЃРѕ СЃС‚СЂРѕРёС‚РµР»СЊСЃС‚РІРѕРј С„Р°Р±СЂРёРє
 	void orderTheConstructionOfFactory(int);
 	void paymentForTheSecondPartOfTheConstruction();
 };

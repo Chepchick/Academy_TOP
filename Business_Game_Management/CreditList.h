@@ -1,5 +1,5 @@
-#pragma once
-#include "�redit.h"
+﻿#pragma once
+#include "Сredit.h"
 
 struct CreditNode {
 	int index{ int() };

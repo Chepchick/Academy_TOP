@@ -1,4 +1,4 @@
-#include "ApplicationList.h"
+﻿#include "ApplicationList.h"
 
 //private:
 ListBox* ApplicationList::findListBox(ListBox* node, int index) {

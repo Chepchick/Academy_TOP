@@ -1,4 +1,4 @@
-#include "Player.h"
+ï»¿#include "Player.h"
 
 //public:
 Player::Player(string name) {
@@ -54,7 +54,7 @@ bool Player::isBankrupt() {
 	else return false;
 }
 
-// Ìåòîäû âûïëàòàì ïîñòîÿííûõ èçäåðæåê
+// ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð²Ñ‹Ð¿Ð»Ð°Ñ‚Ð°Ð¼ Ð¿Ð¾ÑÑ‚Ð¾ÑÐ½Ð½Ñ‹Ñ… Ð¸Ð·Ð´ÐµÑ€Ð¶ÐµÐº
 void Player::paymentOfCostsForESM() {
 	setCash(getCash() - (getPlayerESM() * 300));
 }
@@ -68,7 +68,7 @@ void Player::paymentOfCostsForAutomatedFactory() {
 	setCash(getCash() - (getNumberOfAutomatedFactory() * 1500));
 }
 
-// Ìåòîäû äëÿ îôîðìëåíèÿ çàÿâêè
+// ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð´Ð»Ñ Ð¾Ñ„Ð¾Ñ€Ð¼Ð»ÐµÐ½Ð¸Ñ Ð·Ð°ÑÐ²ÐºÐ¸
 int Player::getRequiredNumberOfECM(Application* app)const {
 	return app->getNumberOfUnitsRequested();
 }
@@ -84,7 +84,7 @@ void Player::EGPapplicationExecution(Application* app) {
 	setCash(getCash() + (app->getNumberOfUnitsRequested() * app->getPricePerUnit()));
 }
 
-//Ìåòîäû ïî ðàáîòå ñ êðåäèòàìè
+//ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð¿Ð¾ Ñ€Ð°Ð±Ð¾Ñ‚Ðµ Ñ ÐºÑ€ÐµÐ´Ð¸Ñ‚Ð°Ð¼Ð¸
 void Player::borrowFromTheBank(const int credit_amount) {
 	player_credits->addNewCredit(credit_amount);
 	setCash(getCash() + credit_amount);
@@ -111,7 +111,7 @@ void Player::creditRepayment(int index) {
 	player_credits->deleteCredit(index);
 }
 
-//Ìåòîäû ïî ðàáîòå ñî ñòðîèòåëüñòâîì ôàáðèê
+//ÐœÐµÑ‚Ð¾Ð´Ñ‹ Ð¿Ð¾ Ñ€Ð°Ð±Ð¾Ñ‚Ðµ ÑÐ¾ ÑÑ‚Ñ€Ð¾Ð¸Ñ‚ÐµÐ»ÑŒÑÑ‚Ð²Ð¾Ð¼ Ñ„Ð°Ð±Ñ€Ð¸Ðº
 void Player::orderTheConstructionOfFactory(int object_type) {
 	player_construction->addNewBuildingSite(object_type);
 	setCash(getCash() - (player_construction->getTheLastConstructionSiteAdded()->getConstructionCost()/2));
@@ -121,7 +121,7 @@ void Player::paymentForTheSecondPartOfTheConstruction() {
 	for (int construction_index = 0; construction_index < player_construction->getSize(); construction_index++)
 	{
 		if (player_construction->getBuildingSite(construction_index)->getConstructionPeriod() == 1) {
-			std::cout << " Ïðîèñõðäèò îïëàòà âòîðîé ÷àñòè çàêàçà íà ñòðîèòåëüñòâî" << std::endl;
+			std::cout << " ÐŸÑ€Ð¾Ð¸ÑÑ…Ñ€Ð´Ð¸Ñ‚ Ð¾Ð¿Ð»Ð°Ñ‚Ð° Ð²Ñ‚Ð¾Ñ€Ð¾Ð¹ Ñ‡Ð°ÑÑ‚Ð¸ Ð·Ð°ÐºÐ°Ð·Ð° Ð½Ð° ÑÑ‚Ñ€Ð¾Ð¸Ñ‚ÐµÐ»ÑŒÑÑ‚Ð²Ð¾" << std::endl;
 			setCash(getCash() - player_construction->getBuildingSite(construction_index)->getConstructionCost() / 2);
 		}
 	}

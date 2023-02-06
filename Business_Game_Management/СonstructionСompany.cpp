@@ -1,6 +1,6 @@
-#include "—onstruction—ompany.h"
+Ôªø#include "–°onstruction–°ompany.h"
 
-BuildingSite* —onstruction—ompany::beginConstructionOfPlant(int object_type) {
+BuildingSite* –°onstruction–°ompany::beginConstructionOfPlant(int object_type) {
 	BuildingSite* temp = new BuildingSite;
 	switch (object_type)
 	{

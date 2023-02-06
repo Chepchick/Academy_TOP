@@ -1,4 +1,4 @@
-#include "Bank.h"
+п»ї#include "Bank.h"
 
 //private:
 void Bank::setCurrentSupplyLevel(const int value) {
@@ -24,7 +24,7 @@ float Bank::getNumberOfPlayersSellingEGPs() { return number_of_players_selling_E
 int Bank::getMinimumESMPrice() { return minimum_ESM_price; };
 int Bank::getMaximumEGPPrice() { return maximum_EGP_price; };
 
-// методы по определению уровня цен
+// РјРµС‚РѕРґС‹ РїРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ СѓСЂРѕРІРЅСЏ С†РµРЅ
 void Bank::updateSupplyLevel() {
 	setCurrentSupplyLevel(getNewSupplyLevel(getCurrentSupplyLevel()));
 }
@@ -40,7 +40,7 @@ void Bank::setCurrentPrice(int curent_level) {
 	setMaximumEGPPrice(price_level_table[curent_level - 1][BankDecisionsOn::the_maximum_price_of_EGP]);
 }
 
-//методы по обработке заявок
+//РјРµС‚РѕРґС‹ РїРѕ РѕР±СЂР°Р±РѕС‚РєРµ Р·Р°СЏРІРѕРє
 void Bank::processingOfApplicationsESMs(ApplicationList*& completed_applications) {
 
 	deletionOfIlliquidApplicationsESMs(completed_applications);
@@ -48,7 +48,7 @@ void Bank::processingOfApplicationsESMs(ApplicationList*& completed_applications
 	int number_of_applications = completed_applications->getNumberOfApplictions();
 	int number_of_unnecessary_applications = number_of_applications > getTheNumberOfESMsSale(number_of_applications) ? number_of_applications - getTheNumberOfESMsSale(number_of_applications) : 0;
 	for (int i = completed_applications->getNumberOfApplictions() - 1; number_of_unnecessary_applications > 0; i--, number_of_unnecessary_applications--) {
-		std::cout << " Заявка игрока " << completed_applications->getPlayer(i)->getName() << " не прошла отборочный этап"<< std::endl;
+		std::cout << " Р—Р°СЏРІРєР° РёРіСЂРѕРєР° " << completed_applications->getPlayer(i)->getName() << " РЅРµ РїСЂРѕС€Р»Р° РѕС‚Р±РѕСЂРѕС‡РЅС‹Р№ СЌС‚Р°Рї"<< std::endl;
 		completed_applications->deleteApplication(i);
 		Sleep(2000);
 	}
@@ -61,7 +61,7 @@ void Bank::processingOfApplicationsEGPs(ApplicationList*& completed_applications
 	int number_of_applications = completed_applications->getNumberOfApplictions();
 	int number_of_unnecessary_applications = number_of_applications > getTheNumberOfEGPsBuy(number_of_applications) ? number_of_applications - getTheNumberOfESMsSale(number_of_applications) : 0;
 	for (int i = completed_applications->getNumberOfApplictions() - 1; number_of_unnecessary_applications > 0; i--, number_of_unnecessary_applications--) {
-		std::cout << "Заявка игрока " << completed_applications->getPlayer(i)->getName() << " не выиграла в конкурсе" << std::endl << std::endl;
+		std::cout << "Р—Р°СЏРІРєР° РёРіСЂРѕРєР° " << completed_applications->getPlayer(i)->getName() << " РЅРµ РІС‹РёРіСЂР°Р»Р° РІ РєРѕРЅРєСѓСЂСЃРµ" << std::endl << std::endl;
 		completed_applications->deleteApplication(i);
 		system("pause");
 	}
@@ -100,7 +100,7 @@ int Bank::getTheNumberOfEGPsBuy(int numbers_of_application){
 	else return (int)ceil(Bank::getNumberOfPlayersSellingEGPs());
 }
 
-// методы по работе с кредитами
+// РјРµС‚РѕРґС‹ РїРѕ СЂР°Р±РѕС‚Рµ СЃ РєСЂРµРґРёС‚Р°РјРё
 Credit* Bank::giveCredit(const int credit_amount) {	
 	return new Credit(credit_amount);
 }

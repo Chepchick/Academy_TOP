@@ -1,4 +1,4 @@
-#include "BuildingSiteList.h"
+ï»¿#include "BuildingSiteList.h"
 
 //private:
 BuildingSiteNode* BuildingSiteList::findBuildingNode(BuildingSiteNode* node, int index) {
@@ -29,7 +29,7 @@ void BuildingSiteList::addNewBuildingSite(int object_type) {
 	BuildingSiteNode* temp = new BuildingSiteNode;
 	temp->next_ptr = head_node;
 	temp->prev_ptr = tail_node;
-	temp->building_site = ÑonstructionÑompany::beginConstructionOfPlant(object_type);
+	temp->building_site = Ð¡onstructionÐ¡ompany::beginConstructionOfPlant(object_type);
 
 	temp->index = list_size - 1;
 

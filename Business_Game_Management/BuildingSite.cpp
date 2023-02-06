@@ -1,4 +1,4 @@
-#include "BuildingSite.h"
+﻿#include "BuildingSite.h"
 
 void BuildingSite::setObjectType(const int object_type) {
 	this->object_type = object_type;

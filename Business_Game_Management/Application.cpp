@@ -1,4 +1,4 @@
-#include "Application.h"
+﻿#include "Application.h"
 
 Application::Application(int num_units, int cost_egp, std::string applicant) {
 	setApplicant(applicant);

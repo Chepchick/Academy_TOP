@@ -1,7 +1,7 @@
-#pragma once
+Ôªø#pragma once
 #include "BuildingSite.h"
 
-static class —onstruction—ompany
+static class –°onstruction–°ompany
 {
 public:
 	static BuildingSite* beginConstructionOfPlant(int);

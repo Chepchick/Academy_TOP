@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <Windows.h>
 #include <cstdlib>
 #include <ctime>
@@ -20,12 +20,12 @@ public:
 	static int getMinimumESMPrice();
 	static int getMaximumEGPPrice();
 
-	// методы по определению уровня цен
+	// РјРµС‚РѕРґС‹ РїРѕ РѕРїСЂРµРґРµР»РµРЅРёСЋ СѓСЂРѕРІРЅСЏ С†РµРЅ
 	static void updateSupplyLevel();
 	static int getNewSupplyLevel(int old_level);
 	static void setCurrentPrice(int level);
 
-	//методы по обработке заявок
+	//РјРµС‚РѕРґС‹ РїРѕ РѕР±СЂР°Р±РѕС‚РєРµ Р·Р°СЏРІРѕРє
 	static void processingOfApplicationsESMs(ApplicationList*&);
 	static void processingOfApplicationsEGPs(ApplicationList*&);
 
@@ -35,7 +35,7 @@ public:
 	static int getTheNumberOfESMsSale(int);
 	static int getTheNumberOfEGPsBuy(int);
 
-	// методы по работе с кредитами
+	// РјРµС‚РѕРґС‹ РїРѕ СЂР°Р±РѕС‚Рµ СЃ РєСЂРµРґРёС‚Р°РјРё
 	static Credit* giveCredit(const int);
 };
 

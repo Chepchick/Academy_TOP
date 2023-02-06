@@ -1,18 +1,18 @@
-#include "PrintConsole.h"
+Ôªø#include "PrintConsole.h"
 
 char PrintConsole::startMenu() {
 	cout << endl << endl << endl << endl << endl << endl << endl << endl;
-	cout << "\t\t\t\t\t   ƒŒ¡–Œ œŒ∆¿ÀŒ¬¿“‹ ¬ »√–” Ã≈Õ≈ƒ∆Ã≈Õ“ !\n";
+	cout << "\t\t\t\t\t   –î–û–ë–†–û –ü–û–ñ–ê–õ–û–í–ê–¢–¨ –í –ò–ì–†–£ –ú–ï–ù–ï–î–ñ–ú–ï–ù–¢ !\n";
 	cout << endl << endl << endl;
-	cout << "\t\t\t\t\t\t  1 Õ‡˜‡Ú¸ Ë„Û\n";
-	cout << "\t\t\t\t\t\t  2 «‡„ÛÁËÚ¸ ÒÓı‡ÌÂÌËÂ\n";
-	cout << "\t\t\t\t\t\t  3 ¬˚ÈÚË ËÁ Ë„˚\n";
+	cout << "\t\t\t\t\t\t  1 –ù–∞—á–∞—Ç—å –∏–≥—Ä—É\n";
+	cout << "\t\t\t\t\t\t  2 –ó–∞–≥—Ä—É–∑–∏—Ç—å —Å–æ—Ö—Ä–∞–Ω–µ–Ω–∏–µ\n";
+	cout << "\t\t\t\t\t\t  3 –í—ã–π—Ç–∏ –∏–∑ –∏–≥—Ä—ã\n";
 	cout << endl;
-	cout << "\t\t\t\t\t\t(‚˚·ÂËÚÂ ÔÛÌÍÚ ËÁ ÏÂÌ˛)\n";
+	cout << "\t\t\t\t\t\t(–≤—ã–±–µ—Ä–∏—Ç–µ –ø—É–Ω–∫—Ç –∏–∑ –º–µ–Ω—é)\n";
 	char ch{ char() };
 	do {
 		ch = _getch();
-		if (ch != '1' && ch != '2' && ch != '3') cout << "¬‚Â‰ÂÌ ÌÂ ÍÓÂÍÚÌ˚È ÒËÏ‚ÓÎ";
+		if (ch != '1' && ch != '2' && ch != '3') cout << "–í–≤–µ–¥–µ–Ω –Ω–µ –∫–æ—Ä—Ä–µ–∫—Ç–Ω—ã–π —Å–∏–º–≤–æ–ª";
 	} while (ch != '1' && ch != '2' && ch != '3');
 	return ch;
 }
@@ -20,12 +20,12 @@ void PrintConsole::startNewGame(BasicData& basic_data) {
 	system("cls");
 	basic_data.month_number = 0;
 	cout << endl << endl << endl << endl << endl << endl << endl << endl;
-	cout << "\t\t\t\t\t\t     Õ¿◊¿ÀŒ ÕŒ¬Œ… »√–€\n";
+	cout << "\t\t\t\t\t\t     –ù–ê–ß–ê–õ–û –ù–û–í–û–ô –ò–ì–†–´\n";
 	cout << endl << endl << endl;
-	cout << "\t\t\t\t\t\t”Í‡ÊËÚÂ ÍÓÎË˜ÂÒÚ‚Ó Ë„ÓÍÓ‚: ";
+	cout << "\t\t\t\t\t\t–£–∫–∞–∂–∏—Ç–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –∏–≥—Ä–æ–∫–æ–≤: ";
 	cin >> basic_data.number_of_players;
 	basic_data.senior_player_number = getSeniorPlayerNumber(basic_data);
-	cout << "\n\t\t\t\t\t¬‚Â‰ËÚÂ ËÏÂÌ‡ Û˜‡ÒÚÌËÍÓ‚ (‡Ì„ÎËÈÒÍËÏË ·ÛÍ‚‡ÏË) \n";
+	cout << "\n\t\t\t\t\t–í–≤–µ–¥–∏—Ç–µ –∏–º–µ–Ω–∞ —É—á–∞—Å—Ç–Ω–∏–∫–æ–≤ (–∞–Ω–≥–ª–∏–π—Å–∫–∏–º–∏ –±—É–∫–≤–∞–º–∏) \n";
 	string name;
 	string admissible{ "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" };
 
@@ -33,10 +33,10 @@ void PrintConsole::startNewGame(BasicData& basic_data) {
 	{
 		do
 		{
-			cout << "\t\t\t\t\t\t    »Ïˇ " << i + 1 << "-„Ó Û˜‡ÒÚÌËÍ‡: ";
+			cout << "\t\t\t\t\t\t    –ò–º—è " << i + 1 << "-–≥–æ —É—á–∞—Å—Ç–Ω–∏–∫–∞: ";
 			cin >> name;
 			if (!name.find_first_not_of(admissible)) {
-				printDisappearingMessage("\t\t\t\t\t\t    »ÒÔÓÎ¸ÁÓ‚‡Ì˚ ÌÂ‰ÓÔÛÒÚËÏ˚Â ÒËÏ‚ÓÎ˚", 2000);
+				printDisappearingMessage("\t\t\t\t\t\t    –ò—Å–ø–æ–ª—å–∑–æ–≤–∞–Ω—ã –Ω–µ–¥–æ–ø—É—Å—Ç–∏–º—ã–µ —Å–∏–º–≤–æ–ª—ã", 2000);
 			}
 			else { basic_data.participating_players.addNewPlayer(name); }
 		} while (!name.find_first_not_of(admissible));
@@ -59,33 +59,33 @@ void PrintConsole::consoleSetup() {
 }
 void PrintConsole::printHead(BasicData& basic_data) {
 	cout << endl;
-	cout << "\t\t\t\t\t\t  “≈ ”Ÿ»… Ã≈—ﬂ÷ - " << basic_data.month_number + 1 << "-È\n";
-	cout << "\t\t\t\t\t\tÒÚ‡¯ËÈ Ë„ÓÍ - Ë„ÓÍ " << basic_data.participating_players[basic_data.senior_player_number]->getName() << endl << endl;
+	cout << "\t\t\t\t\t\t  –¢–ï–ö–£–©–ò–ô –ú–ï–°–Ø–¶ - " << basic_data.month_number + 1 << "-–π\n";
+	cout << "\t\t\t\t\t\t—Å—Ç–∞—Ä—à–∏–π –∏–≥—Ä–æ–∫ - –∏–≥—Ä–æ–∫ " << basic_data.participating_players[basic_data.senior_player_number]->getName() << endl << endl;
 }
 void PrintConsole::printPlayerResources(BasicData& basic_data) {
 	cout << endl;
-	cout << "\t\t\t\t\t\t    –≈—”–—€ »√–Œ Œ¬" << endl << endl;
+	cout << "\t\t\t\t\t\t    –†–ï–°–£–†–°–´ –ò–ì–†–û–ö–û–í" << endl << endl;
 	for (int player_index = 0; player_index < basic_data.participating_players.getNumber(); player_index++)
 	{
-		cout << " »Ïˇ Ë„ÓÍ‡ " << basic_data.participating_players[player_index]->getName() << endl;
-		cout << "  ÓÎË˜ÂÒÚ‚Ó Ó·˚˜Ì˚ı Ù‡·ËÍ " << basic_data.participating_players[player_index]->getNumberOfUsualFactories() << endl;
-		cout << "  ÓÎË˜ÂÒÚ‚Ó ‡‚ÚÓÏ‡ÚÂÁËÓ‚‡ÌÌ˚ı Ù‡·ËÍ " << basic_data.participating_players[player_index]->getNumberOfAutomatedFactory() << endl;
-		cout << "  ÓÎË˜ÂÒÚ‚Ó ≈—Ã Û Ë„ÓÍ‡ " << basic_data.participating_players[player_index]->getPlayerESM() << endl;
-		cout << "  ÓÎË˜ÂÒÚ‚Ó ≈√œ Û Ë„ÓÍ‡ " << basic_data.participating_players[player_index]->getPlayerEGP() << endl;
-		cout << "  ÓÎË˜ÂÒÚ‚Ó Ì‡ÎË˜Ì˚ı ‰ÂÌÂ„ Û Ë„ÓÍ‡ " << basic_data.participating_players[player_index]->getCash() << endl;
+		cout << " –ò–º—è –∏–≥—Ä–æ–∫–∞ " << basic_data.participating_players[player_index]->getName() << endl;
+		cout << " –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –æ–±—ã—á–Ω—ã—Ö —Ñ–∞–±—Ä–∏–∫ " << basic_data.participating_players[player_index]->getNumberOfUsualFactories() << endl;
+		cout << " –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –∞–≤—Ç–æ–º–∞—Ç–µ–∑–∏—Ä–æ–≤–∞–Ω–Ω—ã—Ö —Ñ–∞–±—Ä–∏–∫ " << basic_data.participating_players[player_index]->getNumberOfAutomatedFactory() << endl;
+		cout << " –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–°–ú —É –∏–≥—Ä–æ–∫–∞ " << basic_data.participating_players[player_index]->getPlayerESM() << endl;
+		cout << " –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–ì–ü —É –∏–≥—Ä–æ–∫–∞ " << basic_data.participating_players[player_index]->getPlayerEGP() << endl;
+		cout << " –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –Ω–∞–ª–∏—á–Ω—ã—Ö –¥–µ–Ω–µ–≥ —É –∏–≥—Ä–æ–∫–∞ " << basic_data.participating_players[player_index]->getCash() << endl;
 		if (basic_data.participating_players[player_index]->player_credits->getSize() == 0)
-			cout << "  Â‰ËÚ˚ ÓÚÒÛÚÒÚ‚Û˛Ú" << endl;
+			cout << " –ö—Ä–µ–¥–∏—Ç—ã –æ—Ç—Å—É—Ç—Å—Ç–≤—É—é—Ç" << endl;
 		else {
 			for (int credit_index = 0; credit_index < basic_data.participating_players[player_index]->player_credits->getSize(); credit_index++) {
-				cout << "  Â‰ËÚ #" << credit_index + 1 << " Ì‡ ÒÛÏÏÛ " << basic_data.participating_players[player_index]->player_credits->getCredit(credit_index)->getCreditAmount() <<
-					",ÔÓ„‡¯ÂÌËˇ ÍÂ‰ËÚ‡ ÔÓËÁÓÈ‰ÂÚ ˜ÂÂÁ " << basic_data.participating_players[player_index]->player_credits->getCredit(credit_index)->getCreditPeriod() << " ÏÂÒˇˆÂ‚" << endl;
+				cout << " –ö—Ä–µ–¥–∏—Ç #" << credit_index + 1 << " –Ω–∞ —Å—É–º–º—É " << basic_data.participating_players[player_index]->player_credits->getCredit(credit_index)->getCreditAmount() <<
+					",–ø–æ–≥–∞—à–µ–Ω–∏—è –∫—Ä–µ–¥–∏—Ç–∞ –ø—Ä–æ–∏–∑–æ–π–¥–µ—Ç —á–µ—Ä–µ–∑ " << basic_data.participating_players[player_index]->player_credits->getCredit(credit_index)->getCreditPeriod() << " –º–µ—Å—è—Ü–µ–≤" << endl;
 			}
 		}
 		if (basic_data.participating_players[player_index]->player_construction->getSize() == 0)
-			cout << " —ÚÓÈÍË ÓÚÒÛÚÒÚ‚Û˛Ú" << endl;
+			cout << " –°—Ç—Ä–æ–π–∫–∏ –æ—Ç—Å—É—Ç—Å—Ç–≤—É—é—Ç" << endl;
 		else {
-			for (int Òonstruction_index = 0; Òonstruction_index < basic_data.participating_players[player_index]->player_construction->getSize(); Òonstruction_index++) {
-				cout << " —ÚÓÈÍ‡ #" << Òonstruction_index + 1 << " - " << rusNameObjectForPlayerResourses(basic_data.participating_players[player_index]->player_construction->getBuildingSite(Òonstruction_index)->getObjectType()) << ", ÔÓÒÚÓËÚÒˇ ˜ÂÂÁ " << basic_data.participating_players[player_index]->player_construction->getBuildingSite(Òonstruction_index)->getConstructionPeriod() << " ÏÂÒˇˆ" << endl;
+			for (int —Åonstruction_index = 0; —Åonstruction_index < basic_data.participating_players[player_index]->player_construction->getSize(); —Åonstruction_index++) {
+				cout << " –°—Ç—Ä–æ–π–∫–∞ #" << —Åonstruction_index + 1 << " - " << rusNameObjectForPlayerResourses(basic_data.participating_players[player_index]->player_construction->getBuildingSite(—Åonstruction_index)->getObjectType()) << ", –ø–æ—Å—Ç—Ä–æ–∏—Ç—Å—è —á–µ—Ä–µ–∑ " << basic_data.participating_players[player_index]->player_construction->getBuildingSite(—Åonstruction_index)->getConstructionPeriod() << " –º–µ—Å—è—Ü" << endl;
 			}
 		}
 		cout << endl;
@@ -95,13 +95,13 @@ string PrintConsole::rusNameObjectForPlayerResourses(int object_type) {
 	switch (object_type)
 	{
 	case 0:
-		return "Ó·˚˜Ì‡ˇ Ù‡·ËÍ‡";
+		return "–æ–±—ã—á–Ω–∞—è —Ñ–∞–±—Ä–∏–∫–∞";
 		break;
 	case 1:
-		return "‡‚ÚÓÏ‡ÚËÁËÓ‚‡ÌÌ‡ˇ Ù‡·ËÍ‡";
+		return "–∞–≤—Ç–æ–º–∞—Ç–∏–∑–∏—Ä–æ–≤–∞–Ω–Ω–∞—è —Ñ–∞–±—Ä–∏–∫–∞";
 		break;
 	case 2:
-		return "ÂÍÓÌÒÚÛÍˆËˇ Ó·˚˜ÌÓÈ Ù‡·ËÍË";
+		return "—Ä–µ–∫–æ–Ω—Å—Ç—Ä—É–∫—Ü–∏—è –æ–±—ã—á–Ω–æ–π —Ñ–∞–±—Ä–∏–∫–∏";
 		break;
 
 	default:
@@ -123,7 +123,7 @@ void PrintConsole::printDisappearingMessage(string message, int time) {
 void PrintConsole::printEndOfMonthMessage(BasicData& basic_data) {
 	system("cls");
 	cout << endl << endl << endl << endl << endl;
-	cout << "\t\t\t\tÃ≈—ﬂ÷ #" << basic_data.month_number + 1 << " - Œ ŒÕ◊≈Õ" << endl;
+	cout << "\t\t\t\t–ú–ï–°–Ø–¶ #" << basic_data.month_number + 1 << " - –û–ö–û–ù–ß–ï–ù" << endl;
 	system("pause");
 }
 
@@ -133,8 +133,8 @@ void PrintConsole::firstAction(BasicData& basic_data) {
 	system("pause");
 	system("cls");
 	printHead(basic_data);
-	cout << "\t\t\t\t\t\t  ≈∆≈Ã≈—ﬂ◊Õ€≈ Œœ≈–¿÷»»\n";
-	cout << "\t\t\t\t\t       ¬€œÀ¿“€ œŒ—“ŒﬂÕÕ€’ »«ƒ≈–∆≈ \n";
+	cout << "\t\t\t\t\t\t  –ï–ñ–ï–ú–ï–°–Ø–ß–ù–´–ï –û–ü–ï–†–ê–¶–ò–ò\n";
+	cout << "\t\t\t\t\t       –í–´–ü–õ–ê–¢–´ –ü–û–°–¢–û–Ø–ù–ù–´–• –ò–ó–î–ï–†–ñ–ï–ö\n";
 	cout << endl << endl << endl;
 
 	int cur_player_index{ basic_data.senior_player_number };
@@ -147,12 +147,12 @@ void PrintConsole::firstAction(BasicData& basic_data) {
 		basic_data.participating_players[cur_player_index]->paymentOfCostsForESM();
 		basic_data.participating_players[cur_player_index]->paymentOfCostsForEGP();
 		if (basic_data.participating_players[cur_player_index]->isBankrupt()) {
-			cout << " ¬Õ»Ã¿Õ»≈!!! »„ÓÍ ÌÓÏÂ" << cur_player_index + 1 << " ÔÓ‰ ËÏÂÌÂÏ " << basic_data.participating_players[cur_player_index]->getName() <<
-				" Ó·˙ˇ‚ÎˇÂÚÒˇ ·‡ÌÍÓÚÓÏ Ë ‚˚·˚‚‡ÂÚ ËÁ Ë„˚\n";
+			cout << " –í–ù–ò–ú–ê–ù–ò–ï!!! –ò–≥—Ä–æ–∫ –Ω–æ–º–µ—Ä" << cur_player_index + 1 << " –ø–æ–¥ –∏–º–µ–Ω–µ–º " << basic_data.participating_players[cur_player_index]->getName() <<
+				" –æ–±—ä—è–≤–ª—è–µ—Ç—Å—è –±–∞–Ω–∫—Ä–æ—Ç–æ–º –∏ –≤—ã–±—ã–≤–∞–µ—Ç –∏–∑ –∏–≥—Ä—ã\n";
 			basic_data.participating_players.playerRemoval(cur_player_index);
 		}
 		else {
-			cout << " »„ÓÍ " << basic_data.participating_players[cur_player_index]->getName() << " ‚˚ÔÎ‡ÚËÎ ÂÊÂÏÂÒˇ˜Ì˚Â ËÁ‰ÂÊÍË\n";
+			cout << " –ò–≥—Ä–æ–∫ " << basic_data.participating_players[cur_player_index]->getName() << " –≤—ã–ø–ª–∞—Ç–∏–ª –µ–∂–µ–º–µ—Å—è—á–Ω—ã–µ –∏–∑–¥–µ—Ä–∂–∫–∏\n";
 		}
 		Sleep(1000);
 
@@ -168,42 +168,42 @@ void PrintConsole::secondAct(BasicData& basic_data) {
 	system("cls");
 	printHead(basic_data);
 
-	cout << "\t\t\t\t\t\t  ≈∆≈Ã≈—ﬂ◊Õ€≈ Œœ≈–¿÷»»\n";
-	cout << "\t\t\t\t\t     Œœ–≈ƒ≈À≈Õ»≈ Œ¡—“¿ÕŒ¬ » Õ¿ –€Õ ≈\n";
+	cout << "\t\t\t\t\t\t  –ï–ñ–ï–ú–ï–°–Ø–ß–ù–´–ï –û–ü–ï–†–ê–¶–ò–ò\n";
+	cout << "\t\t\t\t\t     –û–ü–†–ï–î–ï–õ–ï–ù–ò–ï –û–ë–°–¢–ê–ù–û–í–ö–ò –ù–ê –†–´–ù–ö–ï\n";
 	cout << endl << endl << endl;
 
-	printDisappearingMessage(" œÓËÒıÓ‰ËÚ Ó·ÌÓ‚ÎÂÌËÂ ÚÂÍÛ˘Â„Ó ÛÓ‚Ìˇ ˆÂÌ. ŒÊË‰‡ÈÚÂ", 3000);
+	printDisappearingMessage(" –ü—Ä–æ–∏—Å—Ö–æ–¥–∏—Ç –æ–±–Ω–æ–≤–ª–µ–Ω–∏–µ —Ç–µ–∫—É—â–µ–≥–æ —É—Ä–æ–≤–Ω—è —Ü–µ–Ω. –û–∂–∏–¥–∞–π—Ç–µ", 3000);
 
-	cout << " “ÂÍÛ˘ËÈ ÛÓ‚ÂÌ¸ ÔÂ‰ÎÓÊÂÌËˇ - " << Bank::getCurrentSupplyLevel() << endl << endl;
+	cout << " –¢–µ–∫—É—â–∏–π —É—Ä–æ–≤–µ–Ω—å –ø—Ä–µ–¥–ª–æ–∂–µ–Ω–∏—è - " << Bank::getCurrentSupplyLevel() << endl << endl;
 	Bank::setCurrentPrice(Bank::getCurrentSupplyLevel());
 
-	printDisappearingMessage(" œÓËÒıÓ‰ËÚ Ó·ÌÓ‚ÎÂÌËÂ ˆÂÌ Ì‡ ÚÂÍÛ˘ÂÏ ÛÓ‚ÌÂ. ŒÊË‰‡ÈÚÂ", 4000);
+	printDisappearingMessage(" –ü—Ä–æ–∏—Å—Ö–æ–¥–∏—Ç –æ–±–Ω–æ–≤–ª–µ–Ω–∏–µ —Ü–µ–Ω –Ω–∞ —Ç–µ–∫—É—â–µ–º —É—Ä–æ–≤–Ω–µ. –û–∂–∏–¥–∞–π—Ç–µ", 4000);
 
-	cout << "  ÓÎË˜ÂÒÚ‚Ó Ë„ÓÍÓ‚, ÍÓÚÓ˚Ï ¡¿Õ  ÏÓÊÂÚ ÔÓ‰‡Ú¸ ≈—Ã - " << Bank::getTheNumberOfESMsSale(Bank::getNumberOfPlayersBuyingECMs()) << endl;
-	cout << " ÃËÌËÏ‡Î¸Ì‡ˇ ˆÂÌ‡, ÔÓ ÍÓÚÓÓÈ ÏÓÊÌÓ ÍÛÔËÚ¸ ≈—Ã Û ¡¿Õ ¿ - " << Bank::getMinimumESMPrice() << endl;
-	cout << "  ÓÎË˜ÂÒÚ‚Ó Ë„ÓÍÓ‚, Û ÍÓÚÓ˚ı ¡¿Õ  ÏÓÊÂÚ ÍÛÔËÚ¸ ≈√œ - " << Bank::getTheNumberOfEGPsBuy(Bank::getNumberOfPlayersSellingEGPs()) << endl;
-	cout << " Ã‡ÍÒËÏ‡Î¸Ì‡ˇ ˆÂÌ‡, ÔÓ ÍÓÚÓÓÈ ÏÓÊÌÓ ÔÓ‰‡Ú¸ ≈√œ ¡¿Õ ” - " << Bank::getMaximumEGPPrice() << endl << endl;
+	cout << " –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –∏–≥—Ä–æ–∫–æ–≤, –∫–æ—Ç–æ—Ä—ã–º –ë–ê–ù–ö –º–æ–∂–µ—Ç –ø—Ä–æ–¥–∞—Ç—å –ï–°–ú - " << Bank::getTheNumberOfESMsSale(Bank::getNumberOfPlayersBuyingECMs()) << endl;
+	cout << " –ú–∏–Ω–∏–º–∞–ª—å–Ω–∞—è —Ü–µ–Ω–∞, –ø–æ –∫–æ—Ç–æ—Ä–æ–π –º–æ–∂–Ω–æ –∫—É–ø–∏—Ç—å –ï–°–ú —É –ë–ê–ù–ö–ê - " << Bank::getMinimumESMPrice() << endl;
+	cout << " –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –∏–≥—Ä–æ–∫–æ–≤, —É –∫–æ—Ç–æ—Ä—ã—Ö –ë–ê–ù–ö –º–æ–∂–µ—Ç –∫—É–ø–∏—Ç—å –ï–ì–ü - " << Bank::getTheNumberOfEGPsBuy(Bank::getNumberOfPlayersSellingEGPs()) << endl;
+	cout << " –ú–∞–∫—Å–∏–º–∞–ª—å–Ω–∞—è —Ü–µ–Ω–∞, –ø–æ –∫–æ—Ç–æ—Ä–æ–π –º–æ–∂–Ω–æ –ø—Ä–æ–¥–∞—Ç—å –ï–ì–ü –ë–ê–ù–ö–£ - " << Bank::getMaximumEGPPrice() << endl << endl;
 	system("pause");
 }
 void PrintConsole::thirdAct(BasicData& basic_data) {
 	system("cls");
 	printHead(basic_data);
-	cout << "\t\t\t\t\t\t  ≈∆≈Ã≈—ﬂ◊Õ€≈ Œœ≈–¿÷»»\n";
-	cout << "\t\t\t\t       «¿ﬂ¬ » Õ¿ œŒ ”œ ” —€–‹ﬂ » Ã¿“≈–»¿ÀŒ¬ ” ¡¿Õ ¿";
+	cout << "\t\t\t\t\t\t  –ï–ñ–ï–ú–ï–°–Ø–ß–ù–´–ï –û–ü–ï–†–ê–¶–ò–ò\n";
+	cout << "\t\t\t\t       –ó–ê–Ø–í–ö–ò –ù–ê –ü–û–ö–£–ü–ö–£ –°–´–†–¨–Ø –ò –ú–ê–¢–ï–†–ò–ê–õ–û–í –£ –ë–ê–ù–ö–ê";
 	cout << endl << endl;
-	cout << "  ÓÎË˜ÂÒÚ‚Ó Ë„ÓÍÓ‚, ÍÓÚÓ˚Ï ¡¿Õ  ÏÓÊÂÚ ÔÓ‰‡Ú¸ ≈—Ã - " << Bank::getTheNumberOfESMsSale(Bank::getNumberOfPlayersBuyingECMs()) << endl;
-	cout << " ÃËÌËÏ‡Î¸Ì‡ˇ ˆÂÌ‡, ÔÓ ÍÓÚÓÓÈ ÏÓÊÌÓ ÍÛÔËÚ¸ ≈—Ã Û ¡¿Õ ¿ - " << Bank::getMinimumESMPrice() << endl;
+	cout << " –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –∏–≥—Ä–æ–∫–æ–≤, –∫–æ—Ç–æ—Ä—ã–º –ë–ê–ù–ö –º–æ–∂–µ—Ç –ø—Ä–æ–¥–∞—Ç—å –ï–°–ú - " << Bank::getTheNumberOfESMsSale(Bank::getNumberOfPlayersBuyingECMs()) << endl;
+	cout << " –ú–∏–Ω–∏–º–∞–ª—å–Ω–∞—è —Ü–µ–Ω–∞, –ø–æ –∫–æ—Ç–æ—Ä–æ–π –º–æ–∂–Ω–æ –∫—É–ø–∏—Ç—å –ï–°–ú —É –ë–ê–ù–ö–ê - " << Bank::getMinimumESMPrice() << endl;
 	cout << endl;
-	printDisappearingMessage(" œÓËÒıÓ‰ËÚ ÔÓ‰„ÓÚÓ‚Í‡ ·ÛÏ‡„ ‰Îˇ ÓÙÓÏÎÂÌËˇ Á‡ˇ‚ÓÍ. ŒÊË‰‡ÈÚÂ ", 8000);
+	printDisappearingMessage(" –ü—Ä–æ–∏—Å—Ö–æ–¥–∏—Ç –ø–æ–¥–≥–æ—Ç–æ–≤–∫–∞ –±—É–º–∞–≥ –¥–ª—è –æ—Ñ–æ—Ä–º–ª–µ–Ω–∏—è –∑–∞—è–≤–æ–∫. –û–∂–∏–¥–∞–π—Ç–µ ", 8000);
 
 	ApplicationList* completed_applications = fillingApplicationsForESM(basic_data);
 
 	system("cls");
 	printHead(basic_data);
 	cout << endl;
-	cout << "\t\t\t\t  ¬€œŒÀÕ≈Õ»≈ Œ¡ﬂ«¿“≈À‹—“¬ œŒ «¿ﬂ¬ ¿Ã Õ¿ —€–‹® » Ã¿“≈–»¿À€\n";
+	cout << "\t\t\t\t  –í–´–ü–û–õ–ù–ï–ù–ò–ï –û–ë–Ø–ó–ê–¢–ï–õ–¨–°–¢–í –ü–û –ó–ê–Ø–í–ö–ê–ú –ù–ê –°–´–†–¨–Å –ò –ú–ê–¢–ï–†–ò–ê–õ–´\n";
 	cout << endl;
-	printDisappearingMessage(" œÓËÒıÓ‰ËÚ Ó·‡·ÓÚÍ‡ Á‡ˇ‚ÓÍ ¡‡ÌÍÓÏ. ŒÊË‰‡ÈÚÂ. ", 4000);
+	printDisappearingMessage(" –ü—Ä–æ–∏—Å—Ö–æ–¥–∏—Ç –æ–±—Ä–∞–±–æ—Ç–∫–∞ –∑–∞—è–≤–æ–∫ –ë–∞–Ω–∫–æ–º. –û–∂–∏–¥–∞–π—Ç–µ. ", 4000);
 
 	Bank::processingOfApplicationsESMs(completed_applications);
 	fulfilmentOfApplicationsESMs(basic_data, *completed_applications);
@@ -220,23 +220,23 @@ ApplicationList* PrintConsole::fillingApplicationsForESM(BasicData& basic_data) 
 	{
 		system("cls");
 		printHead(basic_data);
-		cout << "\t\t\t\t\t\t   «¿œŒÀÕ≈Õ»≈ «¿ﬂ¬ »" << std::endl << std::endl;
-		cout << "\t\t\t\t\t\t  «‡ÔÓÎÌˇÂÚ Ë„ÓÍ - " << basic_data.participating_players[cur_player_index]->getName() << std::endl;
-		cout << "\t\t\t\t\t\t    ŒÊË‰‡ÌËÂ Ë„ÓÍ‡\n\n";
+		cout << "\t\t\t\t\t\t   –ó–ê–ü–û–õ–ù–ï–ù–ò–ï –ó–ê–Ø–í–ö–ò" << std::endl << std::endl;
+		cout << "\t\t\t\t\t\t  –ó–∞–ø–æ–ª–Ω—è–µ—Ç –∏–≥—Ä–æ–∫ - " << basic_data.participating_players[cur_player_index]->getName() << std::endl;
+		cout << "\t\t\t\t\t\t    –û–∂–∏–¥–∞–Ω–∏–µ –∏–≥—Ä–æ–∫–∞\n\n";
 		Sleep(1000);
 		int num_egp{ int() };
 		int cost_egp{ int() };
-		cout << " ¬ÌËÏ‡ÌËÂ!!! —ÛÏÏ‡Ì‡ˇ ÒÚÓËÏÓÒÚ¸ ÔÓÍÛÔ‡ÂÏ˚ı Û ¡‡ÌÍ‡ ≈—Ã, ÌÂ ‰ÓÎÊÌ‡ ÔÂ‚˚¯‡Ú¸ ÍÓÎË˜ÂÒÚ‚Ó Ì‡ÎË˜Ì˚ı Ì‡ Ò˜ÂÚÛ Û Ë„ÓÍ‡." << endl;
-		cout << " ¬ ÔÓÚË‚ÌÓÏ ÒÎÛ˜‡Â Ë„ÓÍ ‰ËÒÍ‚‡ÎËÙËˆËÛÂÚÒˇ Á‡ ÌÂ‚ÓÁÏÓÊÌÓÒÚ¸ ÓÔÎ‡ÚËÚ¸ Á‡Í‡Á." << endl;
-		cout << " »„ÓÍ, ÛÍ‡Á‡‚¯ËÈ ˆÂÌÛ ÔÓÍÛÔÍË ≈—Ã ÌËÊÂ Á‡ÍÛÔÓ˜ÌÓÈ ËÎË ÍÓÎË˜ÂÒÚ‚Ó ÔÓÍÛÔ‡ÂÏ˚ı ≈—Ã ‡‚ÌÓÂ 0, ÌÂ Û˜‡ÒÚ‚ÛÂÚ ‚ ÚÓ„‡ı." << endl << endl << endl;
-		cout << " ¬‚Â‰ËÚÂ ÊÂÎ‡ÂÏÓÂ ÍÓÎË˜ÂÒÚ‚Ó ≈—Ã ‰Îˇ ÔÓÍÛÔÍË: ";
+		cout << " –í–Ω–∏–º–∞–Ω–∏–µ!!! –°—É–º–º–∞—Ä–Ω–∞—è —Å—Ç–æ–∏–º–æ—Å—Ç—å –ø–æ–∫—É–ø–∞–µ–º—ã—Ö —É –ë–∞–Ω–∫–∞ –ï–°–ú, –Ω–µ –¥–æ–ª–∂–Ω–∞ –ø—Ä–µ–≤—ã—à–∞—Ç—å –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –Ω–∞–ª–∏—á–Ω—ã—Ö –Ω–∞ —Å—á–µ—Ç—É —É –∏–≥—Ä–æ–∫–∞." << endl;
+		cout << " –í –ø—Ä–æ—Ç–∏–≤–Ω–æ–º —Å–ª—É—á–∞–µ –∏–≥—Ä–æ–∫ –¥–∏—Å–∫–≤–∞–ª–∏—Ñ–∏—Ü–∏—Ä—É–µ—Ç—Å—è –∑–∞ –Ω–µ–≤–æ–∑–º–æ–∂–Ω–æ—Å—Ç—å –æ–ø–ª–∞—Ç–∏—Ç—å –∑–∞–∫–∞–∑." << endl;
+		cout << " –ò–≥—Ä–æ–∫, —É–∫–∞–∑–∞–≤—à–∏–π —Ü–µ–Ω—É –ø–æ–∫—É–ø–∫–∏ –ï–°–ú –Ω–∏–∂–µ –∑–∞–∫—É–ø–æ—á–Ω–æ–π –∏–ª–∏ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –ø–æ–∫—É–ø–∞–µ–º—ã—Ö –ï–°–ú —Ä–∞–≤–Ω–æ–µ 0, –Ω–µ —É—á–∞—Å—Ç–≤—É–µ—Ç –≤ —Ç–æ—Ä–≥–∞—Ö." << endl << endl << endl;
+		cout << " –í–≤–µ–¥–∏—Ç–µ –∂–µ–ª–∞–µ–º–æ–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–°–ú –¥–ª—è –ø–æ–∫—É–ø–∫–∏: ";
 		cin >> num_egp;
-		cout << " ¬‚Â‰ËÚÂ ˆÂÌÛ ÔÓ ÍÓÚÓÓÈ ‚˚ „ÓÚÓ‚˚ ÍÛÔËÚ¸ ≈—Ã (ÌÂ ÌËÊÂ " << Bank::getMinimumESMPrice() << " Á‡ Â‰ÂÌËˆÛ ): ";
+		cout << " –í–≤–µ–¥–∏—Ç–µ —Ü–µ–Ω—É –ø–æ –∫–æ—Ç–æ—Ä–æ–π –≤—ã –≥–æ—Ç–æ–≤—ã –∫—É–ø–∏—Ç—å –ï–°–ú (–Ω–µ –Ω–∏–∂–µ " << Bank::getMinimumESMPrice() << " –∑–∞ –µ–¥–µ–Ω–∏—Ü—É ): ";
 		cin >> cost_egp;
 		completed_applications->addNewApplication(num_egp, cost_egp, basic_data.participating_players[cur_player_index]);
 
 		cur_player_index = ++cur_player_index < basic_data.participating_players.getNumber() ? cur_player_index : 0;
-		cout << endl << " «‡ˇ‚Í‡ ÔËÌˇÚ‡ Í ‡ÒÒÏÓÚÂÌË˛. ";
+		cout << endl << " –ó–∞—è–≤–∫–∞ –ø—Ä–∏–Ω—è—Ç–∞ –∫ —Ä–∞—Å—Å–º–æ—Ç—Ä–µ–Ω–∏—é. ";
 		Sleep(2000);
 	}
 	return completed_applications;
@@ -244,19 +244,19 @@ ApplicationList* PrintConsole::fillingApplicationsForESM(BasicData& basic_data) 
 void PrintConsole::fulfilmentOfApplicationsESMs(BasicData& basic_data, ApplicationList& application_list) {
 	for (int i = 0; i < application_list.getNumberOfApplictions(); i++)
 	{
-		cout << " «‡ˇ‚Í‡ Ó‰Ó·ÂÌ‡ Ë„ÓÍÛ - " << application_list[i]->getApplicant() << endl;
-		cout << " Õ‡ ÔÓÍÛÔÍÛ ≈—Ã ‚ ÍÓÎË˜ÂÒÚ‚Â: " << application_list[i]->getNumberOfUnitsRequested() << endl;
-		cout << " œÓ ˆÂÌÂ Á‡ Â‰ÂÌËˆÛ: " << application_list[i]->getPricePerUnit() << endl;
-		printDisappearingMessage(" œÓËÒıÓ‰ËÚ ‚˚ÔÓÎÌÂÌËÂ Ú‡ÌÁ‡ÍˆËË. ŒÊË‰‡ÈÚÂ ", 4000);
+		cout << " –ó–∞—è–≤–∫–∞ –æ–¥–æ–±—Ä–µ–Ω–∞ –∏–≥—Ä–æ–∫—É - " << application_list[i]->getApplicant() << endl;
+		cout << " –ù–∞ –ø–æ–∫—É–ø–∫—É –ï–°–ú –≤ –∫–æ–ª–∏—á–µ—Å—Ç–≤–µ: " << application_list[i]->getNumberOfUnitsRequested() << endl;
+		cout << " –ü–æ —Ü–µ–Ω–µ –∑–∞ –µ–¥–µ–Ω–∏—Ü—É: " << application_list[i]->getPricePerUnit() << endl;
+		printDisappearingMessage(" –ü—Ä–æ–∏—Å—Ö–æ–¥–∏—Ç –≤—ã–ø–æ–ª–Ω–µ–Ω–∏–µ —Ç—Ä–∞–Ω–∑–∞–∫—Ü–∏–∏. –û–∂–∏–¥–∞–π—Ç–µ ", 4000);
 
 		application_list.getPlayer(i)->ESMapplicationExecution(application_list[i]);
 		if (application_list.getPlayer(i)->isBankrupt()) {
-			cout << " “‡Á‡ÍˆËˇ ÌÂ ‚˚ÔÓÎÌÂÌ‡ ËÁ-Á‡ ÌÂ‰ÓÒÚ‡ÚÓ˜ÌÓ„Ó ÍÓÎË˜ÂÒÚ‚‡ ÒÂ‰ÒÚ‚ Ì‡ Ò˜ÂÚÛ Ë„ÓÍ‡." << endl;
-			cout << " »√–Œ  Œ¡⁄ﬂ¬Àﬂ≈“—ﬂ ¡¿Õ –Œ“ŒÃ » ƒ»— ¬¿À»‘»÷»–”≈“—ﬂ »« »√–€!!!" << endl << endl;
+			cout << " –¢—Ä–∞–∑–∞–∫—Ü–∏—è –Ω–µ –≤—ã–ø–æ–ª–Ω–µ–Ω–∞ –∏–∑-–∑–∞ –Ω–µ–¥–æ—Å—Ç–∞—Ç–æ—á–Ω–æ–≥–æ –∫–æ–ª–∏—á–µ—Å—Ç–≤–∞ —Å—Ä–µ–¥—Å—Ç–≤ –Ω–∞ —Å—á–µ—Ç—É –∏–≥—Ä–æ–∫–∞." << endl;
+			cout << " –ò–ì–†–û–ö –û–ë–™–Ø–í–õ–Ø–ï–¢–°–Ø –ë–ê–ù–ö–†–û–¢–û–ú –ò –î–ò–°–ö–í–ê–õ–ò–§–ò–¶–ò–†–£–ï–¢–°–Ø –ò–ó –ò–ì–†–´!!!" << endl << endl;
 			basic_data.participating_players.playerRemoval(i);
 		}
 		else {
-			cout << "“‡Á‡ÍˆËˇ ÛÒÔÂ¯ÌÓ ‚˚ÔÓÎÌÂÌ‡." << endl << endl;
+			cout << "–¢—Ä–∞–∑–∞–∫—Ü–∏—è —É—Å–ø–µ—à–Ω–æ –≤—ã–ø–æ–ª–Ω–µ–Ω–∞." << endl << endl;
 		}
 		Sleep(2000);
 	}
@@ -265,12 +265,12 @@ void PrintConsole::fulfilmentOfApplicationsESMs(BasicData& basic_data, Applicati
 void PrintConsole::fourthAct(BasicData& basic_data) {
 	system("cls");
 	printHead(basic_data);
-	cout << "\t\t\t\t\t\t  ≈∆≈Ã≈—ﬂ◊Õ€≈ Œœ≈–¿÷»»\n";
-	cout << "\t\t\t\t\t    œ–Œ»«¬Œƒ—“¬Œ √Œ“Œ¬Œ… œ–Œƒ” ÷»»" << endl << endl;
-	cout << " ¬˚·ÂÂÚÂ ÒÚÓËÏÓÒÚ¸ ÔÓËÁ‚Ó‰ÒÚ‚‡, ‚ Á‡‚ËÒËÏÓÒÚË ÓÚ ÚËÔ‡ Ù‡·ËÍË Ì‡ ÍÓÚÓÓÈ ıÓÚËÚÂ Á‡ÔÛÒÚËÚ¸ ÔÓËÁ‚Ó‰ÒÚ‚Ó" << endl;
-	cout << "  2000 - ÔÓËÁ‚Ó‰ÒÚ‚Ó 1 ≈—Ã Á‡ ‡Á Ì‡ Ó·˚˜ÌÓÈ ËÎË ‡‚ÚÓÏ‡ÚÂÁËÓ‚‡ÌÌÓÈ Ù‡·ËÍÂ" << endl;
-	cout << "  3000 - ÔÓËÁ‚Ó‰ÒÚ‚Ó 2 ≈—Ã Á‡ ‡Á Ì‡ ‡‚ÚÓÏ‡ÚÂÁËÓ‚‡ÌÌÓÈ Ù‡·ËÍÂ" << endl << endl;
-	cout << " ¬˚·ÂÂÚÂ ÍÓÎË˜ÂÒÚ‚Ó ≈—Ã, ÍÓÚÓ˚Â ‚˚ ıÓÚËÚÂ ÔÂÂ‡·ÓÚ‡Ú¸ ‚ ÔÓ‰ÛÍˆË˛." << endl;
+	cout << "\t\t\t\t\t\t  –ï–ñ–ï–ú–ï–°–Ø–ß–ù–´–ï –û–ü–ï–†–ê–¶–ò–ò\n";
+	cout << "\t\t\t\t\t    –ü–†–û–ò–ó–í–û–î–°–¢–í–û –ì–û–¢–û–í–û–ô –ü–†–û–î–£–ö–¶–ò–ò" << endl << endl;
+	cout << " –í—ã–±–µ—Ä–µ—Ç–µ —Å—Ç–æ–∏–º–æ—Å—Ç—å –ø—Ä–æ–∏–∑–≤–æ–¥—Å—Ç–≤–∞, –≤ –∑–∞–≤–∏—Å–∏–º–æ—Å—Ç–∏ –æ—Ç —Ç–∏–ø–∞ —Ñ–∞–±—Ä–∏–∫–∏ –Ω–∞ –∫–æ—Ç–æ—Ä–æ–π —Ö–æ—Ç–∏—Ç–µ –∑–∞–ø—É—Å—Ç–∏—Ç—å –ø—Ä–æ–∏–∑–≤–æ–¥—Å—Ç–≤–æ" << endl;
+	cout << "  2000 - –ø—Ä–æ–∏–∑–≤–æ–¥—Å—Ç–≤–æ 1 –ï–°–ú –∑–∞ —Ä–∞–∑ –Ω–∞ –æ–±—ã—á–Ω–æ–π –∏–ª–∏ –∞–≤—Ç–æ–º–∞—Ç–µ–∑–∏—Ä–æ–≤–∞–Ω–Ω–æ–π —Ñ–∞–±—Ä–∏–∫–µ" << endl;
+	cout << "  3000 - –ø—Ä–æ–∏–∑–≤–æ–¥—Å—Ç–≤–æ 2 –ï–°–ú –∑–∞ —Ä–∞–∑ –Ω–∞ –∞–≤—Ç–æ–º–∞—Ç–µ–∑–∏—Ä–æ–≤–∞–Ω–Ω–æ–π —Ñ–∞–±—Ä–∏–∫–µ" << endl << endl;
+	cout << " –í—ã–±–µ—Ä–µ—Ç–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–°–ú, –∫–æ—Ç–æ—Ä—ã–µ –≤—ã —Ö–æ—Ç–∏—Ç–µ –ø–µ—Ä–µ—Ä–∞–±–æ—Ç–∞—Ç—å –≤ –ø—Ä–æ–¥—É–∫—Ü–∏—é." << endl;
 	cout << endl;
 	system("pause");
 
@@ -285,18 +285,18 @@ void PrintConsole::fourthAct(BasicData& basic_data) {
 	BEGIN:
 		system("cls");
 		printHead(basic_data);
-		cout << "\t\t\t\t\t\t  ≈∆≈Ã≈—ﬂ◊Õ€≈ Œœ≈–¿÷»»\n";
-		cout << "\t\t\t\t\t    œ–Œ»«¬Œƒ—“¬Œ √Œ“Œ¬Œ… œ–Œƒ” ÷»»" << endl << endl;
-		cout << " Õ‡ÊÏËÚÂ n, ÂÒÎË ÌÂ ÊÂÎ‡ÂÚÂ ÔÓËÁ‚Ó‰ËÚ¸ ÔÓ‰ÛÍˆË˛ ‚ ˝ÚÓÏ ÏÂÒˇˆÂ" << endl;
-		cout << " »„ÓÍ - " << basic_data.participating_players[cur_player_index]->getName() << ", ‚˚·ÂÂÚÂ ÒÚÓËÏÓÒÚ¸ ÔÓËÁ‚Ó‰ÒÚ‚‡ ÔÓ‰ÛÍˆËË (1 - 2000, 2 - 3000) " << endl << endl;
+		cout << "\t\t\t\t\t\t  –ï–ñ–ï–ú–ï–°–Ø–ß–ù–´–ï –û–ü–ï–†–ê–¶–ò–ò\n";
+		cout << "\t\t\t\t\t    –ü–†–û–ò–ó–í–û–î–°–¢–í–û –ì–û–¢–û–í–û–ô –ü–†–û–î–£–ö–¶–ò–ò" << endl << endl;
+		cout << " –ù–∞–∂–º–∏—Ç–µ n, –µ—Å–ª–∏ –Ω–µ –∂–µ–ª–∞–µ—Ç–µ –ø—Ä–æ–∏–∑–≤–æ–¥–∏—Ç—å –ø—Ä–æ–¥—É–∫—Ü–∏—é –≤ —ç—Ç–æ–º –º–µ—Å—è—Ü–µ" << endl;
+		cout << " –ò–≥—Ä–æ–∫ - " << basic_data.participating_players[cur_player_index]->getName() << ", –≤—ã–±–µ—Ä–µ—Ç–µ —Å—Ç–æ–∏–º–æ—Å—Ç—å –ø—Ä–æ–∏–∑–≤–æ–¥—Å—Ç–≤–∞ –ø—Ä–æ–¥—É–∫—Ü–∏–∏ (1 - 2000, 2 - 3000) " << endl << endl;
 
 
 		switch (_getch())
 		{
 		case '1':
-			cout << " ¬˚·‡ÌÓ ÔÓËÁ‚Ó‰ÒÚ‚Ó ÔÓ‰ÛÍˆËË Ì‡ Ó·˚˜Ì˚ı Ë ‡‚ÚÓÏ‡ÚÂÁËÓ‚‡ÌÌ˚ı Ù‡·ËÍ‡ı" << endl;
-			cout << " —ÚÓËÏÓÒÚ¸ ÔÓËÁ‚Ó‰ÒÚ‚‡ Ó‰ÌÓÈ ≈√œ - 2000" << endl << endl;
-			cout << "  ÓÎË˜ÂÒÚ‚Ó ≈—Ã ‰Îˇ ÔÂÂ‡·ÓÚÍË ÌÂ ‰ÓÎÊÌÓ ÔÂ‚˚¯‡Ú¸ ËÏÂ˛˘Â„ÓÒˇ ÍÓÎË˜ÂÒÚ‚‡ ≈—Ã Û Ë„ÓÍ‡" << endl;
+			cout << " –í—ã–±—Ä–∞–Ω–æ –ø—Ä–æ–∏–∑–≤–æ–¥—Å—Ç–≤–æ –ø—Ä–æ–¥—É–∫—Ü–∏–∏ –Ω–∞ –æ–±—ã—á–Ω—ã—Ö –∏ –∞–≤—Ç–æ–º–∞—Ç–µ–∑–∏—Ä–æ–≤–∞–Ω–Ω—ã—Ö —Ñ–∞–±—Ä–∏–∫–∞—Ö" << endl;
+			cout << " –°—Ç–æ–∏–º–æ—Å—Ç—å –ø—Ä–æ–∏–∑–≤–æ–¥—Å—Ç–≤–∞ –æ–¥–Ω–æ–π –ï–ì–ü - 2000" << endl << endl;
+			cout << " –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–°–ú –¥–ª—è –ø–µ—Ä–µ—Ä–∞–±–æ—Ç–∫–∏ –Ω–µ –¥–æ–ª–∂–Ω–æ –ø—Ä–µ–≤—ã—à–∞—Ç—å –∏–º–µ—é—â–µ–≥–æ—Å—è –∫–æ–ª–∏—á–µ—Å—Ç–≤–∞ –ï–°–ú —É –∏–≥—Ä–æ–∫–∞" << endl;
 			number_of_factories = basic_data.participating_players[cur_player_index]->getNumberOfUsualFactories() + basic_data.participating_players[cur_player_index]->getNumberOfAutomatedFactory();
 			selected_number_of_ECMs = getSelectedNumberOfECMs(basic_data.participating_players[cur_player_index]);
 			the_cost_of_production_in_factory = 2000;
@@ -306,19 +306,19 @@ void PrintConsole::fourthAct(BasicData& basic_data) {
 				if (selected_number_of_ECMs <= number_of_factories) {
 					basic_data.participating_players[cur_player_index]->setCash(basic_data.participating_players[cur_player_index]->getCash() - (selected_number_of_ECMs * the_cost_of_production_in_factory));
 					if (basic_data.participating_players[cur_player_index]->isBankrupt()) {
-						cout << "¬Õ»Ã¿Õ»≈!!! »„ÓÍ - " << basic_data.participating_players[cur_player_index]->getName() <<
-							" Ó·˙ˇ‚ÎˇÂÚÒˇ ·‡ÌÍÓÚÓÏ Ë ‚˚·˚‚‡ÂÚ ËÁ Ë„˚ ËÁ-Á‡ ÌÂ‰ÓÒÚ‡ÚÍ‡ ÒÂ‰ÒÚ‚ ‰Îˇ ÓÔÎ‡Ú˚ ÔÓËÁ‚Ó‰ÒÚ‚‡ ≈√œ\n";
+						cout << "–í–ù–ò–ú–ê–ù–ò–ï!!! –ò–≥—Ä–æ–∫ - " << basic_data.participating_players[cur_player_index]->getName() <<
+							" –æ–±—ä—è–≤–ª—è–µ—Ç—Å—è –±–∞–Ω–∫—Ä–æ—Ç–æ–º –∏ –≤—ã–±—ã–≤–∞–µ—Ç –∏–∑ –∏–≥—Ä—ã –∏–∑-–∑–∞ –Ω–µ–¥–æ—Å—Ç–∞—Ç–∫–∞ —Å—Ä–µ–¥—Å—Ç–≤ –¥–ª—è –æ–ø–ª–∞—Ç—ã –ø—Ä–æ–∏–∑–≤–æ–¥—Å—Ç–≤–∞ –ï–ì–ü\n";
 						basic_data.participating_players.playerRemoval(cur_player_index);
 					}
 					else {
-						cout << "‘‡·ËÍË Ë„ÓÍ‡ ÛÒÔÂ¯ÌÓ ÔÓËÁ‚ÂÎË " << selected_number_of_ECMs << " ≈√œ" << endl;
+						cout << "–§–∞–±—Ä–∏–∫–∏ –∏–≥—Ä–æ–∫–∞ —É—Å–ø–µ—à–Ω–æ –ø—Ä–æ–∏–∑–≤–µ–ª–∏ " << selected_number_of_ECMs << " –ï–ì–ü" << endl;
 						Sleep(2000);
 					}
 					basic_data.participating_players[cur_player_index]->setPlayerESM(basic_data.participating_players[cur_player_index]->getPlayerESM() - selected_number_of_ECMs);
 					basic_data.participating_players[cur_player_index]->setPlayerEGP(basic_data.participating_players[cur_player_index]->getPlayerEGP() + selected_number_of_ECMs);
 				}
 				else {
-					cout << "” ‚‡Ò ÌÂ ı‚‡Ú‡ÂÚ Ù‡·ËÍ ‰Îˇ ÔÂÂ‡·ÓÚÍË Ú‡ÍÓ„Ó ÍÓÎË˜ÂÒÚ‚‡ ≈—Ã" << endl;
+					cout << "–£ –≤–∞—Å –Ω–µ —Ö–≤–∞—Ç–∞–µ—Ç —Ñ–∞–±—Ä–∏–∫ –¥–ª—è –ø–µ—Ä–µ—Ä–∞–±–æ—Ç–∫–∏ —Ç–∞–∫–æ–≥–æ –∫–æ–ª–∏—á–µ—Å—Ç–≤–∞ –ï–°–ú" << endl;
 					Sleep(2000);
 					goto BEGIN;
 				}
@@ -326,13 +326,13 @@ void PrintConsole::fourthAct(BasicData& basic_data) {
 
 			break;
 		case '2':
-			cout << " ¬˚·‡ÌÓ ÔÓËÁ‚Ó‰ÒÚ‚Ó ÔÓ‰ÛÍˆËË Ì‡ ‡‚ÚÓÏ‡ÚÂÁËÓ‚‡ÌÌ˚ı Ù‡·ËÍ‡ı" << endl;
-			cout << " —ÚÓËÏÓÒÚ¸ ÔÓËÁ‚Ó‰ÒÚ‚‡ ‰‚Ûı ≈√œ - 3000" << endl << endl;
-			cout << "  ÓÎË˜ÂÒÚ‚Ó ≈—Ã ‰Îˇ ÔÂÂ‡·ÓÚÍË ÌÂ ‰ÓÎÊÌÓ ÔÂ‚˚¯‡Ú¸ ËÏÂ˛˘Â„ÓÒˇ ÍÓÎË˜ÂÒÚ‚‡ ≈—Ã Û Ë„ÓÍ‡" << endl;
+			cout << " –í—ã–±—Ä–∞–Ω–æ –ø—Ä–æ–∏–∑–≤–æ–¥—Å—Ç–≤–æ –ø—Ä–æ–¥—É–∫—Ü–∏–∏ –Ω–∞ –∞–≤—Ç–æ–º–∞—Ç–µ–∑–∏—Ä–æ–≤–∞–Ω–Ω—ã—Ö —Ñ–∞–±—Ä–∏–∫–∞—Ö" << endl;
+			cout << " –°—Ç–æ–∏–º–æ—Å—Ç—å –ø—Ä–æ–∏–∑–≤–æ–¥—Å—Ç–≤–∞ –¥–≤—É—Ö –ï–ì–ü - 3000" << endl << endl;
+			cout << " –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–°–ú –¥–ª—è –ø–µ—Ä–µ—Ä–∞–±–æ—Ç–∫–∏ –Ω–µ –¥–æ–ª–∂–Ω–æ –ø—Ä–µ–≤—ã—à–∞—Ç—å –∏–º–µ—é—â–µ–≥–æ—Å—è –∫–æ–ª–∏—á–µ—Å—Ç–≤–∞ –ï–°–ú —É –∏–≥—Ä–æ–∫–∞" << endl;
 			do
 			{
 				selected_number_of_ECMs = getSelectedNumberOfECMs(basic_data.participating_players[cur_player_index]);
-				if (!isDivisibleByTwo(selected_number_of_ECMs)) cout << " ¬˚·‡ÌÌÓÂ ÁÌ‡˜ÂÌËÂ ÌÂ Í‡ÚÌÓ 2" << endl;
+				if (!isDivisibleByTwo(selected_number_of_ECMs)) cout << " –í—ã–±—Ä–∞–Ω–Ω–æ–µ –∑–Ω–∞—á–µ–Ω–∏–µ –Ω–µ –∫—Ä–∞—Ç–Ω–æ 2" << endl;
 			} while (!isDivisibleByTwo(selected_number_of_ECMs));
 			number_of_factories = basic_data.participating_players[cur_player_index]->getNumberOfAutomatedFactory();
 			selected_number_of_ECMs /= 2;
@@ -343,19 +343,19 @@ void PrintConsole::fourthAct(BasicData& basic_data) {
 				if (selected_number_of_ECMs <= number_of_factories) {
 					basic_data.participating_players[cur_player_index]->setCash(basic_data.participating_players[cur_player_index]->getCash() - (selected_number_of_ECMs * the_cost_of_production_in_factory));
 					if (basic_data.participating_players[cur_player_index]->isBankrupt()) {
-						cout << "¬Õ»Ã¿Õ»≈!!! »„ÓÍ - " << basic_data.participating_players[cur_player_index]->getName() <<
-							" Ó·˙ˇ‚ÎˇÂÚÒˇ ·‡ÌÍÓÚÓÏ Ë ‚˚·˚‚‡ÂÚ ËÁ Ë„˚ ËÁ-Á‡ ÌÂ‰ÓÒÚ‡ÚÍ‡ ÒÂ‰ÒÚ‚ ‰Îˇ ÓÔÎ‡Ú˚ ÔÓËÁ‚Ó‰ÒÚ‚‡ ≈√œ\n";
+						cout << "–í–ù–ò–ú–ê–ù–ò–ï!!! –ò–≥—Ä–æ–∫ - " << basic_data.participating_players[cur_player_index]->getName() <<
+							" –æ–±—ä—è–≤–ª—è–µ—Ç—Å—è –±–∞–Ω–∫—Ä–æ—Ç–æ–º –∏ –≤—ã–±—ã–≤–∞–µ—Ç –∏–∑ –∏–≥—Ä—ã –∏–∑-–∑–∞ –Ω–µ–¥–æ—Å—Ç–∞—Ç–∫–∞ —Å—Ä–µ–¥—Å—Ç–≤ –¥–ª—è –æ–ø–ª–∞—Ç—ã –ø—Ä–æ–∏–∑–≤–æ–¥—Å—Ç–≤–∞ –ï–ì–ü\n";
 						basic_data.participating_players.playerRemoval(cur_player_index);
 					}
 					else {
-						cout << "‘‡·ËÍË Ë„ÓÍ‡ ÛÒÔÂ¯ÌÓ ÔÓËÁ‚ÂÎË " << selected_number_of_ECMs << " ≈√œ" << endl;
+						cout << "–§–∞–±—Ä–∏–∫–∏ –∏–≥—Ä–æ–∫–∞ —É—Å–ø–µ—à–Ω–æ –ø—Ä–æ–∏–∑–≤–µ–ª–∏ " << selected_number_of_ECMs << " –ï–ì–ü" << endl;
 						Sleep(2000);
 					}
 					basic_data.participating_players[cur_player_index]->setPlayerESM(basic_data.participating_players[cur_player_index]->getPlayerESM() - selected_number_of_ECMs);
 					basic_data.participating_players[cur_player_index]->setPlayerEGP(basic_data.participating_players[cur_player_index]->getPlayerEGP() + selected_number_of_ECMs);
 				}
 				else {
-					cout << "” ‚‡Ò ÌÂ ı‚‡Ú‡ÂÚ Ù‡·ËÍ ‰Îˇ ÔÂÂ‡·ÓÚÍË Ú‡ÍÓ„Ó ÍÓÎË˜ÂÒÚ‚‡ ≈—Ã" << endl;
+					cout << "–£ –≤–∞—Å –Ω–µ —Ö–≤–∞—Ç–∞–µ—Ç —Ñ–∞–±—Ä–∏–∫ –¥–ª—è –ø–µ—Ä–µ—Ä–∞–±–æ—Ç–∫–∏ —Ç–∞–∫–æ–≥–æ –∫–æ–ª–∏—á–µ—Å—Ç–≤–∞ –ï–°–ú" << endl;
 					Sleep(2000);
 					goto BEGIN;
 				}
@@ -364,11 +364,11 @@ void PrintConsole::fourthAct(BasicData& basic_data) {
 			break;
 		case 'n':
 		case 'N':
-			cout << " ¬ ˝ÚÓÏ ÏÂÒˇˆÂ Ë„ÓÍ - " << basic_data.participating_players[cur_player_index]->getName() << " ÌÂ ÔÓËÁ‚Ó‰ËÚ ÔÓ‰ÛÍˆË˛" << endl << endl;
+			cout << " –í —ç—Ç–æ–º –º–µ—Å—è—Ü–µ –∏–≥—Ä–æ–∫ - " << basic_data.participating_players[cur_player_index]->getName() << " –Ω–µ –ø—Ä–æ–∏–∑–≤–æ–¥–∏—Ç –ø—Ä–æ–¥—É–∫—Ü–∏—é" << endl << endl;
 			Sleep(2000);
 			break;
 		default:
-			printDisappearingMessage("¬‚Â‰ÂÌ ÌÂ ÍÓÂÍÚÌ˚È ÒËÏ‚ÓÎ", 2000);
+			printDisappearingMessage("–í–≤–µ–¥–µ–Ω –Ω–µ –∫–æ—Ä—Ä–µ–∫—Ç–Ω—ã–π —Å–∏–º–≤–æ–ª", 2000);
 			goto BEGIN;
 			break;
 		}
@@ -385,14 +385,14 @@ int PrintConsole::getSelectedNumberOfECMs(Player* player) {
 	int selected_number_of_ECMs;
 	do
 	{
-		cout << " ”Í‡ÊËÚÂ ÊÂÎ‡ÂÏÓÂ ÍÓÎË˜ÂÒÚ‚Ó ≈—Ã ‰Îˇ ÔÂÂ‡·ÓÚÍË ‚ ≈√œ: ";
+		cout << " –£–∫–∞–∂–∏—Ç–µ –∂–µ–ª–∞–µ–º–æ–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–°–ú –¥–ª—è –ø–µ—Ä–µ—Ä–∞–±–æ—Ç–∫–∏ –≤ –ï–ì–ü: ";
 		cin >> selected_number_of_ECMs;
 		cout << endl;
 		if (selected_number_of_ECMs <= player->getPlayerESM() && selected_number_of_ECMs >= 0) {
 			return selected_number_of_ECMs;
 		}
 		else {
-			cout << " ¬‚Â‰ÂÌÌÓÂ ÍÓÎË˜ÂÒÚ‚Ó ≈—Ã ÔÂ‚˚¯‡ÂÚ ËÏÂ˛˘ËÂÒˇ ÍÓÎË˜ÂÒÚ‚Ó ≈—Ã Û Ë„ÓÍ‡" << endl;
+			cout << " –í–≤–µ–¥–µ–Ω–Ω–æ–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–°–ú –ø—Ä–µ–≤—ã—à–∞–µ—Ç –∏–º–µ—é—â–∏–µ—Å—è –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–°–ú —É –∏–≥—Ä–æ–∫–∞" << endl;
 		}
 
 	} while (selected_number_of_ECMs > player->getPlayerESM());
@@ -402,22 +402,22 @@ void PrintConsole::fifthAct(BasicData& basic_data) {
 	system("cls");
 	printHead(basic_data);
 
-	cout << "\t\t\t\t\t\t  ≈∆≈Ã≈—ﬂ◊Õ€≈ Œœ≈–¿÷»»\n";
-	cout << "\t\t\t\t\t«¿ﬂ¬ » Õ¿ œ–Œƒ¿∆” √Œ“Œ¬Œ… œ–Œƒ” ÷»» ¡¿Õ ”";
+	cout << "\t\t\t\t\t\t  –ï–ñ–ï–ú–ï–°–Ø–ß–ù–´–ï –û–ü–ï–†–ê–¶–ò–ò\n";
+	cout << "\t\t\t\t\t–ó–ê–Ø–í–ö–ò –ù–ê –ü–†–û–î–ê–ñ–£ –ì–û–¢–û–í–û–ô –ü–†–û–î–£–ö–¶–ò–ò –ë–ê–ù–ö–£";
 	cout << endl << endl;
-	cout << "  ÓÎË˜ÂÒÚ‚Ó Ë„ÓÍÓ‚, Û ÍÓÚÓ˚ı ¡¿Õ  ÏÓÊÂÚ ÍÛÔËÚ¸ ≈√œ - " << Bank::getTheNumberOfEGPsBuy(Bank::getNumberOfPlayersSellingEGPs()) << endl;
-	cout << " Ã‡ÍÒËÏ‡Î¸Ì‡ˇ ˆÂÌ‡, ÔÓ ÍÓÚÓÓÈ ÏÓÊÌÓ ÔÓ‰‡Ú¸ ≈√œ ¡¿Õ ” - " << Bank::getMaximumEGPPrice() << endl << endl;
+	cout << " –ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –∏–≥—Ä–æ–∫–æ–≤, —É –∫–æ—Ç–æ—Ä—ã—Ö –ë–ê–ù–ö –º–æ–∂–µ—Ç –∫—É–ø–∏—Ç—å –ï–ì–ü - " << Bank::getTheNumberOfEGPsBuy(Bank::getNumberOfPlayersSellingEGPs()) << endl;
+	cout << " –ú–∞–∫—Å–∏–º–∞–ª—å–Ω–∞—è —Ü–µ–Ω–∞, –ø–æ –∫–æ—Ç–æ—Ä–æ–π –º–æ–∂–Ω–æ –ø—Ä–æ–¥–∞—Ç—å –ï–ì–ü –ë–ê–ù–ö–£ - " << Bank::getMaximumEGPPrice() << endl << endl;
 	cout << endl;
-	printDisappearingMessage(" œÓËÒıÓ‰ËÚ ÔÓ‰„ÓÚÓ‚Í‡ ·ÛÏ‡„ ‰Îˇ ÓÙÓÏÎÂÌËˇ Á‡ˇ‚ÓÍ. ŒÊË‰‡ÈÚÂ ", 8000);
+	printDisappearingMessage(" –ü—Ä–æ–∏—Å—Ö–æ–¥–∏—Ç –ø–æ–¥–≥–æ—Ç–æ–≤–∫–∞ –±—É–º–∞–≥ –¥–ª—è –æ—Ñ–æ—Ä–º–ª–µ–Ω–∏—è –∑–∞—è–≤–æ–∫. –û–∂–∏–¥–∞–π—Ç–µ ", 8000);
 
 	ApplicationList* completed_applications = fillingApplicationsForEGP(basic_data);
 
 	system("cls");
 	printHead(basic_data);
 	cout << endl;
-	cout << "\t\t\t\t  ¬€œŒÀÕ≈Õ»≈ Œ¡ﬂ«¿“≈À‹—“¬ œŒ «¿ﬂ¬ ¿Ã Õ¿ √Œ“Œ¬”ﬁ œ–Œƒ” ÷»ﬁ\n";
+	cout << "\t\t\t\t  –í–´–ü–û–õ–ù–ï–ù–ò–ï –û–ë–Ø–ó–ê–¢–ï–õ–¨–°–¢–í –ü–û –ó–ê–Ø–í–ö–ê–ú –ù–ê –ì–û–¢–û–í–£–Æ –ü–†–û–î–£–ö–¶–ò–Æ\n";
 	cout << endl;
-	printDisappearingMessage(" œÓËÒıÓ‰ËÚ Ó·‡·ÓÚÍ‡ Á‡ˇ‚ÓÍ ¡‡ÌÍÓÏ. ŒÊË‰‡ÈÚÂ. ", 4000);
+	printDisappearingMessage(" –ü—Ä–æ–∏—Å—Ö–æ–¥–∏—Ç –æ–±—Ä–∞–±–æ—Ç–∫–∞ –∑–∞—è–≤–æ–∫ –ë–∞–Ω–∫–æ–º. –û–∂–∏–¥–∞–π—Ç–µ. ", 4000);
 
 	Bank::processingOfApplicationsEGPs(completed_applications);
 	fulfilmentOfApplicationsEGPs(basic_data, *completed_applications);
@@ -434,29 +434,29 @@ ApplicationList* PrintConsole::fillingApplicationsForEGP(BasicData& basic_data) 
 	{
 		system("cls");
 		printHead(basic_data);
-		cout << "\t\t\t\t\t\t   «¿œŒÀÕ≈Õ»≈ «¿ﬂ¬ »" << std::endl << std::endl;
-		cout << "\t\t\t\t\t\t  «‡ÔÓÎÌˇÂÚ Ë„ÓÍ - " << basic_data.participating_players[cur_player_index]->getName() << std::endl;
-		cout << "\t\t\t\t\t\t    ŒÊË‰‡ÌËÂ Ë„ÓÍ‡\n\n";
+		cout << "\t\t\t\t\t\t   –ó–ê–ü–û–õ–ù–ï–ù–ò–ï –ó–ê–Ø–í–ö–ò" << std::endl << std::endl;
+		cout << "\t\t\t\t\t\t  –ó–∞–ø–æ–ª–Ω—è–µ—Ç –∏–≥—Ä–æ–∫ - " << basic_data.participating_players[cur_player_index]->getName() << std::endl;
+		cout << "\t\t\t\t\t\t    –û–∂–∏–¥–∞–Ω–∏–µ –∏–≥—Ä–æ–∫–∞\n\n";
 		Sleep(1000);
 		int num_esm{ int() };
 		int cost_esm{ int() };
-		cout << " ¬ÌËÏ‡ÌËÂ!!! —ÛÏÏ‡ÌÓÂ ÍÓÎË˜ÂÒÚ‚Ó ÔÓ‰‡‚‡ÂÏ˚ı ¡‡ÌÍÛ ≈√œ, ÌÂ ‰ÓÎÊÌÓ ÔÂ‚˚¯‡Ú¸ ÍÓÎË˜ÂÒÚ‚Ó ËÏÂ˛˘ËıÒˇ ≈√œ Û Ë„ÓÍ‡." << endl;
-		cout << " «‡ˇ‚Í‡ Ò ˆÂÌÓÈ ÔÓ‰‡ÊË ≈√œ ‚˚¯Â ÛÒÚ‡ÌÓ‚ÎÂÌÌÓÈ ¡‡ÌÍÓÏ ËÎË ÍÓÎË˜ÂÒÚ‚ÓÏ ÔÓ‰‡‚‡ÈÏ˚ı ≈√œ ‡‚ÌÓÏ 0, ÌÂ Û˜‡ÒÚ‚ÛÂÚ ‚ ÚÓ„‡ı." << endl << endl << endl;
+		cout << " –í–Ω–∏–º–∞–Ω–∏–µ!!! –°—É–º–º–∞—Ä–Ω–æ–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –ø—Ä–æ–¥–∞–≤–∞–µ–º—ã—Ö –ë–∞–Ω–∫—É –ï–ì–ü, –Ω–µ –¥–æ–ª–∂–Ω–æ –ø—Ä–µ–≤—ã—à–∞—Ç—å –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –∏–º–µ—é—â–∏—Ö—Å—è –ï–ì–ü —É –∏–≥—Ä–æ–∫–∞." << endl;
+		cout << " –ó–∞—è–≤–∫–∞ —Å —Ü–µ–Ω–æ–π –ø—Ä–æ–¥–∞–∂–∏ –ï–ì–ü –≤—ã—à–µ —É—Å—Ç–∞–Ω–æ–≤–ª–µ–Ω–Ω–æ–π –ë–∞–Ω–∫–æ–º –∏–ª–∏ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ–º –ø—Ä–æ–¥–∞–≤–∞–π–º—ã—Ö –ï–ì–ü —Ä–∞–≤–Ω–æ–º 0, –Ω–µ —É—á–∞—Å—Ç–≤—É–µ—Ç –≤ —Ç–æ—Ä–≥–∞—Ö." << endl << endl << endl;
 		do
 		{
-			cout << " ¬‚Â‰ËÚÂ ÊÂÎ‡ÂÏÓÂ ÍÓÎË˜ÂÒÚ‚Ó ≈√œ ‰Îˇ ÔÓ‰‡ÊË: ";
+			cout << " –í–≤–µ–¥–∏—Ç–µ –∂–µ–ª–∞–µ–º–æ–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–ì–ü –¥–ª—è –ø—Ä–æ–¥–∞–∂–∏: ";
 			cin >> num_esm;
 			if (basic_data.participating_players[cur_application_index]->getPlayerEGP() < num_esm)
-				cout << " ”Í‡Á‡ÌÌÓÂ ÍÓÎË˜ÂÒÚ‚Ó ≈—Ã ÔÂ‚˚¯‡ÂÚ ÍÓÎË˜ÂÒÚ‚Ó ËÏÂ˛˘ÂÂÒÂ Û Ë„ÓÍ‡" << endl;
+				cout << " –£–∫–∞–∑–∞–Ω–Ω–æ–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–°–ú –ø—Ä–µ–≤—ã—à–∞–µ—Ç –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –∏–º–µ—é—â–µ–µ—Å–µ —É –∏–≥—Ä–æ–∫–∞" << endl;
 		} while (basic_data.participating_players[cur_application_index]->getPlayerEGP() < num_esm);
 
-		cout << " ¬‚Â‰ËÚÂ ˆÂÌÛ ÔÓ ÍÓÚÓÓÈ ‚˚ „ÓÚÓ‚˚ ÔÓ‰‡Ú¸ ≈√œ (ÌÂ ‚˚¯Â " << Bank::getMaximumEGPPrice() << " Á‡ Â‰ÂÌËˆÛ ): ";
+		cout << " –í–≤–µ–¥–∏—Ç–µ —Ü–µ–Ω—É –ø–æ –∫–æ—Ç–æ—Ä–æ–π –≤—ã –≥–æ—Ç–æ–≤—ã –ø—Ä–æ–¥–∞—Ç—å –ï–ì–ü (–Ω–µ –≤—ã—à–µ " << Bank::getMaximumEGPPrice() << " –∑–∞ –µ–¥–µ–Ω–∏—Ü—É ): ";
 		cin >> cost_esm;
 		cout << endl;
 		completed_applications->addNewApplication(num_esm, cost_esm, basic_data.participating_players[cur_player_index]);
 
 		cur_player_index = ++cur_player_index < basic_data.participating_players.getNumber() ? cur_player_index : 0;
-		cout << " «‡ˇ‚Í‡ ÔËÌˇÚ‡ Í ‡ÒÒÏÓÚÂÌË˛. ";
+		cout << " –ó–∞—è–≤–∫–∞ –ø—Ä–∏–Ω—è—Ç–∞ –∫ —Ä–∞—Å—Å–º–æ—Ç—Ä–µ–Ω–∏—é. ";
 		Sleep(1000);
 	}
 	return completed_applications;
@@ -465,27 +465,27 @@ void PrintConsole::sixthAct(BasicData& basic_data) {
 	system("cls");
 	printHead(basic_data);
 
-	cout << "\t\t\t\t\t\t  ≈∆≈Ã≈—ﬂ◊Õ€≈ Œœ≈–¿÷»»\n";
-	cout << "\t\t\t\t\t\t¬€œÀ¿“¿ ——”ƒÕŒ√Œ œ–Œ÷≈Õ“¿\n";
+	cout << "\t\t\t\t\t\t  –ï–ñ–ï–ú–ï–°–Ø–ß–ù–´–ï –û–ü–ï–†–ê–¶–ò–ò\n";
+	cout << "\t\t\t\t\t\t–í–´–ü–õ–ê–¢–ê –°–°–£–î–ù–û–ì–û –ü–†–û–¶–ï–ù–¢–ê\n";
 
 	int cur_player_index{ basic_data.senior_player_number };
 	do
 	{
 		cur_player_index = cur_player_index < basic_data.participating_players.getNumber() ? cur_player_index : 0;
-		cout << " ŒÔÎ‡˜Ë‚‡ÂÚ Ë„ÓÍ - " << basic_data.participating_players[cur_player_index]->getName() << endl;
-		printDisappearingMessage(" œÓËÒıÓ‰ËÚ ‚˚ÔÓÎÌÂÌËÂ Ú‡ÌÁ‡ÍˆËË. ŒÊË‰‡ÈÚÂ. ", 3000);
+		cout << " –û–ø–ª–∞—á–∏–≤–∞–µ—Ç –∏–≥—Ä–æ–∫ - " << basic_data.participating_players[cur_player_index]->getName() << endl;
+		printDisappearingMessage(" –ü—Ä–æ–∏—Å—Ö–æ–¥–∏—Ç –≤—ã–ø–æ–ª–Ω–µ–Ω–∏–µ —Ç—Ä–∞–Ω–∑–∞–∫—Ü–∏–∏. –û–∂–∏–¥–∞–π—Ç–µ. ", 3000);
 
 		if (basic_data.participating_players[cur_player_index]->player_credits->getSize() == 0)
-			cout << " ” Ë„ÓÍ‡ " << basic_data.participating_players[cur_player_index]->getName() << " ÌÂÚ ÍÂ‰ËÚÓ‚" << endl;
+			cout << " –£ –∏–≥—Ä–æ–∫–∞ " << basic_data.participating_players[cur_player_index]->getName() << " –Ω–µ—Ç –∫—Ä–µ–¥–∏—Ç–æ–≤" << endl;
 		else {
 			basic_data.participating_players[cur_player_index]->payInterestOnTheCredit();
 			if (basic_data.participating_players[cur_player_index]->isBankrupt()) {
-				cout << " ¬Õ»Ã¿Õ»≈!!! »„ÓÍ ÌÓÏÂ " << cur_player_index + 1 << " ÔÓ‰ ËÏÂÌÂÏ " << basic_data.participating_players[cur_player_index]->getName() <<
-					" Ó·˙ˇ‚ÎˇÂÚÒˇ ·‡ÌÍÓÚÓÏ Ë ‚˚·˚‚‡ÂÚ ËÁ Ë„˚\n";
+				cout << " –í–ù–ò–ú–ê–ù–ò–ï!!! –ò–≥—Ä–æ–∫ –Ω–æ–º–µ—Ä " << cur_player_index + 1 << " –ø–æ–¥ –∏–º–µ–Ω–µ–º " << basic_data.participating_players[cur_player_index]->getName() <<
+					" –æ–±—ä—è–≤–ª—è–µ—Ç—Å—è –±–∞–Ω–∫—Ä–æ—Ç–æ–º –∏ –≤—ã–±—ã–≤–∞–µ—Ç –∏–∑ –∏–≥—Ä—ã\n";
 				basic_data.participating_players.playerRemoval(cur_player_index);
 			}
 			else {
-				cout << " »„ÓÍ ÌÓÏÂ " << cur_player_index + 1 << " ÔÓ‰ ËÏÂÌÂÏ " << basic_data.participating_players[cur_player_index]->getName() << " ‚˚ÔÎ‡ÚËÎ ÒÒÛ‰Ì˚È ÔÓˆÂÌÚ ÔÓ ‚ÒÂÏ ÍÂ‰ËÚ‡Ï\n";
+				cout << " –ò–≥—Ä–æ–∫ –Ω–æ–º–µ—Ä " << cur_player_index + 1 << " –ø–æ–¥ –∏–º–µ–Ω–µ–º " << basic_data.participating_players[cur_player_index]->getName() << " –≤—ã–ø–ª–∞—Ç–∏–ª —Å—Å—É–¥–Ω—ã–π –ø—Ä–æ—Ü–µ–Ω—Ç –ø–æ –≤—Å–µ–º –∫—Ä–µ–¥–∏—Ç–∞–º\n";
 			}
 		}
 		cout << endl;
@@ -499,38 +499,38 @@ void PrintConsole::seventhAct(BasicData& basic_data) {
 	system("cls");
 	printHead(basic_data);
 
-	cout << "\t\t\t\t\t\t  ≈∆≈Ã≈—ﬂ◊Õ€≈ Œœ≈–¿÷»»\n";
-	cout << "\t\t\t\t\t\t    œŒ√¿ÿ≈Õ»≈  –≈ƒ»“¿\n";
+	cout << "\t\t\t\t\t\t  –ï–ñ–ï–ú–ï–°–Ø–ß–ù–´–ï –û–ü–ï–†–ê–¶–ò–ò\n";
+	cout << "\t\t\t\t\t\t    –ü–û–ì–ê–®–ï–ù–ò–ï –ö–†–ï–î–ò–¢–ê\n";
 
 	int cur_player_index{ basic_data.senior_player_number };
 	do
 	{
 		cur_player_index = cur_player_index < basic_data.participating_players.getNumber() ? cur_player_index : 0;
-		cout << " œÓ„‡¯ÂÌËÂ ÍÂ‰ËÚ‡ ÌÓÏÂ " << cur_player_index + 1 << "  Ë„ÓÍÓÏ - " << basic_data.participating_players[cur_player_index]->getName() << endl;
-		printDisappearingMessage(" œÓËÒıÓ‰ËÚ ‚˚ÔÓÎÌÂÌËÂ Ú‡ÌÁ‡ÍˆËË. ŒÊË‰‡ÈÚÂ. ", 3000);
+		cout << " –ü–æ–≥–∞—à–µ–Ω–∏–µ –∫—Ä–µ–¥–∏—Ç–∞ –Ω–æ–º–µ—Ä " << cur_player_index + 1 << "  –∏–≥—Ä–æ–∫–æ–º - " << basic_data.participating_players[cur_player_index]->getName() << endl;
+		printDisappearingMessage(" –ü—Ä–æ–∏—Å—Ö–æ–¥–∏—Ç –≤—ã–ø–æ–ª–Ω–µ–Ω–∏–µ —Ç—Ä–∞–Ω–∑–∞–∫—Ü–∏–∏. –û–∂–∏–¥–∞–π—Ç–µ. ", 3000);
 
 		if (basic_data.participating_players[cur_player_index]->player_credits->getSize() == 0)
-			cout << " ” Ë„ÓÍ‡ " << basic_data.participating_players[cur_player_index]->getName() << " ÌÂÚ ÍÂ‰ËÚÓ‚" << endl;
+			cout << " –£ –∏–≥—Ä–æ–∫–∞ " << basic_data.participating_players[cur_player_index]->getName() << " –Ω–µ—Ç –∫—Ä–µ–¥–∏—Ç–æ–≤" << endl;
 		else {
 
 			for (int i = 0; i < basic_data.participating_players[cur_player_index]->player_credits->getSize(); i++)
 			{
 				if (basic_data.participating_players[cur_player_index]->player_credits->getCredit(i)->getCreditPeriod() > 0) {
-					cout << " —ÓÍ " << i + 1 << "-„Ó ÍÂ‰ËÚ‡ Û Ë„ÓÍ‡ " << basic_data.participating_players[cur_player_index]->getName() << " Â˘∏ ÌÂ ËÒÚÂÍ" << endl;
+					cout << " –°—Ä–æ–∫ " << i + 1 << "-–≥–æ –∫—Ä–µ–¥–∏—Ç–∞ —É –∏–≥—Ä–æ–∫–∞ " << basic_data.participating_players[cur_player_index]->getName() << " –µ—â—ë –Ω–µ –∏—Å—Ç–µ–∫" << endl;
 				}
 				else {
 					basic_data.participating_players[cur_player_index]->creditRepayment(i);
-					cout << " ” Ë„ÓÍ‡ " << basic_data.participating_players[cur_player_index]->getName() << " Á‡Í˚ÎÒˇ ÍÂ‰ËÚ ÌÓÏÂ " << i + 1 << endl;
+					cout << " –£ –∏–≥—Ä–æ–∫–∞ " << basic_data.participating_players[cur_player_index]->getName() << " –∑–∞–∫—Ä—ã–ª—Å—è –∫—Ä–µ–¥–∏—Ç –Ω–æ–º–µ—Ä " << i + 1 << endl;
 				}
 			}
 
 			if (basic_data.participating_players[cur_player_index]->isBankrupt()) {
-				cout << " ¬Õ»Ã¿Õ»≈!!! »„ÓÍ ÌÓÏÂ" << cur_player_index + 1 << " ÔÓ‰ ËÏÂÌÂÏ " << basic_data.participating_players[cur_player_index]->getName() <<
-					" Ó·˙ˇ‚ÎˇÂÚÒˇ ·‡ÌÍÓÚÓÏ Ë ‚˚·˚‚‡ÂÚ ËÁ Ë„˚\n";
+				cout << " –í–ù–ò–ú–ê–ù–ò–ï!!! –ò–≥—Ä–æ–∫ –Ω–æ–º–µ—Ä" << cur_player_index + 1 << " –ø–æ–¥ –∏–º–µ–Ω–µ–º " << basic_data.participating_players[cur_player_index]->getName() <<
+					" –æ–±—ä—è–≤–ª—è–µ—Ç—Å—è –±–∞–Ω–∫—Ä–æ—Ç–æ–º –∏ –≤—ã–±—ã–≤–∞–µ—Ç –∏–∑ –∏–≥—Ä—ã\n";
 				basic_data.participating_players.playerRemoval(cur_player_index);
 			}
 			else {
-				cout << " »„ÓÍ - " << basic_data.participating_players[cur_player_index]->getName() << " ÛÒÔÂ¯ÌÓ ÔÓ„‡ÒËÎ ÍÂ‰ËÚ" << endl;
+				cout << " –ò–≥—Ä–æ–∫ - " << basic_data.participating_players[cur_player_index]->getName() << " —É—Å–ø–µ—à–Ω–æ –ø–æ–≥–∞—Å–∏–ª –∫—Ä–µ–¥–∏—Ç" << endl;
 			}
 		}
 		cout << endl;
@@ -544,14 +544,14 @@ void PrintConsole::eighthAct(BasicData& basic_data) {
 	system("cls");
 	printHead(basic_data);
 
-	cout << "\t\t\t\t\t\t  ≈∆≈Ã≈—ﬂ◊Õ€≈ Œœ≈–¿÷»»\n";
-	cout << "\t\t\t\t\t\t    œŒÀ”◊≈Õ»≈  –≈ƒ»“¿\n";
+	cout << "\t\t\t\t\t\t  –ï–ñ–ï–ú–ï–°–Ø–ß–ù–´–ï –û–ü–ï–†–ê–¶–ò–ò\n";
+	cout << "\t\t\t\t\t\t    –ü–û–õ–£–ß–ï–ù–ò–ï –ö–†–ï–î–ò–¢–ê\n";
 	cout << endl;
 	int cur_player_index{ basic_data.senior_player_number };
 	do
 	{
 		cur_player_index = cur_player_index < basic_data.participating_players.getNumber() ? cur_player_index : 0;
-		cout << " »„ÓÍ " << basic_data.participating_players[cur_player_index]->getName() << ". ∆ÂÎ‡ÂÚÂ ‚ÁˇÚ¸ ÍÂ‰ËÚ ‚ ¡‡ÌÍÂ? (y - ‰‡, n-ÌÂÚ): ";
+		cout << " –ò–≥—Ä–æ–∫ " << basic_data.participating_players[cur_player_index]->getName() << ". –ñ–µ–ª–∞–µ—Ç–µ –≤–∑—è—Ç—å –∫—Ä–µ–¥–∏—Ç –≤ –ë–∞–Ω–∫–µ? (y - –¥–∞, n-–Ω–µ—Ç): ";
 		char choice{ char() };
 		do
 		{
@@ -560,25 +560,25 @@ void PrintConsole::eighthAct(BasicData& basic_data) {
 				int credit_amount{ 0 };
 				do
 				{
-					cout << " ”Í‡ÊËÚÂ ÒÛÏÏÛ ÍÓÚÓÛ˛ ‚˚ ıÓÚËÚÂ ‚ÁˇÚ¸ ‚ ÍÂ‰ËÚ: ";
+					cout << " –£–∫–∞–∂–∏—Ç–µ —Å—É–º–º—É –∫–æ—Ç–æ—Ä—É—é –≤—ã —Ö–æ—Ç–∏—Ç–µ –≤–∑—è—Ç—å –≤ –∫—Ä–µ–¥–∏—Ç: ";
 					cin >> credit_amount;
 					cout << endl;
 
 					if (basic_data.participating_players[cur_player_index]->creditRequirementsAreMet(credit_amount)) {
 						basic_data.participating_players[cur_player_index]->borrowFromTheBank(credit_amount);
-						cout << " ¬‡Ï Ó‰Ó·ÂÌ ÍÂ‰ËÚ Ì‡ ÒÛÏÏÛ " << credit_amount << ", ÒÓÍÓÏ Ì‡ 12 ÏÂÒˇˆÂ‚" << endl;
+						cout << " –í–∞–º –æ–¥–æ–±—Ä–µ–Ω –∫—Ä–µ–¥–∏—Ç –Ω–∞ —Å—É–º–º—É " << credit_amount << ", —Å—Ä–æ–∫–æ–º –Ω–∞ 12 –º–µ—Å—è—Ü–µ–≤" << endl;
 					}
 					else {
-						cout << " «‡Ô‡¯Ë‚‡ÂÏ‡ˇ ‚‡ÏË ÒÛÏÏ‡ ÔÂ‚˚¯‡ÂÚ ÎËÏËÚ, ÛÒÚ‡ÌÓ‚ÎÂÌÌ˚È ‰Îˇ ‚‡Ò ¡‡ÌÍÓÏ ËÎË ‡‚Ì‡ 0" << endl;
+						cout << " –ó–∞–ø—Ä–∞—à–∏–≤–∞–µ–º–∞—è –≤–∞–º–∏ —Å—É–º–º–∞ –ø—Ä–µ–≤—ã—à–∞–µ—Ç –ª–∏–º–∏—Ç, —É—Å—Ç–∞–Ω–æ–≤–ª–µ–Ω–Ω—ã–π –¥–ª—è –≤–∞—Å –ë–∞–Ω–∫–æ–º –∏–ª–∏ —Ä–∞–≤–Ω–∞ 0" << endl;
 					}
 				} while (!basic_data.participating_players[cur_player_index]->creditRequirementsAreMet(credit_amount));
 			}
 			else if (choice == 'n' || choice == 'N') {
 
-				cout << " »„ÓÍ - " << basic_data.participating_players[cur_player_index]->getName() << " ÓÚÍ‡Á‡ÎÒˇ ÓÚ ÍÂ‰ËÚ‡." << endl;
+				cout << " –ò–≥—Ä–æ–∫ - " << basic_data.participating_players[cur_player_index]->getName() << " –æ—Ç–∫–∞–∑–∞–ª—Å—è –æ—Ç –∫—Ä–µ–¥–∏—Ç–∞." << endl;
 				continue;
 			}
-			else cout << " ¬‚Â‰ÂÌ ÌÂ ÍÓÂÍÚÌ˚È ÒËÏ‚ÓÎ" << endl;
+			else cout << " –í–≤–µ–¥–µ–Ω –Ω–µ –∫–æ—Ä—Ä–µ–∫—Ç–Ω—ã–π —Å–∏–º–≤–æ–ª" << endl;
 		} while (!((choice == 'y' || choice == 'Y') || (choice == 'n' || choice == 'N')));
 		Sleep(1000);
 		cout << endl;
@@ -593,15 +593,15 @@ void PrintConsole::ninthAct(BasicData& basic_data) {
 	system("cls");
 	printHead(basic_data);
 
-	cout << "\t\t\t\t\t\t  ≈∆≈Ã≈—ﬂ◊Õ€≈ Œœ≈–¿÷»»\n";
-	cout << "\t\t\t\t\t   «¿ﬂ¬ » Õ¿ —“–Œ»“≈À‹—“¬Œ ‘¿¡–» »\n";
+	cout << "\t\t\t\t\t\t  –ï–ñ–ï–ú–ï–°–Ø–ß–ù–´–ï –û–ü–ï–†–ê–¶–ò–ò\n";
+	cout << "\t\t\t\t\t   –ó–ê–Ø–í–ö–ò –ù–ê –°–¢–†–û–ò–¢–ï–õ–¨–°–¢–í–û –§–ê–ë–†–ò–ö–ò\n";
 	cout << endl;
 	int cur_player_index{ basic_data.senior_player_number };
 
 	do
 	{
 		cur_player_index = cur_player_index < basic_data.participating_players.getNumber() ? cur_player_index : 0;
-		cout << " »„ÓÍ - " << basic_data.participating_players[cur_player_index]->getName() << ". ∆ÂÎ‡ÂÚÂ Ì‡˜‡Ú¸ ÒÚÓËÚÂÎ¸ÒÚ‚Ó Ù‡·ËÍË? (y - ‰‡, n-ÌÂÚ): ";
+		cout << " –ò–≥—Ä–æ–∫ - " << basic_data.participating_players[cur_player_index]->getName() << ". –ñ–µ–ª–∞–µ—Ç–µ –Ω–∞—á–∞—Ç—å —Å—Ç—Ä–æ–∏—Ç–µ–ª—å—Å—Ç–≤–æ —Ñ–∞–±—Ä–∏–∫–∏? (y - –¥–∞, n-–Ω–µ—Ç): ";
 		char choice{ char() };
 		do
 		{
@@ -610,21 +610,21 @@ void PrintConsole::ninthAct(BasicData& basic_data) {
 				int object_type{ 0 };
 				do
 				{
-					cout << " ”Í‡ÊËÚÂ Ì‡ËÏÂÌÓ‚‡ÌËÂ ‡·ÓÚ (1 - Ó·˚˜Ì‡ˇ Ù‡·ËÍ‡, 2 - ‡‚ÚÓÏ‡ÚËÁËÓ‚‡ÌÌ‡ˇ Ù‡·ËÍ‡, 3 - ÂÍÓÌÒÚÛÍˆËˇ Ó·˚˜ÌÓÈ Ù‡·ËÍË): ";
+					cout << " –£–∫–∞–∂–∏—Ç–µ –Ω–∞–∏–º–µ–Ω–æ–≤–∞–Ω–∏–µ —Ä–∞–±–æ—Ç (1 - –æ–±—ã—á–Ω–∞—è —Ñ–∞–±—Ä–∏–∫–∞, 2 - –∞–≤—Ç–æ–º–∞—Ç–∏–∑–∏—Ä–æ–≤–∞–Ω–Ω–∞—è —Ñ–∞–±—Ä–∏–∫–∞, 3 - —Ä–µ–∫–æ–Ω—Å—Ç—Ä—É–∫—Ü–∏—è –æ–±—ã—á–Ω–æ–π —Ñ–∞–±—Ä–∏–∫–∏): ";
 					cin >> object_type;
 					cout << endl;
 
 					if (object_type == 1 || object_type == 2 || object_type == 3) {
 						basic_data.participating_players[cur_player_index]->orderTheConstructionOfFactory(object_type);
-						cout << " »„ÓÍ Ì‡˜‡Î " << rusNameObjectForPartNine(object_type) << ", ÒÓÍÓÏ Ì‡ " << basic_data.participating_players[cur_player_index]->player_construction->getTheLastConstructionSiteAdded()->getConstructionPeriod() << " ÏÂÒˇˆÂ‚" << endl;
+						cout << " –ò–≥—Ä–æ–∫ –Ω–∞—á–∞–ª " << rusNameObjectForPartNine(object_type) << ", —Å—Ä–æ–∫–æ–º –Ω–∞ " << basic_data.participating_players[cur_player_index]->player_construction->getTheLastConstructionSiteAdded()->getConstructionPeriod() << " –º–µ—Å—è—Ü–µ–≤" << endl;
 					}
 					else {
-						cout << " ¬‚Â‰ÂÌ ÌÂ ÍÓÂÍÚÌ˚È ÒËÏ‚ÓÎ" << endl;
+						cout << " –í–≤–µ–¥–µ–Ω –Ω–µ –∫–æ—Ä—Ä–µ–∫—Ç–Ω—ã–π —Å–∏–º–≤–æ–ª" << endl;
 					}
 				} while (!(object_type == 1 || object_type == 2 || object_type == 3 || object_type == 0));
 
 			}
-			else cout << " »„ÓÍ ÓÚÍ‡Á˚‚‡ÂÚÒˇ ÓÚ ÒÚÓËÚÂÎ¸ÒÚ‚‡" << endl;
+			else cout << " –ò–≥—Ä–æ–∫ –æ—Ç–∫–∞–∑—ã–≤–∞–µ—Ç—Å—è –æ—Ç —Å—Ç—Ä–æ–∏—Ç–µ–ª—å—Å—Ç–≤–∞" << endl;
 
 		} while (!((choice == 'y' || choice == 'Y') || (choice == 'n' || choice == 'N')));
 
@@ -632,12 +632,12 @@ void PrintConsole::ninthAct(BasicData& basic_data) {
 			
 			basic_data.participating_players[cur_player_index]->paymentForTheSecondPartOfTheConstruction();
 			if (basic_data.participating_players[cur_player_index]->isBankrupt()) {
-				cout << "¬Õ»Ã¿Õ»≈!!! »„ÓÍ - " << basic_data.participating_players[cur_player_index]->getName() <<
-					" Ó·˙ˇ‚ÎˇÂÚÒˇ ·‡ÌÍÓÚÓÏ Ë ‚˚·˚‚‡ÂÚ ËÁ Ë„˚ ËÁ-Á‡ ÌÂ‰ÓÒÚ‡ÚÍ‡ ÒÂ‰ÒÚ‚ ‰Îˇ ÓÔÎ‡Ú˚ ‚ÚÓÓÈ ˜‡ÒÚË ÒÚÓÈÍË\n";
+				cout << "–í–ù–ò–ú–ê–ù–ò–ï!!! –ò–≥—Ä–æ–∫ - " << basic_data.participating_players[cur_player_index]->getName() <<
+					" –æ–±—ä—è–≤–ª—è–µ—Ç—Å—è –±–∞–Ω–∫—Ä–æ—Ç–æ–º –∏ –≤—ã–±—ã–≤–∞–µ—Ç –∏–∑ –∏–≥—Ä—ã –∏–∑-–∑–∞ –Ω–µ–¥–æ—Å—Ç–∞—Ç–∫–∞ —Å—Ä–µ–¥—Å—Ç–≤ –¥–ª—è –æ–ø–ª–∞—Ç—ã –≤—Ç–æ—Ä–æ–π —á–∞—Å—Ç–∏ —Å—Ç—Ä–æ–π–∫–∏\n";
 				basic_data.participating_players.playerRemoval(cur_player_index);
 			}
 			else {
-				cout << "œÓÁ‰‡‚Îˇ˛, ÒÚÓËÚÂÎ¸ÒÚ‚Ó ÓÍÓÌ˜ÂÌÓ" << endl;
+				cout << "–ü–æ–∑–¥—Ä–∞–≤–ª—è—é, —Å—Ç—Ä–æ–∏—Ç–µ–ª—å—Å—Ç–≤–æ –æ–∫–æ–Ω—á–µ–Ω–æ" << endl;
 				Sleep(2000);
 			}
 		}
@@ -655,13 +655,13 @@ string PrintConsole::rusNameObjectForPartNine(int object_type) {
 	switch (object_type)
 	{
 	case 1:
-		return "ÒÚÓËÚÂÎ¸ÒÚ‚Ó Ó·˚˜ÌÓÈ Ù‡·ËÍË";
+		return "—Å—Ç—Ä–æ–∏—Ç–µ–ª—å—Å—Ç–≤–æ –æ–±—ã—á–Ω–æ–π —Ñ–∞–±—Ä–∏–∫–∏";
 		break;
 	case 2:
-		return "ÒÚÓËÚÂÎ¸ÒÚ‚Ó ‡‚ÚÓÏ‡ÚËÁËÓ‚‡ÌÌÓÈ Ù‡·ËÍË";
+		return "—Å—Ç—Ä–æ–∏—Ç–µ–ª—å—Å—Ç–≤–æ –∞–≤—Ç–æ–º–∞—Ç–∏–∑–∏—Ä–æ–≤–∞–Ω–Ω–æ–π —Ñ–∞–±—Ä–∏–∫–∏";
 		break;
 	case 3:
-		return "ÂÍÓÌÒÚÛÍˆË˛ Ó·˚˜ÌÓÈ Ù‡·ËÍË";
+		return "—Ä–µ–∫–æ–Ω—Å—Ç—Ä—É–∫—Ü–∏—é –æ–±—ã—á–Ω–æ–π —Ñ–∞–±—Ä–∏–∫–∏";
 		break;
 
 	default:
@@ -689,30 +689,30 @@ void PrintConsole::printFinalResult(BasicData& basic_data) {
 	system("cls");
 	if (basic_data.participating_players.getNumber() == 0) {
 		cout << endl << endl << endl << endl << endl;
-		cout << "\t\t\t\t\t\t»√–¿ «¿ ŒÕ◊»À¿—‹ Õ»◊‹≈…" << endl;
+		cout << "\t\t\t\t\t\t–ò–ì–†–ê –ó–ê–ö–û–ù–ß–ò–õ–ê–°–¨ –ù–ò–ß–¨–ï–ô" << endl;
 		cout << endl << endl << endl << endl << endl;
 	}
 	else {
 		cout << endl << endl << endl << endl << endl;
-		cout << "\t\t\t\t\t»√–Œ  œŒƒ »Ã≈Õ≈Ã " << basic_data.participating_players[0]->getName() << " Œƒ≈–∆¿À œŒ¡≈ƒ”!!!" << endl << endl;
-		cout << "\t ÓÎË˜ÂÒÚ‚Ó Ó·˚˜Ì˚ı Ù‡·ËÍ " << basic_data.participating_players[0]->getNumberOfUsualFactories() << endl;
-		cout << "\t ÓÎË˜ÂÒÚ‚Ó ‡‚ÚÓÏ‡ÚÂÁËÓ‚‡ÌÌ˚ı Ù‡·ËÍ " << basic_data.participating_players[0]->getNumberOfAutomatedFactory() << endl;
-		cout << "\t ÓÎË˜ÂÒÚ‚Ó ≈—Ã Û Ë„ÓÍ‡ " << basic_data.participating_players[0]->getPlayerESM() << endl;
-		cout << "\t ÓÎË˜ÂÒÚ‚Ó ≈√œ Û Ë„ÓÍ‡ " << basic_data.participating_players[0]->getPlayerEGP() << endl;
-		cout << "\t ÓÎË˜ÂÒÚ‚Ó Ì‡ÎË˜Ì˚ı ‰ÂÌÂ„ Û Ë„ÓÍ‡ " << basic_data.participating_players[0]->getCash() << endl;
+		cout << "\t\t\t\t\t–ò–ì–†–û–ö –ü–û–î –ò–ú–ï–ù–ï–ú " << basic_data.participating_players[0]->getName() << " –û–î–ï–†–ñ–ê–õ –ü–û–ë–ï–î–£!!!" << endl << endl;
+		cout << "\t–ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –æ–±—ã—á–Ω—ã—Ö —Ñ–∞–±—Ä–∏–∫ " << basic_data.participating_players[0]->getNumberOfUsualFactories() << endl;
+		cout << "\t–ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –∞–≤—Ç–æ–º–∞—Ç–µ–∑–∏—Ä–æ–≤–∞–Ω–Ω—ã—Ö —Ñ–∞–±—Ä–∏–∫ " << basic_data.participating_players[0]->getNumberOfAutomatedFactory() << endl;
+		cout << "\t–ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–°–ú —É –∏–≥—Ä–æ–∫–∞ " << basic_data.participating_players[0]->getPlayerESM() << endl;
+		cout << "\t–ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –ï–ì–ü —É –∏–≥—Ä–æ–∫–∞ " << basic_data.participating_players[0]->getPlayerEGP() << endl;
+		cout << "\t–ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –Ω–∞–ª–∏—á–Ω—ã—Ö –¥–µ–Ω–µ–≥ —É –∏–≥—Ä–æ–∫–∞ " << basic_data.participating_players[0]->getCash() << endl;
 		if (basic_data.participating_players[0]->player_credits->getSize() == 0)
-			cout << "\t Â‰ËÚ˚ ÓÚÒÛÚÒÚ‚Û˛Ú" << endl;
+			cout << "\t–ö—Ä–µ–¥–∏—Ç—ã –æ—Ç—Å—É—Ç—Å—Ç–≤—É—é—Ç" << endl;
 		else {
 			for (int credit_index = 0; credit_index < basic_data.participating_players[0]->player_credits->getSize(); credit_index++) {
-				cout << "\t Â‰ËÚ %" << credit_index + 1 << " Ì‡ ÒÛÏÏÛ " << basic_data.participating_players[0]->player_credits->getCredit(credit_index)->getCreditAmount() <<
-					", ÔÓ„‡¯ÂÌËˇ ÍÂ‰ËÚ‡ ÔÓËÁÓÈ‰ÂÚ ˜ÂÂÁ" << basic_data.participating_players[0]->player_credits->getCredit(credit_index)->getCreditPeriod() << " ÏÂÒˇˆÂ‚" << endl;
+				cout << "\t–ö—Ä–µ–¥–∏—Ç %" << credit_index + 1 << " –Ω–∞ —Å—É–º–º—É " << basic_data.participating_players[0]->player_credits->getCredit(credit_index)->getCreditAmount() <<
+					", –ø–æ–≥–∞—à–µ–Ω–∏—è –∫—Ä–µ–¥–∏—Ç–∞ –ø—Ä–æ–∏–∑–æ–π–¥–µ—Ç —á–µ—Ä–µ–∑" << basic_data.participating_players[0]->player_credits->getCredit(credit_index)->getCreditPeriod() << " –º–µ—Å—è—Ü–µ–≤" << endl;
 			}
 		}
 		if (basic_data.participating_players[0]->player_construction->getSize() == 0)
-			cout << "\t—ÚÓÈÍË ÓÚÒÛÚÒÚ‚Û˛Ú" << endl;
+			cout << "\t–°—Ç—Ä–æ–π–∫–∏ –æ—Ç—Å—É—Ç—Å—Ç–≤—É—é—Ç" << endl;
 		else {
-			for (int Òonstruction_index = 0; Òonstruction_index < basic_data.participating_players[0]->player_construction->getSize(); Òonstruction_index++) {
-				cout << "\t—ÚÓÈÍ‡ #" << Òonstruction_index + 1 << " - " << rusNameObjectForPlayerResourses(basic_data.participating_players[0]->player_construction->getBuildingSite(Òonstruction_index)->getObjectType()) << ", ÔÓÒÚÓËÚÒˇ ˜ÂÂÁ" << basic_data.participating_players[0]->player_construction->getBuildingSite(Òonstruction_index)->getConstructionPeriod() << " ÏÂÒˇˆ" << endl;
+			for (int —Åonstruction_index = 0; —Åonstruction_index < basic_data.participating_players[0]->player_construction->getSize(); —Åonstruction_index++) {
+				cout << "\t–°—Ç—Ä–æ–π–∫–∞ #" << —Åonstruction_index + 1 << " - " << rusNameObjectForPlayerResourses(basic_data.participating_players[0]->player_construction->getBuildingSite(—Åonstruction_index)->getObjectType()) << ", –ø–æ—Å—Ç—Ä–æ–∏—Ç—Å—è —á–µ—Ä–µ–∑" << basic_data.participating_players[0]->player_construction->getBuildingSite(—Åonstruction_index)->getConstructionPeriod() << " –º–µ—Å—è—Ü" << endl;
 			}
 		}
 		cout << endl << endl;
@@ -730,11 +730,11 @@ int PrintConsole::getSeniorPlayerNumber(BasicData& basic_data) {
 void PrintConsole::fulfilmentOfApplicationsEGPs(BasicData& basic_data, ApplicationList& application_list) {
 	for (int i = 0; i < application_list.getNumberOfApplictions(); i++)
 	{
-		cout << " «‡ˇ‚Í‡ Ó‰Ó·ÂÌ‡ Ë„ÓÍÛ - " << application_list[i]->getApplicant() << endl;
-		cout << " Õ‡ ÔÓ‰‡ÊÛ ≈√œ ‚ ÍÓÎË˜ÂÒÚ‚Â: " << application_list[i]->getNumberOfUnitsRequested() << endl;
-		cout << " œÓ ˆÂÌÂ Á‡ Â‰ÂÌËˆÛ: " << application_list[i]->getPricePerUnit() << endl << endl;
-		printDisappearingMessage(" œÓËÒıÓ‰ËÚ ‚˚ÔÓÎÌÂÌËÂ Ú‡ÌÁ‡ÍˆËË. ŒÊË‰‡ÈÚÂ ", 4000);
-		cout << "“‡Á‡ÍˆËˇ ÛÒÔÂ¯ÌÓ ‚˚ÔÓÎÌÂÌ‡. " << endl << endl;
+		cout << " –ó–∞—è–≤–∫–∞ –æ–¥–æ–±—Ä–µ–Ω–∞ –∏–≥—Ä–æ–∫—É - " << application_list[i]->getApplicant() << endl;
+		cout << " –ù–∞ –ø—Ä–æ–¥–∞–∂—É –ï–ì–ü –≤ –∫–æ–ª–∏—á–µ—Å—Ç–≤–µ: " << application_list[i]->getNumberOfUnitsRequested() << endl;
+		cout << " –ü–æ —Ü–µ–Ω–µ –∑–∞ –µ–¥–µ–Ω–∏—Ü—É: " << application_list[i]->getPricePerUnit() << endl << endl;
+		printDisappearingMessage(" –ü—Ä–æ–∏—Å—Ö–æ–¥–∏—Ç –≤—ã–ø–æ–ª–Ω–µ–Ω–∏–µ —Ç—Ä–∞–Ω–∑–∞–∫—Ü–∏–∏. –û–∂–∏–¥–∞–π—Ç–µ ", 4000);
+		cout << "–¢—Ä–∞–∑–∞–∫—Ü–∏—è —É—Å–ø–µ—à–Ω–æ –≤—ã–ø–æ–ª–Ω–µ–Ω–∞. " << endl << endl;
 		application_list.getPlayer(i)->EGPapplicationExecution(application_list[i]);
 	}
 }
