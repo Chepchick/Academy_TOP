@@ -8,7 +8,7 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Алексей\\.nuget\\packages\\": {}
+    "C:\\Users\\Aleksey\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -16,11 +16,11 @@
       "projectUniqueName": "F:\\Academy_TOP\\C-Sharp_programming_language_basics\\tasks_from_26.11.22\\tasks_from_26.11.22.csproj",
       "projectName": "tasks_from_26.11.22",
       "projectPath": "F:\\Academy_TOP\\C-Sharp_programming_language_basics\\tasks_from_26.11.22\\tasks_from_26.11.22.csproj",
-      "packagesPath": "C:\\Users\\Алексей\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Aleksey\\.nuget\\packages\\",
       "outputPath": "F:\\Academy_TOP\\C-Sharp_programming_language_basics\\tasks_from_26.11.22\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Алексей\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Aleksey\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
