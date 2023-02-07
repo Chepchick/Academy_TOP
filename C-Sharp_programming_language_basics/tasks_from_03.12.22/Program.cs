@@ -1,4 +1,5 @@
-﻿#define TASK_
+﻿#define TASK_7
+using System.Linq;
 using static System.Console;
 
 #if TASK_1
@@ -389,9 +390,11 @@ string? word = "море";
 
 string replacement = new string('*', word.Length);
 
-text = text?.Replace(word, replacement);
+text = text.Replace(word, replacement);
+string[] strArr = text.Split(replacement.ToCharArray(),StringSplitOptions.RemoveEmptyEntries);
 
 WriteLine(text);
+WriteLine($"Статистика: {strArr.Length} замены слова {word}");
 
 #endif //TASK_7
 
