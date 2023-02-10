@@ -1,4 +1,4 @@
-﻿#define TASK_
+﻿#define TASK_1
 
 using static System.Console;
 

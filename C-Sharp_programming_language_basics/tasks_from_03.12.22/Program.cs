@@ -1,4 +1,4 @@
-﻿#define TASK_7
+﻿#define TASK_6
 using System.Linq;
 using static System.Console;
 

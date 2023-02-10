@@ -1,0 +1,15 @@
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\bin\Debug\net7.0\task_14.01.23.exe
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\bin\Debug\net7.0\task_14.01.23.deps.json
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\bin\Debug\net7.0\task_14.01.23.runtimeconfig.json
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\bin\Debug\net7.0\task_14.01.23.dll
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\bin\Debug\net7.0\task_14.01.23.pdb
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\obj\Debug\net7.0\task_14.01.23.csproj.AssemblyReference.cache
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\obj\Debug\net7.0\task_14.01.23.GeneratedMSBuildEditorConfig.editorconfig
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\obj\Debug\net7.0\task_14.01.23.AssemblyInfoInputs.cache
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\obj\Debug\net7.0\task_14.01.23.AssemblyInfo.cs
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\obj\Debug\net7.0\task_14.01.23.csproj.CoreCompileInputs.cache
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\obj\Debug\net7.0\task_14.01.23.dll
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\obj\Debug\net7.0\refint\task_14.01.23.dll
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\obj\Debug\net7.0\task_14.01.23.pdb
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\obj\Debug\net7.0\task_14.01.23.genruntimeconfig.cache
+F:\Academy_TOP\C-Sharp_programming_language_basics\task_14.01.23\obj\Debug\net7.0\ref\task_14.01.23.dll
