@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Hierarchy_of_transport_classes/1.0.0": {
+        "runtime": {
+          "Hierarchy_of_transport_classes.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Hierarchy_of_transport_classes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
