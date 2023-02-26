@@ -1,0 +1,15 @@
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\bin\Debug\net7.0\Fracion.exe
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\bin\Debug\net7.0\Fracion.deps.json
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\bin\Debug\net7.0\Fracion.runtimeconfig.json
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\bin\Debug\net7.0\Fracion.dll
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\bin\Debug\net7.0\Fracion.pdb
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\obj\Debug\net7.0\Fracion.csproj.AssemblyReference.cache
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\obj\Debug\net7.0\Fracion.GeneratedMSBuildEditorConfig.editorconfig
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\obj\Debug\net7.0\Fracion.AssemblyInfoInputs.cache
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\obj\Debug\net7.0\Fracion.AssemblyInfo.cs
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\obj\Debug\net7.0\Fracion.csproj.CoreCompileInputs.cache
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\obj\Debug\net7.0\Fracion.dll
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\obj\Debug\net7.0\refint\Fracion.dll
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\obj\Debug\net7.0\Fracion.pdb
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\obj\Debug\net7.0\Fracion.genruntimeconfig.cache
+F:\Academy_TOP\C-Sharp_programming_language_basics\Fracion\obj\Debug\net7.0\ref\Fracion.dll
