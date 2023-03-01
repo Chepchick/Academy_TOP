@@ -85,7 +85,8 @@ namespace Fracion
             => a < b || a == b;
 
 
-        public static Fraction operator+ (Fraction a, Fraction b) {
+
+       public static Fraction operator+ (Fraction a, Fraction b) {
             Fraction temp = new Fraction();
             temp.Numerator = (ushort)((a.Numerator + a.Denominator * a.Integer) * b.Denominator + (b.Numerator + b.Denominator * b.Integer) * a.Denominator);
             temp.Denominator = (ushort)(a.Denominator * b.Denominator);
@@ -93,14 +94,19 @@ namespace Fracion
             temp.CalculateTheInteger();
             return temp;
         }
-        public static Fraction operator+ (Fraction a, int b)
-            => new Fraction((ushort)(a.Integer + b), a.Numerator, a.Denominator);        
-        public static Fraction operator+ (int a, Fraction b)
-            => new Fraction((ushort)(b.Integer + a), b.Numerator, b.Denominator);
-        public static Fraction operator+ (Fraction a, double b)
-            => a + b;
-        public static Fraction operator+ (double a, Fraction b)
-            => a + b;
+
+        public delegate Fraction Sum_f_int(Fraction a, int b);
+        Sum_f_int s_f_int = (Fraction a, int b) => new Fraction((ushort)(a.Integer + b), a.Numerator, a.Denominator);        
+        
+        public delegate Fraction Sum_int_f(int a, Fraction b);
+        Sum_int_f s_int_f = (int a, Fraction b) => new Fraction((ushort)(b.Integer + a), b.Numerator, b.Denominator);       
+        
+        public delegate Fraction Sum_f_d(Fraction a, double b);
+        Sum_f_d s_f_d = (Fraction a, double b) => a + b;
+
+        public delegate Fraction Sum_d_f(double a, Fraction b);
+        Sum_d_f s_d_f = (double a, Fraction b) => a + b;
+        
         
 
         public static Fraction operator- (Fraction a, Fraction b)
@@ -120,21 +126,20 @@ namespace Fracion
 
             return temp;            
         }
-        public static Fraction operator- (Fraction a, int b)
-        {
-            Fraction B = new((ushort)b);
-            return a - B;
-        }        
-        public static Fraction operator- (int a, Fraction b)
-        {
-            Fraction A = new((ushort)a);
-            return A - b;
-        }
-        public static Fraction operator- (Fraction a, double b)
-            => a - b;
-        public static Fraction operator- (double a, Fraction b)
-            => a - b;
 
+        public delegate Fraction Difference_f_int(Fraction a, int b);
+        Difference_f_int d_f_int = (Fraction a, int b) => a - new Fraction((ushort)b);
+    
+        public delegate Fraction Difference_int_f (int a, Fraction b);
+        Difference_int_f d_int_f = (int a, Fraction b) => new Fraction((ushort)a) - b;
+
+        public delegate Fraction Difference_f_d(Fraction a, double b);
+        Difference_f_d d_f_d = (Fraction a, double b) => a - b;
+
+        public delegate Fraction Difference_d_f(Fraction a, double b);
+        Difference_f_d d_d_f = (Fraction a, double b) => a - b;
+
+       
 
         public static Fraction operator* (Fraction a, Fraction b)
         {            
@@ -145,6 +150,20 @@ namespace Fracion
             temp.CalculateTheInteger();
             return temp;
         }
+
+        public delegate Fraction ultiplication_f_int(Fraction a, int b);
+        Difference_f_int d_f_int = (Fraction a, int b) => a - new Fraction((ushort)b);
+
+        public delegate Fraction Difference_int_f(int a, Fraction b);
+        Difference_int_f d_int_f = (int a, Fraction b) => new Fraction((ushort)a) - b;
+
+        public delegate Fraction Difference_f_d(Fraction a, double b);
+        Difference_f_d d_f_d = (Fraction a, double b) => a - b;
+
+        public delegate Fraction Difference_d_f(Fraction a, double b);
+        Difference_f_d d_d_f = (Fraction a, double b) => a - b;
+
+
         public static Fraction operator* (Fraction a, int b)
         {
             Fraction B = new((ushort)b);
